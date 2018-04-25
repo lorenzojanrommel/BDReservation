@@ -1,0 +1,29 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	font-family: 'Moserrat', sans-serif;
+}
+.title{
+	font-weight: bold;
+	font-size: 1.5em;
+	color: #000;
+}
+.title-intro{
+	font-family: 'Great Vibes', cursive;
+}
+.get {
+	letter-spacing: 2px;
+}
+.intro {
+	background-image: url('../img/bg_landing_page.jpg');
+	width: 100%;
+    height: 100vh;
+    overflow: hidden;
+	padding-top: 1em;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
