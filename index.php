@@ -1,14 +1,25 @@
 <?php
 	function display_title(){
-		echo "Boarding House & Dormitories Finder || Index";
+		echo "Boarding House & Dormitories Finder";
 	}
 	function display_content(){
 		?>
-		
+
+		<div class="intro">
 			<div class="container">
-				<h1>Index</h1>
+				<div class="title-intro">
+					<h1>Boarding House & Dormitories Finder</h1>
+				</div>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua.</p>
+					<div class="get">
+						<a href="index.php" class="btn btn-outline-success get">GET STARTED</a>
+					</div>
 			</div>
+		</div>
 		<?php
+
 	}
-	require "template.php"
+	require "template.php";
 ?>
+
