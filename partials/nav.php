@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	<div class="container-fluid">
@@ -20,9 +23,21 @@
       <li class="nav-item">
         <a class="nav-link" href="about.php">About</a>
       </li>
+      <?php
+      if (isset($_SESSION['username'])) {
+       ?>
+       <li class="nav-item">
+        <a class="nav-link" href="logout.php">Logout</a>
+       </li>
+       <?php
+      }else{
+      ?>
       <li class="nav-item">
         <a class="nav-link" href="login.php">Login</a>
       </li>
+      <?php
+        }
+      ?>
     </ul>
   </div>
   </div>
@@ -30,7 +45,13 @@
 <section>
   <div class="welcome">
     <div class="container">
-      Welcome Guest!
+      Welcome <?php 
+        if (isset($_SESSION['fname'])) {
+          echo $_SESSION['fname'];
+        }else {
+          echo "Guest!";
+        }
+        ?>
     </div>
   </div>
 </section>
