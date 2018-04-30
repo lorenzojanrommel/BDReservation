@@ -47,10 +47,8 @@
  			                        <div class="form-group row">
  			                            <label for="name" class="col-md-4 col-form-label text-md-right">Username</label>
  			                            <div class="col-md-6">
- 			                                <input id="username" type="text" class="form-control" name="username" required autofocus>
- 			                                    <span class="invalid-feedback">
- 			                                        <strong>{{ $errors->first('name') }}</strong>
- 			                                    </span>
+ 			                                <input id="username" type="text" class="form-control" name="username" required autofocus oninput="return validate_username()">
+ 			                                   <strong><p id="confirm_username"></p></strong>
  			                            </div>
  			                        </div>
  			                        <!-- Password Register -->
@@ -58,24 +56,22 @@
  			                            <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
 
  			                            <div class="col-md-6">
- 			                                <input id="password" type="password" class="form-control" name="password" minlength="6" required oninput="return validate()">
+ 			                                <input id="password" type="password" class="form-control" name="password" minlength="6" required  oninput="return validate()">
  			                            </div>
  			                        </div>
-
+ 			                        <!-- Confirm password -->
  			                        <div class="form-group row">
  			                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
 
  			                            <div class="col-md-6">
  			                                <input id="password-confirm" type="password" class="form-control" oninput="return validate()" name="password_confirmation" required>
- 			                                 <span>
  			                                    <strong><p id="msgconfirmpass"></p></strong>
- 			                                <span>
  			                            </div>
  			                        </div>
 
  			                        <div class="form-group row mb-0">
  			                            <div class="col-md-6 offset-md-4">
- 			                                <button type="submit" id="register_submit" class="btn btn-primary">
+ 			                                <button type="submit" id="register_submit" disabled class="btn btn-primary">
  			                                    Register
  			                                </button>
  			                            </div>
@@ -87,6 +83,7 @@
  			    </div>
  			</div>
  			<script type="text/javascript" src="assets/js/validate_password.js"></script>
+ 			<script type="text/javascript" src="assets/js/validate_username_exist.js"></script>
  		<?php
  	}
  	require 'template.php';

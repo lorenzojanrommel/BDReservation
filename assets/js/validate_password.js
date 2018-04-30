@@ -4,7 +4,7 @@ function validate(){
 	// console.log(password);
 	// console.log(confirm_password);
 	if(password != confirm_password){
-		$('#msgconfirmpass').text('Password do not Match.');
+		$('#msgconfirmpass').html('Password do not Match.');
 		$('#msgconfirmpass').css("color", "red");
 		$('#register_submit').attr('disabled','disabled');
 		return false;
