@@ -11,6 +11,8 @@
 			// extract($row);
 			$_SESSION['username'] = $username;
 			$_SESSION['fname'] = $row['user_fname'];
+			$_SESSION['user_status'] = $row['status_id'];
+			$_SESSION['user_level'] = $row['role_id'];
 		}
 		header('location: dashboard.php');
 	}
