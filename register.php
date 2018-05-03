@@ -37,10 +37,8 @@
  			                            <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
 
  			                            <div class="col-md-6">
- 			                                <input id="email" type="email" class="form-control" name="email" required>
- 			                                    <span class="invalid-feedback">
- 			                                        <strong>{{ $errors->first('email') }}</strong>
- 			                                    </span>
+ 			                                <input id="email" type="email" class="form-control" name="email" oninput="validate_email()">
+ 			                                <strong><p id="confirm_email"></p></strong>
  			                            </div>
  			                        </div>
  			                        <!-- Username -->
@@ -84,6 +82,7 @@
  			</div>
  			<script type="text/javascript" src="assets/js/validate_password.js"></script>
  			<script type="text/javascript" src="assets/js/validate_username_exist.js"></script>
+ 			<script type="text/javascript" src="assets/js/validate_email.js"></script>
  		<?php
  	}
  	require 'template.php';
