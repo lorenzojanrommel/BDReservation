@@ -11,9 +11,8 @@
 			// extract($row);
 			$_SESSION['username'] = $username;
 			$_SESSION['fname'] = $row['user_fname'];
-			$_SESSION['user_status'] = $row['status_id'];
-			$_SESSION['user_level'] = $row['role_id'];
 		}
+<<<<<<< HEAD
 		header('Location: dashboard.php');
 	}elseif(isset($_POST['register'])){
 <<<<<<< HEAD
@@ -74,6 +73,9 @@
 		header('Location: index.php');
 		exit();
 >>>>>>> 7a6aee47a6e6ec63e7b01a4581c19f3fa9cd978d
+=======
+		header('location: dashboard.php');
+>>>>>>> parent of 17aaeb2... Adding user into database
 	}
 
 ?>

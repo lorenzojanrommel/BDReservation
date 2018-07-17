@@ -13,7 +13,7 @@
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 					tempor incididunt ut labore et dolore magna aliqua.</p>
 					<div class="get">
-						<a href="home.php" class="btn btn-outline-success get">GET STARTED</a>
+						<a href="index.php" class="btn btn-outline-success get">GET STARTED</a>
 					</div>
 			</div>
 		</div>

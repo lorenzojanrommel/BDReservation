@@ -12,14 +12,19 @@
 
  			                <div class="card-body">
 <<<<<<< HEAD
+<<<<<<< HEAD
  			                    <form method="POST" action="add_user_owner.php">
 =======
  			                    <form method="POST" action="authenticate.php">
 >>>>>>> 7a6aee47a6e6ec63e7b01a4581c19f3fa9cd978d
  			                    	<!-- First Name -->
+=======
+ 			                    <form method="POST" action="">
+>>>>>>> parent of 17aaeb2... Adding user into database
  			                        <div class="form-group row">
- 			                            <label for="name" class="col-md-4 col-form-label text-md-right">First Name</label>
+ 			                            <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
  			                            <div class="col-md-6">
+<<<<<<< HEAD
 <<<<<<< HEAD
  			                                <input id="fname" type="text" class="form-control" name="fname" placeholder="First Name" required autofocus>
 =======
@@ -49,6 +54,12 @@
  			                                        <strong>{{ $errors->first('name') }}</strong>
  			                                    </span>
 >>>>>>> 7a6aee47a6e6ec63e7b01a4581c19f3fa9cd978d
+=======
+ 			                                <input id="name" type="text" class="form-control" name="name" required autofocus>
+ 			                                    <span class="invalid-feedback">
+ 			                                        <strong>{{ $errors->first('name') }}</strong>
+ 			                                    </span>
+>>>>>>> parent of 17aaeb2... Adding user into database
  			                            </div>
  			                        </div>
  			                        <!-- Email address Reg -->
@@ -56,6 +67,7 @@
  			                            <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
 
  			                            <div class="col-md-6">
+<<<<<<< HEAD
 <<<<<<< HEAD
  			                                <input id="email" type="email" class="form-control" name="email" required autofocus oninput="return validate_email()" placeholder="Email Address">
 =======
@@ -74,6 +86,12 @@
  			                                <input id="username" type="text" class="form-control" name="username" required autofocus oninput="return validate_username()">
 >>>>>>> 7a6aee47a6e6ec63e7b01a4581c19f3fa9cd978d
  			                                   <strong><p id="confirm_username"></p></strong>
+=======
+ 			                                <input id="email" type="email" class="form-control" name="email" required>
+ 			                                    <span class="invalid-feedback">
+ 			                                        <strong>{{ $errors->first('email') }}</strong>
+ 			                                    </span>
+>>>>>>> parent of 17aaeb2... Adding user into database
  			                            </div>
  			                        </div>
  			                        <!-- Password Register -->
@@ -82,29 +100,40 @@
 
  			                            <div class="col-md-6">
 <<<<<<< HEAD
+<<<<<<< HEAD
  			                                <input id="password" type="password" class="form-control" name="password" minlength="6" required  oninput="return validate()" placeholder="Password">
 =======
  			                                <input id="password" type="password" class="form-control" name="password" minlength="6" required  oninput="return validate()">
 >>>>>>> 7a6aee47a6e6ec63e7b01a4581c19f3fa9cd978d
+=======
+ 			                                <input id="password" type="password" class="form-control" name="password" required>
+ 			                                    <span class="invalid-feedback">
+ 			                                        <strong>{{ $errors->first('password') }}</strong>
+ 			                                    </span>
+>>>>>>> parent of 17aaeb2... Adding user into database
  			                            </div>
  			                        </div>
- 			                        <!-- Confirm password -->
+
  			                        <div class="form-group row">
  			                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
 
  			                            <div class="col-md-6">
+<<<<<<< HEAD
 <<<<<<< HEAD
  			                                <input id="password-confirm" type="password" class="form-control" oninput="return validate()" name="password_confirmation" required placeholder="Confirm Password">
 =======
  			                                <input id="password-confirm" type="password" class="form-control" oninput="return validate()" name="password_confirmation" required>
 >>>>>>> 7a6aee47a6e6ec63e7b01a4581c19f3fa9cd978d
  			                                    <strong><p id="msgconfirmpass"></p></strong>
+=======
+ 			                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+>>>>>>> parent of 17aaeb2... Adding user into database
  			                            </div>
  			                        </div>
 
  			                        <div class="form-group row mb-0">
  			                            <div class="col-md-6 offset-md-4">
- 			                                <button type="submit" id="register_submit" disabled class="btn btn-primary">
+ 			                                <button type="submit" class="btn btn-primary">
  			                                    Register
  			                                </button>
  			                            </div>
@@ -115,6 +144,7 @@
  			        </div>
  			    </div>
  			</div>
+<<<<<<< HEAD
  			<script type="text/javascript" src="assets/js/validate_password.js"></script>
  			<script type="text/javascript" src="assets/js/validate_username_exist.js"></script>
 <<<<<<< HEAD
@@ -122,7 +152,10 @@
 =======
  			<script type="text/javascript" src="assets/js/validate_email.js"></script>
 >>>>>>> 7a6aee47a6e6ec63e7b01a4581c19f3fa9cd978d
+=======
+>>>>>>> parent of 17aaeb2... Adding user into database
  		<?php
  	}
  	require 'template.php';
+
 ?>
