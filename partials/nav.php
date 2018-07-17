@@ -38,7 +38,11 @@
       }else{
       ?>
       <li class="nav-item">
+<<<<<<< HEAD
         <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
+=======
+        <a class="nav-link" href="dashboard.php">Home <span class="sr-only">(current)</span></a>
+>>>>>>> 7a6aee47a6e6ec63e7b01a4581c19f3fa9cd978d
       </li>
       <li class="nav-item">
         <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="room.php">Rooms</a>

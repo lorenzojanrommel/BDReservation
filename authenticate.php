@@ -16,6 +16,7 @@
 		}
 		header('Location: dashboard.php');
 	}elseif(isset($_POST['register'])){
+<<<<<<< HEAD
 			$username = htmlspecialchars($_POST['username']);
 			$sql = "SELECT * FROM users WHERE username = '$username'";
 			$results = mysqli_query($conn, $sql);
@@ -26,6 +27,53 @@
 			}
 	}else{
 		header('Location: index.php');
+=======
+		if (isset($_POST['username'])) {
+			$username = htmlspecialchars($_POST['username']);
+			if (strlen($username) > 0) {
+				$sql = "SELECT * FROM users WHERE username = '$username'";
+				$results = mysqli_query($conn, $sql);
+				if (mysqli_num_rows($results)>0) {
+					echo "invalid";
+					exit();
+				}elseif(mysqli_num_rows($results) == 0){
+					echo "valid";
+					exit();
+				}
+				exit();
+			}elseif (strlen($username) == 0){
+				echo "empty";
+				exit();
+			}
+			exit();
+		}elseif(isset($_POST['email'])){
+			$email = htmlspecialchars($_POST['email']);
+			if (strlen($email) > 0 ) {
+				// Check if email is valid
+				if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+					$sql = "SELECT * FROM users WHERE user_email = '$email'";
+					$results = mysqli_query($conn, $sql);
+					if (mysqli_num_rows($results) > 0) {
+						echo "validate_email_not_available";
+						exit();
+					}elseif(mysqli_num_rows($results) == 0){
+						echo "validate_email_available";
+					}
+					exit();
+				}else{
+					echo "validate_invalid";
+				}
+				exit();
+			}elseif(strlen($email) == 0){
+				echo "is";
+				exit();
+			}
+			exit();
+		}
+	}else{
+		header('Location: index.php');
+		exit();
+>>>>>>> 7a6aee47a6e6ec63e7b01a4581c19f3fa9cd978d
 	}
 
 ?>
