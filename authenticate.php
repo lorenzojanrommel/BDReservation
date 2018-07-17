@@ -11,8 +11,21 @@
 			// extract($row);
 			$_SESSION['username'] = $username;
 			$_SESSION['fname'] = $row['user_fname'];
+			$_SESSION['user_status'] = $row['status_id'];
+			$_SESSION['user_level'] = $row['role_id'];
 		}
-		header('location: dashboard.php');
+		header('Location: dashboard.php');
+	}elseif(isset($_POST['register'])){
+			$username = htmlspecialchars($_POST['username']);
+			$sql = "SELECT * FROM users WHERE username = '$username'";
+			$results = mysqli_query($conn, $sql);
+			if (mysqli_num_rows($results)>0) {
+				echo "invalid";
+			}else{
+				echo "valid";
+			}
+	}else{
+		header('Location: index.php');
 	}
 
 ?>
