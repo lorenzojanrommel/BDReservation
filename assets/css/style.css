@@ -36,3 +36,9 @@ html {
 	font-weight: bold;
 	font-size: 2em;
 }
+.hr_line {
+	width: 90%;
+	height: 1px;
+	background: #000;
+	margin: 20px;
+}

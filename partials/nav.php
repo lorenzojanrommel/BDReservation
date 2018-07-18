@@ -19,26 +19,74 @@
       <?php
         if (isset($_SESSION['username']) && $_SESSION['user_level'] == 1 && $_SESSION['user_status'] == 1) {
       ?>
-      <li class="nav-item">
-        <a class="nav-link" href="dashboard.php">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="room.php">Rooms</a>
-        <a class="nav-link d-lg-none" href="room.php">Rooms</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="contacts.php">Contacts</a>
-        <a class="nav-link d-lg-none" href="contacts.php">Contacts</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="about.php">About</a>
-        <a class="nav-link d-lg-none" href="about.php">About</a>
-      </li>
+        <li class="nav-item">
+          <a class="nav-link" href="dashboard.php">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="user_list.php">User List</a>
+          <a class="nav-link d-lg-none" href="user_list.php">User List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="add_admin.php">Add Admin</a>
+          <a class="nav-link d-lg-none" href="add_admin.php">Add Addmin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="about.php">About</a>
+          <a class="nav-link d-lg-none" href="about.php">About</a>
+        </li>
       <?php
+      }elseif(isset($_SESSION['username']) && $_SESSION['user_level'] == 2 && $_SESSION['user_status'] == 1){
+        ?>
+          <li class="nav-item">
+            <a class="nav-link" href="owner_dashboard.php">Dashboard<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="add_room.php">Add Room</a>
+            <a class="nav-link d-lg-none" href="add_room.php">Add Room</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="booking.php">Booking</a>
+            <a class="nav-link d-lg-none" href="booking.php">Booking</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="room_availability.php">Room Availability</a>
+            <a class="nav-link d-lg-none" href="room_availability.php">Room Availability</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="find.php">Find</a>
+            <a class="nav-link d-lg-none" href="find.php">Find</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="payments.php">Payments</a>
+            <a class="nav-link d-lg-none" href="payments.php">Payments</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="cancel.php">Cancel</a>
+            <a class="nav-link d-lg-none" href="cancel.php">Cancel</a>
+          </li>
+        <?
+      }elseif(isset($_SESSION['username']) && $_SESSION['user_level'] == 3 && $_SESSION ['user_status'] == 1){
+        ?>
+          <li class="nav-item">
+            <a class="nav-link" href="customer_dashboard.php">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="room.php">Rooms</a>
+            <a class="nav-link d-lg-none" href="room.php">Rooms</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="contacts.php">Contacts</a>
+            <a class="nav-link d-lg-none" href="contacts.php">Contacts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="about.php">About</a>
+            <a class="nav-link d-lg-none" href="about.php">About</a>
+          </li>
+        <?php
       }else{
       ?>
       <li class="nav-item">
-        <a class="nav-link" href="dashboard.php">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="room.php">Rooms</a>

@@ -54,11 +54,13 @@
 				                    </div>
 				                </form>
 				                <!-- Sign up -->
-				                <hr>
-				                	<div class="col s12 center login-flex pl-5 ml-5">
-				                	<a href="register.php"><small class="signup">Sign Up for Boarding House & Dormitories Finder</small></a>
+				                <div class="hr_line"></div>
+				                	<div class="col s12 center login-flex pl-5 ml-2">
+				                		<a href="register.php" class="mr-1"><small class="signup">Sign Up for Owner Boarding House / Dormitories</small></a>
+				                		or
+				                		<a href="register_customer.php" class="ml-1"><small class="signup">Sign Up for Customer Boarding House / Dormitories</small></a>
 				                	</div>
-				                <hr>
+				                <div class="hr_line"></div>
 				            </div>
 				        </div>
 				    </div>

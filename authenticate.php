@@ -14,7 +14,16 @@
 			$_SESSION['user_status'] = $row['status_id'];
 			$_SESSION['user_level'] = $row['role_id'];
 		}
-		header('Location: dashboard.php');
+		if ($_SESSION['user_level'] == 1) {
+			header('Location: dashboard.php');
+			exit();
+		}elseif($_SESSION['user_level'] == 2){
+			header('Location: owner_dashboard.php');
+			exit();
+		}elseif($_SESSION['user_level'] == 3){
+			header('Location: customer_dashboard.php');
+			exit();
+		}
 	}elseif(isset($_POST['register'])){
 			$username = htmlspecialchars($_POST['username']);
 			$sql = "SELECT * FROM users WHERE username = '$username'";

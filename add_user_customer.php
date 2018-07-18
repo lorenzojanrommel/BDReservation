@@ -32,7 +32,7 @@ session_start();
 	$username = htmlspecialchars($_POST['username']);
 	$password = sha1($_POST['password']);
 
-	$sql = "INSERT INTO users (role_id, status_id, user_fname, user_lname, user_mname, user_address, user_gender, user_birthdate, user_picture, user_email, username, password) VALUES ('2', '1', '$fname', '$lname', '$mname', '$address', '$gender', '$bday', '$picture', '$email', '$username', '$password')";
+	$sql = "INSERT INTO users (role_id, status_id, user_fname, user_lname, user_mname, user_address, user_gender, user_birthdate, user_picture, user_email, username, password) VALUES ('3', '1', '$fname', '$lname', '$mname', '$address', '$gender', '$bday', '$picture', '$email', '$username', '$password')";
 	mysqli_query($conn, $sql) or die (mysqli_error($conn));
 	$sql = "SELECT * FROM users WHERE username = '$username'";
 	$results = mysqli_query($conn, $sql);
@@ -41,7 +41,5 @@ session_start();
 	$_SESSION['fname'] = $fname;
 	$_SESSION['user_level'] = $user_level;
 	$_SESSION['user_status'] = $row['user_status'];
-	header('location: owner_dashboard.php');
-
-
+	header('location: customer_dashboard.php');
 ?>
