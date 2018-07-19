@@ -9,9 +9,7 @@
             <!--First column-->
             <div class="col-md-6">
                 <h5 class="mb-4 mt-3 font-weight-bold footer-title">Boarding House & Dormitories Finder</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                <p>Boarding house and Dormitories finder is a new method of accessing information of the business by integrating the user interface design on the website, not only browsing content but also to process information and transaction.</p>
             </div>
             <!--/.First column-->
 

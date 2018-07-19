@@ -4,22 +4,15 @@
 	}
 	function display_content(){
 		?>
-
-		<div class="intro">
-			<div class="container">
-				<div class="title-intro">
-					<h1>Customer Dashboard</h1>
-				</div>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua.</p>
-					<div class="get">
-						<a href="home.php" class="btn btn-outline-success get">GET STARTED</a>
+			<div class="par1-index">
+				<div class="container">
+					<div class="title-header">
+						<h1 class="title-header text-uppercase">Boarding House <span class="and">&</span> <span class="dorm">Dormitories Finder</span></h1>
 					</div>
+				</div>
 			</div>
-		</div>
 		<?php
-
 	}
-	require "template.php";
-?>
+	require 'template.php';
 
+?>
