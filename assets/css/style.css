@@ -42,3 +42,24 @@ html {
 	background: #000;
 	margin: 20px;
 }
+a.footer-a-tag {
+	color: #fff;
+}
+.footer-title{
+	color: #fff;
+	font-family: 'Great Vibes', cursive;
+	font-size: 3em;
+	text-shadow: 10px 5px 5px #000;
+	letter-spacing: 1.5px;
+}
+.par1-index{
+	background-color: #fff;
+	background: url('../img/part1-index.jpg');
+    width: 100%;
+    height: calc(100% - 1.71875rem);
+    overflow: hidden;
+	padding-top: 1em;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}

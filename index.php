@@ -4,22 +4,13 @@
 	}
 	function display_content(){
 		?>
-
-		<div class="intro">
-			<div class="container">
-				<div class="title-intro">
-					<h1>Boarding House & Dormitories Finder</h1>
+			<div class="par1-index">
+				<div class="title-header animated infinite pulse">
+					<h1 class="title-header">Bacabac Farmers Producers Cooperative</h1>
 				</div>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua.</p>
-					<div class="get">
-						<a href="home.php" class="btn btn-outline-success get">GET STARTED</a>
-					</div>
 			</div>
-		</div>
 		<?php
-
 	}
-	require "template.php";
-?>
+	require 'template.php';
 
+?>
