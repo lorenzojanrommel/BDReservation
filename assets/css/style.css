@@ -3,7 +3,7 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-html {
+html,body {
 	font-family: 'Moserrat', sans-serif;
 }
 .title{
@@ -71,4 +71,49 @@ h1.title-header{
 	text-shadow: 10px 5px 5px #0d2f29;
 	color: #dedede;
 	letter-spacing: 1s.5px;
+}
+span.and{
+	margin-left: .5em;
+}
+span.dorm{
+	margin-left: 1em;
+}
+.about-us-h3{
+	margin-top: 1em;
+	font-weight: bold;
+}
+.about-us-p{
+	font-size: 1.3em;
+	text-indent: 50px;
+	text-align: justify;
+}
+.our-team{
+	font-size: 2.5em;
+	font-weight: bold;
+}
+.member-container{
+	/*height: 500px;*/
+	width: 100%;
+	padding: 10px;
+}
+.member-images{
+	padding: 10px;
+    text-align: center;
+}
+.member-img{
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	border: 1px solid #000;
+}
+.member-name{
+	margin: 0;
+	text-align: center;
+	font-size: 2.5em;
+	font-weight: bold;
+}
+.member-details-p{
+	font-size: 1em;
+	text-indent: 50px;
+	text-align: justify;
 }
