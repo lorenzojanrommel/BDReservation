@@ -5,8 +5,10 @@
 	function display_content(){
 		?>
 			<div class="par1-index">
-				<div class="title-header animated infinite pulse">
-					<h1 class="title-header">Bacabac Farmers Producers Cooperative</h1>
+				<div class="container">
+					<div class="title-header">
+						<h1 class="title-header text-uppercase">Boarding House & Dormitories Finder</h1>
+					</div>
 				</div>
 			</div>
 		<?php

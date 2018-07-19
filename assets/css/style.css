@@ -63,3 +63,12 @@ a.footer-a-tag {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+h1.title-header{
+	padding: 2.5em;
+	font-family: 'Anton', sans-serif;
+	font-size: 5em;
+	font-weight: bold;
+	text-shadow: 10px 5px 5px #0d2f29;
+	color: #dedede;
+	letter-spacing: 1s.5px;
+}
