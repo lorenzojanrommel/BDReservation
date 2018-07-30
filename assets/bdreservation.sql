@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.6
--- https://www.phpmyadmin.net/
+-- version 4.4.14
+-- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Jul 18, 2018 at 11:12 PM
--- Server version: 10.1.29-MariaDB
--- PHP Version: 7.1.12
+-- Host: 127.0.0.1
+-- Generation Time: Jul 30, 2018 at 07:07 PM
+-- Server version: 5.6.26
+-- PHP Version: 5.6.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -25,13 +23,37 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `facilities`
+--
+
+CREATE TABLE IF NOT EXISTS `facilities` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `faci_name` varchar(255) NOT NULL,
+  `faci_address` varchar(255) NOT NULL,
+  `faci_postcode` int(11) NOT NULL,
+  `faci_phone_number` text NOT NULL,
+  `faci_picture` text NOT NULL,
+  `faci_description` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `facilities`
+--
+
+INSERT INTO `facilities` (`id`, `user_id`, `faci_name`, `faci_address`, `faci_postcode`, `faci_phone_number`, `faci_picture`, `faci_description`) VALUES
+(1, 3, 'Sebastian''s Boarding House', 'Camiling , Colleges', 2306, '09122251545', '', 'This is description of the boarding of sebastian''s Family :)');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `roles`
 --
 
-CREATE TABLE `roles` (
+CREATE TABLE IF NOT EXISTS `roles` (
   `id` int(11) NOT NULL,
   `role` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `roles`
@@ -48,10 +70,10 @@ INSERT INTO `roles` (`id`, `role`) VALUES
 -- Table structure for table `status`
 --
 
-CREATE TABLE `status` (
+CREATE TABLE IF NOT EXISTS `status` (
   `id` int(11) NOT NULL,
   `status` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `status`
@@ -67,7 +89,7 @@ INSERT INTO `status` (`id`, `status`) VALUES
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL,
   `role_id` int(11) NOT NULL,
   `status_id` int(11) NOT NULL,
@@ -83,7 +105,7 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `create_date` datetime NOT NULL,
   `update_date` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
@@ -93,11 +115,19 @@ INSERT INTO `users` (`id`, `role_id`, `status_id`, `user_fname`, `user_lname`, `
 (1, 1, 1, 'Admin', 'Admin', '', 'Admin address', 'm', '04/27/2018', '', 'admin@test.com', 'admin', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (2, 2, 1, 'Jan', 'Lorenzo', 'kj', 'NA', '', 'NA', 'NA', 'jan@gmail.com', 'mel', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (3, 2, 1, 'Owner', 'Owner', 'Owner', 'NA', '', 'NA', 'NA', 'owner@gmail.com', 'owner', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(4, 3, 1, 'Customer', 'Customer', 'Customer', 'NA', '', 'NA', 'NA', 'customer@gmail.com', 'customer', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(4, 3, 1, 'Customer', 'Customer', 'Customer', 'NA', '', 'NA', 'NA', 'customer@gmail.com', 'customer', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(5, 2, 1, 'Owner2', 'Owner2', 'Owner2', 'NA', '', 'NA', 'NA', 'owner2@test.test', 'owner2', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `facilities`
+--
+ALTER TABLE `facilities`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `roles`
@@ -125,26 +155,34 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `facilities`
+--
+ALTER TABLE `facilities`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `status`
 --
 ALTER TABLE `status`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `facilities`
+--
+ALTER TABLE `facilities`
+  ADD CONSTRAINT `facilities_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `users`
@@ -152,7 +190,6 @@ ALTER TABLE `users`
 ALTER TABLE `users`
   ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`),
   ADD CONSTRAINT `users_ibfk_2` FOREIGN KEY (`status_id`) REFERENCES `status` (`id`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
