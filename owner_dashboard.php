@@ -21,11 +21,17 @@
 		}else{
 			?>
 			<div class="container">
-				<p>Create your boarding House Here</p>
+				<div class="container-cybod m-5 p-5">
+					<h3 class="cybod pt-5 pl-5 pr-5 text-center">Create Your Boarding House/Dormitory</h3>
+					<div class="button-click text-center">
+						<button type="button" class="btn btn-outline-warning c-button" data-toggle="modal" data-target="#create_bhod">Click Here</button>
+					</div>
+				</div>
 			</div>
 			<?php
 		}
 	}
 	require 'template.php';
+	require 'create_bhod_modal.php'
 
 ?>

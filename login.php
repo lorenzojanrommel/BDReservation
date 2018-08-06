@@ -5,7 +5,7 @@
 	function display_content(){
 		?>
 			<div class="container">
-				<div class="row justify-content-center mt-5 pt-5">
+				<div class="row justify-content-center mt-5 pt-5 mb-5 pb-5">
 				    <div class="col-md-8">
 				        <div class="card card-default">
 				            <div class="card-header">Login</div>

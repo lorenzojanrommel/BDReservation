@@ -181,3 +181,34 @@ h3.rooms{
 img.img-view-room {
 	width: 100%;
 }
+.container-cybod{
+	border: 0.5rem dashed #000;
+  	/*outline: 0.5rem solid khaki;*/
+  	box-shadow: 0 0 3em 0 #87c3eb;
+  	border-radius: 12px;
+  	font: bold 1rem sans-serif;
+  	margin: 2rem;
+  	padding: 1rem;
+  	/*outline-offset: 0.5rem;*/
+  	height: 500px;
+}
+h3.cybod{
+	font-size: 5em;
+	font-family: 'IM Fell English SC', serif;
+	/*font-family: 'Anton', sans-serif;*/
+	font-weight: bold;
+	color: #1c8874;
+}
+.c-button{
+	padding: 10px;
+	width: 300px;
+	color: #000;
+}
+.modal-dialog{
+	max-width: 90%;/*
+	margin-top: 12em;*/
+	/*border-radius: 1px;*/
+}
+.modal-title{
+	font-size: 3em;
+}
