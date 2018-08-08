@@ -13,64 +13,65 @@
       </div>
       <div class="modal-body">
        <div class="container-fluid">
-        <form method='post' action='add_bhod.php' enctype='multipart/form-data'>
+        <form method='POST' action='add_bhod.php' enctype='multipart/form-data'>
          <div class="form-row">
           <!-- Name of boarding house/dormitory -->
              <div class="form-group col-sm-6">
                   <label for="NOYBHOD">Name</label>
-                  <input type="text" id="noybhd" class="form-control" placeholder="Name of Your Boarding House/Dormitory">
+                  <input type="text" id="noybhd" name="noybhd" class="form-control" placeholder="Name of Your Boarding House/Dormitory">
               </div>
            <!-- End of name of boarding house -->
            <!-- Address -->
              <div class="form-group col-sm-6">
                   <label for="Address">Address</label>
-                  <input type="text" id="address" class="form-control" placeholder="Address of Your Boarding House/Dormitory">
+                  <input type="text" id="address" name="aoybhd" class="form-control" placeholder="Address of Your Boarding House/Dormitory">
               </div>
            <!-- End address -->
            <!-- Postcode -->
              <div class="form-group col-sm-6">
                   <label for="Postcode">Postcode</label>
-                  <input type="text" id="postcode" class="form-control" placeholder="Postcode of Your Boarding House/Dormitory">
+                  <input type="text" id="postcode" name="pcoybhd" class="form-control" placeholder="Postcode of Your Boarding House/Dormitory">
               </div>
            <!-- End postcode -->
            <!-- Phone Number -->
              <div class="form-group col-sm-6">
                   <label for="pnumber">Phone Number</label>
-                  <input type="text" id="pnumber" class="form-control" placeholder="Phone Number of Your Boarding House/Dormitory">
+                  <input type="text" id="pnumber" name="pnoybhd" class="form-control" placeholder="Phone Number of Your Boarding House/Dormitory">
               </div>
            <!-- End Phone Number -->
          </div>
          <!-- Picture of the boarding house or dormitory -->
          <div class="form-group col-sm-12">
               <label for="BHDPicture">Picture of Your Boarding House/Dormitory</label>
-              <input type="file" id="bhdpicture" class="form-control-file" aria-describedby="fileHelp" placeholder="Picture of Your Boarding House/Dormitory">
+              <input type="file" id="bhdpicture" name="poybhd" class="form-control-file" aria-describedby="fileHelp" placeholder="Picture of Your Boarding House/Dormitory">
           </div>
          <!-- End Picture of the boarding house or dormitory -->
          <!-- Mayors Permit picture of the boarding house or dormitory -->
          <div class="form-group col-sm-12">
               <label for="MPPicture">Mayors Permit Picture of Your Boarding House/Dormitory</label>
-              <input type="file" id="mppicture" class="form-control-file" aria-describedby="fileHelp" placeholder="Picture of Your Boarding House/Dormitory">
+              <input type="file" id="mppicture" name="mpofbhd" class="form-control-file" aria-describedby="fileHelp" placeholder="Picture of Your Boarding House/Dormitory">
           </div>
          <!-- End Mayors Permit picture of the boarding house or dormitory -->
          <!-- BIR picture of the boarding house or dormitory -->
          <div class="form-group col-sm-12">
               <label for="birpicture">BIR Picture of Your Boarding House/Dormitory</label>
-              <input type="file" id="birpicture" class="form-control-file" aria-describedby="fileHelp" placeholder="Picture of Your Boarding House/Dormitory">
+              <input type="file" id="birpicture" name="biroybhd" class="form-control-file" aria-describedby="fileHelp" placeholder="Picture of Your Boarding House/Dormitory">
           </div>
          <!-- End BIR picture of the boarding house or dormitory -->
-         <!-- BIR picture of the boarding house or dormitory -->
+         <!-- Description of the boarding house or dormitory -->
          <div class="form-group col-sm-12">
               <label for="birpicture">Description</label>
-              <textarea class="form-control" id="description" placeholder="Description of Your Boarding House/Dormitory" rows="3" style="margin-top: 0px; margin-bottom: 0px; height: 143px;"></textarea>
+              <textarea class="form-control" id="description" name="bhddescription" placeholder="Description of Your Boarding House/Dormitory" rows="3" style="margin-top: 0px; margin-bottom: 0px; height: 143px;"></textarea>
           </div>
-         <!-- End BIR picture of the boarding house or dormitory -->
-       </form>
+         <!-- End Description of the boarding house or dormitory -->
        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <input type="submit" name="submit" value="Save" class="btn btn-warning">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
+       </form>
     </div>
   </div>
 </div>
+

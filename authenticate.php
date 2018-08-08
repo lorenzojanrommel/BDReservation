@@ -13,6 +13,7 @@
 			$_SESSION['fname'] = $row['user_fname'];
 			$_SESSION['user_status'] = $row['status_id'];
 			$_SESSION['user_level'] = $row['role_id'];
+			$_SESSION['user_id'] = $row['id'];
 		}
 		if ($_SESSION['user_level'] == 1) {
 			header('Location: dashboard.php');
