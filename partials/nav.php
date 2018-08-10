@@ -23,6 +23,10 @@
           <a class="nav-link" href="dashboard.php">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
+          <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="pending_bhod.php">Pending</a>
+          <a class="nav-link d-lg-none" href="user_list.php">User List</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="user_list.php">User List</a>
           <a class="nav-link d-lg-none" href="user_list.php">User List</a>
         </li>
