@@ -34,7 +34,8 @@
 		$target_file3 = $no_image_uploaded;
 	}
 	
-
+	// Boarding house category
+	$category = htmlspecialchars($_POST['category']);
 	// Boarding house or dormitory name
 	$bhd_name = htmlspecialchars($_POST['noybhd']);
 	// Address of boarding hourse or dormitory
@@ -55,8 +56,8 @@
 	$user_id = $_SESSION['user_id'];
 
 
-	$sql = "INSERT INTO facilities (user_id, faci_name, faci_address, faci_postcode, faci_phone_number, faci_picture, faci_mp, faci_birp, faci_description, faci_status) 
-			VALUES ('$user_id' , '$bhd_name', '$bhd_address', '$bhd_postcode', '$bdh_pnumber', '$bhd_image', '$bhd_mp_image', '$bhd_bir_image', '$bhd_description', '3')";
+	$sql = "INSERT INTO houses (user_id, house_category_id, faci_name, faci_address, faci_postcode, faci_phone_number, faci_picture, faci_mp, faci_birp, faci_description, faci_status) 
+			VALUES ('$user_id' , '$category' , '$bhd_name', '$bhd_address', '$bhd_postcode', '$bdh_pnumber', '$bhd_image', '$bhd_mp_image', '$bhd_bir_image', '$bhd_description', '3')";
 	mysqli_query($conn, $sql) or die (mysqli_error($conn));
 	header('location: owner_dashboard.php');
 ?>

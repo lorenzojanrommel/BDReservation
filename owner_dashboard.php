@@ -10,7 +10,7 @@
 		$row = mysqli_fetch_assoc($results);
 		extract($row);
 		$user_id = $id;
-		$sql1 = "SELECT * FROM facilities WHERE user_id = '$user_id'";
+		$sql1 = "SELECT * FROM houses WHERE user_id = '$user_id'";
 		$results = mysqli_query($conn, $sql1);
 		if (mysqli_num_rows($results) > 0 ) {
 			?>

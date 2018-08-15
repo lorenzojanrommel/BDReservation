@@ -153,7 +153,7 @@ span.dorm{
   margin-top: 10px;
 }
 label{
-  font-size: 1.3em;
+  font-size: 13px;
   line-height: 1em;
   font-weight: normal;
 }
@@ -211,4 +211,12 @@ h3.cybod{
 }
 .modal-title{
 	font-size: 3em;
+}
+/*
+ *
+ *User list table
+ *
+ */
+.house-pending-list{
+	width: 100%;
 }

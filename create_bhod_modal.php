@@ -1,3 +1,6 @@
+<?php
+  require 'condb.php';
+?>
 <div class="modal" id="create_bhod">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -14,6 +17,22 @@
       <div class="modal-body">
        <div class="container-fluid">
         <form method='POST' action='add_bhod.php' enctype='multipart/form-data'>
+          <!-- Select for category -->
+          <div class="form-group">
+            <label for="Category">House Category</label>
+            <select class="form-control" id="category" name="category">
+              <option selected disabled> Select your house category Dormitory/Boarding House</option>
+              <?php
+                $sql = "SELECT * FROM categories";
+                $results = mysqli_query($conn, $sql);
+                while ($row = mysqli_fetch_assoc($results)) {
+                  extract($row);
+                  echo "<option value='$id'> $house_category </option>";
+                }
+              ?>
+            </select>
+          </div>
+          <!-- end of Select for category -->
          <div class="form-row">
           <!-- Name of boarding house/dormitory -->
              <div class="form-group col-sm-6">

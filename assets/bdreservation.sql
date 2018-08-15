@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 10, 2018 at 10:34 AM
+-- Generation Time: Aug 15, 2018 at 09:41 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.1.12
 
@@ -25,12 +25,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `facilities`
+-- Table structure for table `categories`
 --
 
-CREATE TABLE `facilities` (
+CREATE TABLE `categories` (
+  `id` int(11) NOT NULL,
+  `house_category` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`id`, `house_category`) VALUES
+(1, 'Boarding House'),
+(2, 'Dormitory');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `houses`
+--
+
+CREATE TABLE `houses` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
+  `house_category_id` int(11) NOT NULL,
   `faci_name` varchar(255) NOT NULL,
   `faci_address` varchar(255) NOT NULL,
   `faci_postcode` int(11) NOT NULL,
@@ -43,11 +63,11 @@ CREATE TABLE `facilities` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `facilities`
+-- Dumping data for table `houses`
 --
 
-INSERT INTO `facilities` (`id`, `user_id`, `faci_name`, `faci_address`, `faci_postcode`, `faci_phone_number`, `faci_picture`, `faci_mp`, `faci_birp`, `faci_description`, `faci_status`) VALUES
-(1, 3, 'Sebastian\'s Boarding House', 'Camiling , Colleges', 2306, '09122251545', '', '', '', 'This is description of the boarding of sebastian\'s Family :)', 4);
+INSERT INTO `houses` (`id`, `user_id`, `house_category_id`, `faci_name`, `faci_address`, `faci_postcode`, `faci_phone_number`, `faci_picture`, `faci_mp`, `faci_birp`, `faci_description`, `faci_status`) VALUES
+(34, 5, 1, 'sample1', 'sample1@address', 2306, '0932323232', 'assets/img/no_image_uploaded.png', 'assets/img/no_image_uploaded.png', 'assets/img/no_image_uploaded.png', 'this is sample 1', 3);
 
 -- --------------------------------------------------------
 
@@ -131,12 +151,19 @@ INSERT INTO `users` (`id`, `role_id`, `status_id`, `user_fname`, `user_lname`, `
 --
 
 --
--- Indexes for table `facilities`
+-- Indexes for table `categories`
 --
-ALTER TABLE `facilities`
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `houses`
+--
+ALTER TABLE `houses`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`),
-  ADD KEY `faci_status` (`faci_status`);
+  ADD KEY `faci_status` (`faci_status`),
+  ADD KEY `house_category_id` (`house_category_id`);
 
 --
 -- Indexes for table `roles`
@@ -164,10 +191,16 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `facilities`
+-- AUTO_INCREMENT for table `categories`
 --
-ALTER TABLE `facilities`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+ALTER TABLE `categories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `houses`
+--
+ALTER TABLE `houses`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -192,11 +225,12 @@ ALTER TABLE `users`
 --
 
 --
--- Constraints for table `facilities`
+-- Constraints for table `houses`
 --
-ALTER TABLE `facilities`
-  ADD CONSTRAINT `facilities_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `facilities_status` FOREIGN KEY (`faci_status`) REFERENCES `status` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+ALTER TABLE `houses`
+  ADD CONSTRAINT `facilities_status` FOREIGN KEY (`faci_status`) REFERENCES `status` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `house_category` FOREIGN KEY (`house_category_id`) REFERENCES `categories` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `houses_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `users`
