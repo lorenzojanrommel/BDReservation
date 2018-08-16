@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 15, 2018 at 09:41 AM
+-- Generation Time: Aug 16, 2018 at 08:12 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.1.12
 
@@ -48,26 +48,26 @@ INSERT INTO `categories` (`id`, `house_category`) VALUES
 --
 
 CREATE TABLE `houses` (
-  `id` int(11) NOT NULL,
+  `house_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `house_category_id` int(11) NOT NULL,
-  `faci_name` varchar(255) NOT NULL,
-  `faci_address` varchar(255) NOT NULL,
-  `faci_postcode` int(11) NOT NULL,
-  `faci_phone_number` text NOT NULL,
-  `faci_picture` text NOT NULL,
-  `faci_mp` text NOT NULL,
-  `faci_birp` text NOT NULL,
-  `faci_description` text NOT NULL,
-  `faci_status` int(11) NOT NULL
+  `house_name` varchar(255) NOT NULL,
+  `house_address` varchar(255) NOT NULL,
+  `house_postcode` int(11) NOT NULL,
+  `house_phone_number` text NOT NULL,
+  `house_picture` text NOT NULL,
+  `house_mp` text NOT NULL,
+  `house_birp` text NOT NULL,
+  `house_description` text NOT NULL,
+  `house_status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `houses`
 --
 
-INSERT INTO `houses` (`id`, `user_id`, `house_category_id`, `faci_name`, `faci_address`, `faci_postcode`, `faci_phone_number`, `faci_picture`, `faci_mp`, `faci_birp`, `faci_description`, `faci_status`) VALUES
-(34, 5, 1, 'sample1', 'sample1@address', 2306, '0932323232', 'assets/img/no_image_uploaded.png', 'assets/img/no_image_uploaded.png', 'assets/img/no_image_uploaded.png', 'this is sample 1', 3);
+INSERT INTO `houses` (`house_id`, `user_id`, `house_category_id`, `house_name`, `house_address`, `house_postcode`, `house_phone_number`, `house_picture`, `house_mp`, `house_birp`, `house_description`, `house_status`) VALUES
+(36, 5, 2, 'Sample1', 'sample1address', 2306, '09232322', 'assets/img/no_image_uploaded.png', 'assets/img/no_image_uploaded.png', 'assets/img/no_image_uploaded.png', 'This is sample 1', 3);
 
 -- --------------------------------------------------------
 
@@ -160,9 +160,9 @@ ALTER TABLE `categories`
 -- Indexes for table `houses`
 --
 ALTER TABLE `houses`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`house_id`),
   ADD KEY `user_id` (`user_id`),
-  ADD KEY `faci_status` (`faci_status`),
+  ADD KEY `faci_status` (`house_status`),
   ADD KEY `house_category_id` (`house_category_id`);
 
 --
@@ -200,7 +200,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `houses`
 --
 ALTER TABLE `houses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `house_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -228,7 +228,7 @@ ALTER TABLE `users`
 -- Constraints for table `houses`
 --
 ALTER TABLE `houses`
-  ADD CONSTRAINT `facilities_status` FOREIGN KEY (`faci_status`) REFERENCES `status` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `facilities_status` FOREIGN KEY (`house_status`) REFERENCES `status` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
   ADD CONSTRAINT `house_category` FOREIGN KEY (`house_category_id`) REFERENCES `categories` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `houses_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE;
 

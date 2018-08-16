@@ -32,6 +32,6 @@
 		}
 	}
 	require 'template.php';
-	require 'create_bhod_modal.php'
+	require 'create_bhod_modal.php';
 
 ?>

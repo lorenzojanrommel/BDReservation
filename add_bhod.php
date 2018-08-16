@@ -56,7 +56,7 @@
 	$user_id = $_SESSION['user_id'];
 
 
-	$sql = "INSERT INTO houses (user_id, house_category_id, faci_name, faci_address, faci_postcode, faci_phone_number, faci_picture, faci_mp, faci_birp, faci_description, faci_status) 
+	$sql = "INSERT INTO houses (user_id, house_category_id, house_name, house_address, house_postcode, house_phone_number, house_picture, house_mp, house_birp, house_description, house_status) 
 			VALUES ('$user_id' , '$category' , '$bhd_name', '$bhd_address', '$bhd_postcode', '$bdh_pnumber', '$bhd_image', '$bhd_mp_image', '$bhd_bir_image', '$bhd_description', '3')";
 	mysqli_query($conn, $sql) or die (mysqli_error($conn));
 	header('location: owner_dashboard.php');
