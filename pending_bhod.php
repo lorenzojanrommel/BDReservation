@@ -38,14 +38,14 @@
 									echo "$user_fname";?></td>
 								<!-- End of boarding house owner -->
 								<!-- Boarding House BIR permit -->
-								<td><button type="button" class="btn btn-info">View</button></td>
+								<td><button type="button" class="btn btn-info view-bir" data-id=<?php echo $house_id?> data-toggle="modal" data-target="#view-bir-picture">View</button></td>
 								<!-- End of boarding house permit -->
 								<!-- Boarding house Mayors Permit -->
 								<td><button type="button" class="btn btn-warning">View</button></td>
 								<!-- End of boarding house permit -->
 								<!-- Boarding house status -->
 								<td>
-									<button type="button" class="btn btn-primary" data-id=<?php echo $house_id?> data-toggle="modal" data-target="#approve" id="approve_modal">Approve</button>
+									<button type="button" class="btn btn-primary approve_modal" data-id=<?php echo $house_id?> data-toggle="modal" data-target="#approve">Approve</button>
 								<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deny">Deny</button>
 								</td>
 								<!-- End of boarding house status -->
@@ -63,6 +63,7 @@
 	}
 	require "template.php";
 	require 'approve_modal.php';
+	require 'view_bir_picture_modal.php'
 	// require 'approve_house_modal_body.php';
 ?>
 
@@ -73,9 +74,9 @@
 	    	        "lengthMenu": [[-1, 5, 10, 25], ["All", 5, 10, 25]]
 	    	    });
 	} );
-	$('#approve_modal').click(function() {
+	$('.approve_modal').click(function() {
 		var id = $(this).data('id');
-		console.log(id);
+		// console.log(id);
 		$.ajax({
 			method: 'post',
 			url: 'approve_house_modal_body.php',
@@ -84,7 +85,7 @@
 				id : id
 			},
 			success: function(data){
-				console.log(data);
+				// console.log(data);
 				$('#approve_house_body').html(data);
 			}
 		})
