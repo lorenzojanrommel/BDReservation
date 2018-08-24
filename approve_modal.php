@@ -12,7 +12,7 @@
         </button>
         </div>
       </div>
-      <div class="approve_house_body">
+      <div class="approve_house_body" id="approve_house_body">
 
       </div>
     </div>

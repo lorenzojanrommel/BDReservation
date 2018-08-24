@@ -30,13 +30,12 @@
 								<td><?php echo"$house_name" ?></td>
 								<!-- end of boarding house name -->
 								<!-- Boarding House Owner -->
-								<?php
-									$sql = "SELECT * FROM users WHERE id = '$user_id'";
-									$results = mysqli_query($conn, $sql);
-									$row = mysqli_fetch_assoc($results);
-									extract($row);
-								?>
-								<td><?php echo "$user_fname";?></td>
+								<td><?php 
+									$sql1 = "SELECT * FROM users WHERE id = '$user_id'";
+									$user = mysqli_query($conn, $sql1);
+									$row1 = mysqli_fetch_assoc($user);
+									extract($row1);
+									echo "$user_fname";?></td>
 								<!-- End of boarding house owner -->
 								<!-- Boarding House BIR permit -->
 								<td><button type="button" class="btn btn-info">View</button></td>
@@ -45,10 +44,10 @@
 								<td><button type="button" class="btn btn-warning">View</button></td>
 								<!-- End of boarding house permit -->
 								<!-- Boarding house status -->
-								<td><?php if ($house_status == 3) {
-								?><button type="button" class="btn btn-primary" data-id="<?php echo "$house_id"?>" data-toggle="modal" data-target="#approve" id="approve_modal">Approve</button>
-								<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deny">Deny</button><?php
-								}?></td>
+								<td>
+									<button type="button" class="btn btn-primary" data-id=<?php echo $house_id?> data-toggle="modal" data-target="#approve" id="approve_modal">Approve</button>
+								<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deny">Deny</button>
+								</td>
 								<!-- End of boarding house status -->
 								</tr>
 								<?php
@@ -86,9 +85,8 @@
 			},
 			success: function(data){
 				console.log(data);
-				$('.approve_house_body').html(data);
+				$('#approve_house_body').html(data);
 			}
 		})
 	})
 </script>
-
