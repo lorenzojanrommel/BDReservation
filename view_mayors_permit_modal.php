@@ -1,6 +1,6 @@
-<div class="modal" id="view-bir-picture">
+<div class="modal" id="view-mayors-permit-picture">
   <div class="modal-dialog" role="document">
-    <div class="view-bir-container">
+    <div class="view-mayors-permit-container">
     <div class="modal-content">
       <div class="modal-header">
         <div class="col-sm-10">
@@ -12,7 +12,7 @@
         </button>
         </div>
       </div>
-      <div class="bir_house_body" id="bir_house_body">
+      <div class="mayors_permit_house_body" id="mayors_permit_house_body">
         
       </div>
     </div>

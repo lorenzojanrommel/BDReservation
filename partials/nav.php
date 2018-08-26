@@ -27,6 +27,10 @@
           <a class="nav-link d-lg-none" href="user_list.php">User List</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="house.php">House</a>
+          <a class="nav-link d-lg-none" href="house.php">House</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="user_list.php">User List</a>
           <a class="nav-link d-lg-none" href="user_list.php">User List</a>
         </li>

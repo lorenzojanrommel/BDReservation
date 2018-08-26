@@ -244,3 +244,13 @@ h3.cybod{
   text-align: left;
   vertical-align: middle;
 }
+
+.nav.nav-tabs {
+    float: left;
+    display: block;
+    margin-right: 20px;
+    border-bottom: 0;
+    border-right: 1px solid transparent;
+    padding-right: 15px;
+    border-left: 1px solid transparent;
+}
