@@ -12,7 +12,7 @@
 			    <a class="nav-link active" data-toggle="tab" href="#pending" role="tab" aria-controls="pending">Pending</a>
 			  </li>
 			  <li class="nav-item">
-			    <a class="nav-link" data-toggle="tab" href="#profile" role="tab" aria-controls="profile">House</a>
+			    <a class="nav-link" data-toggle="tab" href="#house" role="tab" aria-controls="profile">House</a>
 			  </li>
 			</ul>
 			<div class="tab-content">
@@ -76,7 +76,35 @@
 			  		</div>
 			  	</div>
 			  </div>
-			  <div class="tab-pane" id="profile" role="tabpanel">..2.</div>
+			  <div class="tab-pane" id="house" role="tabpanel">
+			  	<div class="container">
+			  		<div class="row">
+			  		<h3 class="mt-1">House List</h3>
+			  		<div class="col-sm-12 mt-2">
+			  		<table class="house-list" id="house-list" class="table table-hover">
+			  			<thead>
+			  				<tr>
+			  					<th>House Name</th>
+			  					<th class="pl-5">Ban</th>
+			  					<th>Notify</th>
+			  				</tr>
+			  			</thead>
+			  			<tbody>
+			  				<tr>
+			  					<td>Hello</td>
+			  					<td class="pl-5">
+			  						<button type="button" class="btn btn-danger approve_modal" data-id=<?php echo $house_id?> data-toggle="modal" data-target="#approve">Notify</button>
+			  					</td>
+			  					<td class="pl-5">
+			  						<button type="button" class="btn btn-primary approve_modal" data-id=<?php echo $house_id?> data-toggle="modal" data-target="#approve">Notify</button>
+			  					</td>
+			  				</tr>
+			  			</tbody>
+			  		</table>
+			  		</div>
+			  		</div>
+			  	</div>
+			  </div>
 			</div>
 		</div>
 		<?php
@@ -90,6 +118,12 @@
 	require 'view_business_plate_modal.php';
 ?>
 <script type="text/javascript">
+	$(document).ready(function() {
+	    $('#house-list').DataTable(
+	    	{
+	    	        "lengthMenu": [[-1, 5, 10, 25], ["All", 5, 10, 25]]
+	    	    });
+	} );
 	$(document).ready(function() {
 	    $('#house-pending-list').DataTable(
 	    	{
