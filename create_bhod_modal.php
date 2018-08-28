@@ -58,6 +58,12 @@
                   <input type="text" id="pnumber" name="pnoybhd" class="form-control" placeholder="Phone Number of Your Boarding House/Dormitory">
               </div>
            <!-- End Phone Number -->
+           <!-- Number of Rooms -->
+           <div class="form-group col-sm-6">
+                <label for="rnumber">Number of Rooms</label>
+                <input type="number" id="rnumber" name="rnumber" class="form-control" placeholder="Number of Rooms of Your Boarding House/Dormitory" min="0">
+            </div>
+            <!-- End of Number of Rooms -->
          </div>
          <!-- Picture of the boarding house or dormitory -->
          <div class="form-group col-sm-12">
@@ -68,15 +74,21 @@
          <!-- Mayors Permit picture of the boarding house or dormitory -->
          <div class="form-group col-sm-12">
               <label for="MPPicture">Mayors Permit Picture of Your Boarding House/Dormitory</label>
-              <input type="file" id="mppicture" name="mpofbhd" class="form-control-file" aria-describedby="fileHelp" placeholder="Picture of Your Boarding House/Dormitory">
+              <input type="file" id="mppicture" name="mpofbhd" class="form-control-file" aria-describedby="fileHelp" placeholder="Mayors Permit Picture of Your Boarding House/Dormitory">
           </div>
          <!-- End Mayors Permit picture of the boarding house or dormitory -->
          <!-- BIR picture of the boarding house or dormitory -->
          <div class="form-group col-sm-12">
               <label for="birpicture">BIR Picture of Your Boarding House/Dormitory</label>
-              <input type="file" id="birpicture" name="biroybhd" class="form-control-file" aria-describedby="fileHelp" placeholder="Picture of Your Boarding House/Dormitory">
+              <input type="file" id="birpicture" name="biroybhd" class="form-control-file" aria-describedby="fileHelp" placeholder="BIR Picture of Your Boarding House/Dormitory">
           </div>
          <!-- End BIR picture of the boarding house or dormitory -->
+         <!-- Business License Plate Picture -->
+         <div class="form-group col-sm-12">
+              <label for="blppoybhd">Business License Plate Picture of Your Boarding House/Dormitory</label>
+              <input type="file" id="blppoybhd" name="blppoybhd" class="form-control-file" aria-describedby="fileHelp" placeholder="Business License Plate Picture of Your Boarding House/Dormitory">
+          </div>
+         <!-- End of Business License Plate Picture -->
          <!-- Description of the boarding house or dormitory -->
          <div class="form-group col-sm-12">
               <label for="birpicture">Description</label>

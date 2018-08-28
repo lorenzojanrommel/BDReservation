@@ -245,12 +245,64 @@ h3.cybod{
   vertical-align: middle;
 }
 
-.nav.nav-tabs {
-    float: left;
-    display: block;
-    margin-right: 20px;
-    border-bottom: 0;
-    border-right: 1px solid transparent;
-    padding-right: 15px;
-    border-left: 1px solid transparent;
+/*
+ *
+ *Vertical Tab House 
+ *
+ */
+
+ .nav.nav-tabs {
+     float: left;
+     display: block;
+     margin-right: 20px;
+     border-bottom:0;
+     border-right: 1px solid #ddd;
+     padding-right: 15px;
+     font-size: 2em;
+     font-weight: bold;
+ }
+ .nav-tabs .nav-link {
+     border: 1px solid transparent;
+     border-top-left-radius: .25rem;
+     border-top-right-radius: .25rem;
+     background: #ccc;
+ }
+
+ .nav-tabs .nav-link.active {
+     color: #495057;
+     /*background-color:#007bff !important;*/
+     border-right: transparent !important;
+     border-top: 1px solid #000;
+     border-bottom: 1px solid #000;
+     border-left: 1px solid #000;
+ }
+ .nav-tabs .nav-link {
+     border: 1px solid #000;
+     border-top-left-radius: 0rem!important;
+     border-top-right-radius: 0rem!important;
+ }
+ .tab-content>.active {
+     display: block;
+     /*background: #007bff;*/
+     min-height: 500px;
+ }
+ .nav.nav-tabs {
+     float: left;
+     display: block;
+     margin-right: 20px;
+     border-bottom: 0;
+     border-right: 1px solid transparent;
+     padding-right: 15px;
+ }
+ .nav-tabs .nav-item{
+ 	width: 200px;
+ }
+.tab-content{
+	border: 1px solid #000;
+}
+
+
+div.dataTables_wrapper div.dataTables_info,
+div.dataTables_wrapper div.dataTables_paginate{
+	margin-top: 2em;
 }

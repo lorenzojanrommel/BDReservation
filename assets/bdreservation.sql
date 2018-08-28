@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 16, 2018 at 08:12 AM
+-- Generation Time: Aug 28, 2018 at 08:03 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.1.12
 
@@ -55,9 +55,11 @@ CREATE TABLE `houses` (
   `house_address` varchar(255) NOT NULL,
   `house_postcode` int(11) NOT NULL,
   `house_phone_number` text NOT NULL,
+  `house_number_room` text NOT NULL,
   `house_picture` text NOT NULL,
   `house_mp` text NOT NULL,
   `house_birp` text NOT NULL,
+  `house_blpp` text NOT NULL,
   `house_description` text NOT NULL,
   `house_status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -66,8 +68,9 @@ CREATE TABLE `houses` (
 -- Dumping data for table `houses`
 --
 
-INSERT INTO `houses` (`house_id`, `user_id`, `house_category_id`, `house_name`, `house_address`, `house_postcode`, `house_phone_number`, `house_picture`, `house_mp`, `house_birp`, `house_description`, `house_status`) VALUES
-(36, 5, 2, 'Sample1', 'sample1address', 2306, '09232322', 'assets/img/no_image_uploaded.png', 'assets/img/no_image_uploaded.png', 'assets/img/no_image_uploaded.png', 'This is sample 1', 3);
+INSERT INTO `houses` (`house_id`, `user_id`, `house_category_id`, `house_name`, `house_address`, `house_postcode`, `house_phone_number`, `house_number_room`, `house_picture`, `house_mp`, `house_birp`, `house_blpp`, `house_description`, `house_status`) VALUES
+(36, 5, 2, 'Sample1', 'sample1address', 2306, '09232322', '', 'assets/img/no_image_uploaded.png', 'assets/img/no_image_uploaded.png', 'assets/img/no_image_uploaded.png', '', 'This is sample 1', 3),
+(53, 3, 1, 'QWE', 'Camiling, Tarlac, Philippines', 2306, '902323232424242', '2', 'assets/img/bhd_images/1535397801homebg.jpg', 'assets/img/bhd_mayors_permit/1535397801homebg.jpg', 'assets/img/bhd_bir_permit/1535397801homebg.jpg', 'assets/img/bhd_business_license_plate/1535397801coffee.jpg', 'QWEqeqwewqewq', 3);
 
 -- --------------------------------------------------------
 
@@ -200,7 +203,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `houses`
 --
 ALTER TABLE `houses`
-  MODIFY `house_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `house_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `roles`
