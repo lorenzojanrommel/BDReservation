@@ -1,5 +1,6 @@
 <?php
   session_start();
+  require '../condb.php';
 ?>
     <div class="d-flex justify-content-center">
       <a class="navbar-brand title d-none d-lg-block" href="../admin/../../BDReservation/index.php">Boarding House & Dormitories Finder</a>
@@ -48,30 +49,52 @@
           <li class="nav-item">
             <a class="nav-link" href="BDReservation/../../../BDReservation/landlord/owner_dashboard.php">Dashboard<span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/landlord/add_room.php">Add Room</a>
-            <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/add_room.php">Add Room</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/landlord/booking.php">Booking</a>
-            <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/booking.php">Booking</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/landlord/room_availability.php">Room Availability</a>
-            <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/room_availability.php">Room Availability</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/landlord/find.php">Find</a>
-            <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/find.php">Find</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/landlord/payments.php">Payments</a>
-            <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/payments.php">Payments</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/landlord/cancel.php">Cancel</a>
-            <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/cancel.php">Cancel</a>
-          </li>
+          <?php
+            $user = $_SESSION['username'];
+            $sql = "SELECT * FROM users WHERE username = '$user'";
+            $results = mysqli_query($conn, $sql);
+            $row = mysqli_fetch_assoc($results);
+            extract($row);
+            $sql1 = "SELECT * FROM houses WHERE user_id = '$id'";
+            $results1 = mysqli_query($conn, $sql1);
+            $row1 = mysqli_fetch_assoc($results1);
+            extract($row1);
+            if ($house_status == 3) {
+              ?>
+              <li class="nav-item">
+                <span class="nav-link border-left d-none d-sm-none d-md-none d-lg-block disabled" href="BDReservation/../../../BDReservation/landlord/add_room.php" disabled>Add Room</span>
+                <span class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/add_room.php" disabled>Add Room</span>
+              </li>
+              <?php
+            }elseif ($house_status == 4) {
+              ?>
+              <li class="nav-item">
+                <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/landlord/add_room.php">Add Room</a>
+                <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/add_room.php">Add Room</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/landlord/booking.php">Booking</a>
+                <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/booking.php">Booking</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/landlord/room_availability.php">Room Availability</a>
+                <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/room_availability.php">Room Availability</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/landlord/find.php">Find</a>
+                <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/find.php">Find</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/landlord/payments.php">Payments</a>
+                <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/payments.php">Payments</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/landlord/cancel.php">Cancel</a>
+                <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/cancel.php">Cancel</a>
+              </li>
+              <?php
+            }
+          ?>
         <?php
       }elseif(isset($_SESSION['username']) && $_SESSION['user_level'] == 3 && $_SESSION ['user_status'] == 1){
         ?>

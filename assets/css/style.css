@@ -181,6 +181,40 @@ h3.rooms{
 img.img-view-room {
 	width: 100%;
 }
+.hr-line{
+	margin-top: 1rem;
+ /*   margin-bottom: 1rem;*/
+    border: 0;
+    border-top: 1px solid #cecece;
+}
+.bhod-title-display{
+	margin-left: 1em;
+	margin-top: .5em;
+	font-weight: bold;
+	font-size: 2em;
+}
+span.pending {
+	color: red;
+	margin-left: .3em;
+}
+span.approved{
+	color: green;
+	margin-left: .3em;
+}
+.bhod-status-display{
+	margin-top: 1.5em;
+	font-size: 1.2em;
+}
+.bhod-image-display{
+	width: 100%;
+	height: 500px;
+}
+.container-cybod-house{
+	margin-top: 1em;
+	margin-bottom: 1em;
+	border: 1px solid black;
+	min-height: 600px;
+}
 .container-cybod{
 	border: 0.5rem dashed #000;
   	/*outline: 0.5rem solid khaki;*/
