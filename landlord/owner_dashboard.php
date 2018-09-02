@@ -3,7 +3,7 @@
 		echo "Boarding House & Dormitories Finder";
 	}
 	function display_content(){
-		require 'condb.php';
+		require '../condb.php';
 		$username = $_SESSION['username'];
 		$sql = "SELECT * FROM users WHERE username = '$username'";
 		$results = mysqli_query($conn, $sql);
@@ -31,7 +31,7 @@
 			<?php
 		}
 	}
-	require 'template.php';
+	require '../template.php';
 	require 'create_bhod_modal.php';
 
 ?>

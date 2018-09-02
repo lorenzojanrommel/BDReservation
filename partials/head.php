@@ -9,6 +9,7 @@
 <!-- Bootswatch -->
 <link href="https://bootswatch.com/4/flatly/bootstrap.min.css" rel="stylesheet">
 <!-- Custom CSS -->
+<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 <!-- fonts -->
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">

@@ -1,5 +1,5 @@
 <?php
-  require 'condb.php';
+  require '../condb.php';
 ?>
 <div class="modal" id="create_bhod">
   <div class="modal-dialog" role="document">

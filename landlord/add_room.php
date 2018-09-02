@@ -8,7 +8,7 @@
 		<div class="intro">
 			<div class="container">
 				<div class="title-intro">
-					<h1>User List</h1>
+					<h1>Add Room</h1>
 				</div>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 					tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -20,6 +20,6 @@
 		<?php
 
 	}
-	require "template.php";
+	require "../template.php";
 ?>
 

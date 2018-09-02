@@ -1,6 +1,6 @@
 <?php
 	$id = $_POST['id'];
-	require 'condb.php';
+	require '../condb.php';
 	$sql = "SELECT * FROM houses WHERE house_id = '$id'";
 	$results = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_assoc($results);

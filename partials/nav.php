@@ -2,14 +2,14 @@
   session_start();
 ?>
     <div class="d-flex justify-content-center">
-      <a class="navbar-brand title d-none d-lg-block" href="index.php">Boarding House & Dormitories Finder</a>
+      <a class="navbar-brand title d-none d-lg-block" href="../admin/../../BDReservation/index.php">Boarding House & Dormitories Finder</a>
     </div>
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-center">
 <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> -->
 	<div class="d-flex justify-content-center">
-  <a class="navbar-brand title d-none d-md-block d-lg-none mr-5 pr-5" href="index.php">Boarding House & Dormitories Finder</a>
-  <a class="navbar-brand title d-sm-block d-md-none" href="index.php">BH&DF</a>
+  <a class="navbar-brand title d-none d-md-block d-lg-none mr-5 pr-5" href="/index.php">Boarding House & Dormitories Finder</a>
+  <a class="navbar-brand title d-sm-block d-md-none" href="BDReservation/../../../BDReservation/admin/index.php">BH&DF</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -20,59 +20,59 @@
         if (isset($_SESSION['username']) && $_SESSION['user_level'] == 1 && $_SESSION['user_status'] == 1) {
       ?>
         <li class="nav-item">
-          <a class="nav-link" href="dashboard.php">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="BDReservation/../../../BDReservation/admin/dashboard.php">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/admin/house.php">House</a>
+          <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/admin/house.php">House</a>
         </li>
         <li class="nav-item">
           <!-- <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="pending_bhod.php">Pending</a> -->
-          <a class="nav-link d-lg-none" href="user_list.php">User List</a>
+          <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/admin/user_list.php">User List</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="house.php">House</a>
-          <a class="nav-link d-lg-none" href="house.php">House</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="user_list.php">User List</a>
-          <a class="nav-link d-lg-none" href="user_list.php">User List</a>
+          <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/admin/user_list.php">User List</a>
+          <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/admin/user_list.php">User List</a>
         </li>
         <li class="nav-item">
           <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="add_admin.php">Add Admin</a>
-          <a class="nav-link d-lg-none" href="add_admin.php">Add Addmin</a>
+          <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/admin/add_admin.php">Add Addmin</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="about.php">About</a>
-          <a class="nav-link d-lg-none" href="about.php">About</a>
+          <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="../admin/../../BDReservation/about.php">About</a>
+          <a class="nav-link d-lg-none" href="../admin/../../BDReservation/about.php">About</a>
         </li>
       <?php
       }elseif(isset($_SESSION['username']) && $_SESSION['user_level'] == 2 && $_SESSION['user_status'] == 1){
         ?>
           <li class="nav-item">
-            <a class="nav-link" href="owner_dashboard.php">Dashboard<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="BDReservation/../../../BDReservation/landlord/owner_dashboard.php">Dashboard<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="add_room.php">Add Room</a>
-            <a class="nav-link d-lg-none" href="add_room.php">Add Room</a>
+            <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/landlord/add_room.php">Add Room</a>
+            <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/add_room.php">Add Room</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="booking.php">Booking</a>
-            <a class="nav-link d-lg-none" href="booking.php">Booking</a>
+            <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/landlord/booking.php">Booking</a>
+            <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/booking.php">Booking</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="room_availability.php">Room Availability</a>
-            <a class="nav-link d-lg-none" href="room_availability.php">Room Availability</a>
+            <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/landlord/room_availability.php">Room Availability</a>
+            <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/room_availability.php">Room Availability</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="find.php">Find</a>
-            <a class="nav-link d-lg-none" href="find.php">Find</a>
+            <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/landlord/find.php">Find</a>
+            <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/find.php">Find</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="payments.php">Payments</a>
-            <a class="nav-link d-lg-none" href="payments.php">Payments</a>
+            <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/landlord/payments.php">Payments</a>
+            <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/payments.php">Payments</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="cancel.php">Cancel</a>
-            <a class="nav-link d-lg-none" href="cancel.php">Cancel</a>
+            <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/landlord/cancel.php">Cancel</a>
+            <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/cancel.php">Cancel</a>
           </li>
-        <?
+        <?php
       }elseif(isset($_SESSION['username']) && $_SESSION['user_level'] == 3 && $_SESSION ['user_status'] == 1){
         ?>
           <li class="nav-item">
@@ -113,8 +113,8 @@
       if (isset($_SESSION['username'])) {
        ?>
        <li class="nav-item">
-        <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="logout.php">Logout</a>
-        <a class="nav-link d-lg-none" href="logout.php">Logout</a>
+        <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="../../BDReservation/logout.php">Logout</a>
+        <a class="nav-link d-lg-none" href="../logout.php">Logout</a>
        </li>
        <?php
       }else{

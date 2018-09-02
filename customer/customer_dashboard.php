@@ -13,6 +13,6 @@
 			</div>
 		<?php
 	}
-	require 'template.php';
+	require '../template.php';
 
 ?>

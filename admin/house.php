@@ -3,7 +3,7 @@
 		echo "Boarding House & Dormitories Finder";
 	}
 	function display_content(){
-		require 'condb.php';
+		require '../condb.php';
 		?>
 
 		<div class="container mt-3 mb-5">
@@ -110,7 +110,7 @@
 		<?php
 
 	}
-	require "template.php";
+	require "../template.php";
 	require 'approve_modal.php';
 	require 'view_bir_picture_modal.php';
 	// require 'approve_house_modal_body.php';

@@ -16,13 +16,13 @@
 			$_SESSION['user_id'] = $row['id'];
 		}
 		if ($_SESSION['user_level'] == 1) {
-			header('Location: dashboard.php');
+			header('Location: admin/dashboard.php');
 			exit();
 		}elseif($_SESSION['user_level'] == 2){
-			header('Location: owner_dashboard.php');
+			header('Location: landlord/owner_dashboard.php');
 			exit();
 		}elseif($_SESSION['user_level'] == 3){
-			header('Location: customer_dashboard.php');
+			header('Location: customer/customer_dashboard.php');
 			exit();
 		}
 	}elseif(isset($_POST['register'])){
