@@ -9,14 +9,90 @@
 		<div class="container mt-3 mb-5">
 			  <ul class="nav nav-tabs" role="tablist">
 			  <li class="nav-item">
-			    <a class="nav-link active" data-toggle="tab" href="#pending" role="tab" aria-controls="pending">Pending</a>
+			    <a class="nav-link active" data-toggle="tab" href="#boarding_house" role="tab" aria-controls="boarding_house">Boarding House</a>
 			  </li>
 			  <li class="nav-item">
-			    <a class="nav-link" data-toggle="tab" href="#house" role="tab" aria-controls="profile">House</a>
+			    <a class="nav-link" data-toggle="tab" href="#dormitory" role="tab" aria-controls="dormitory">Dormitory</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" data-toggle="tab" href="#pending" role="tab" aria-controls="pending">Pending</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" data-toggle="tab" href="#house" role="tab" aria-controls="approved">Approved</a>
 			  </li>
 			</ul>
 			<div class="tab-content">
-			  <div class="tab-pane active" id="pending" role="tabpanel">
+			  <div class="tab-pane active" id="boarding_house" role="tabpanel">
+			  	<div class="container">
+			  		<div class="col-sm-12">
+			  		<h3 class="mt-1">Approved Boarding House List</h3>
+			  		</div>
+			  		<div class="container">
+			  			<div class="row">
+			  			<div class="col-sm-12 mt-2">
+			  			<table class="boarding-house-list" id="boarding-house-list" class="table table-hover">
+			  				<thead>
+			  					<tr>
+			  						<th>House Name</th>
+			  						<th>Owner</th>
+			  						<th>BIR Permit</th>
+			  						<th>Mayors Permit</th>
+			  						<th>Business License Permit</th>
+			  						<th>Status</th>
+			  					</tr>
+			  				</thead>
+			  				<tbody>
+			  					<tr>
+			  						<td>123</td>
+			  						<td>123</td>
+			  						<td>123</td>
+			  						<td>123</td>
+			  						<td>123</td>
+			  						<td>123</td>
+			  					</tr>
+			  				</tbody>
+			  			</table>
+			  			</div>
+			  			</div>
+			  		</div>
+			  	</div>
+			  </div>
+			  <div class="tab-pane" id="dormitory" role="tabpanel">
+			  	<div class="container">
+			  		<div class="col-sm-12">
+			  		<h3>Approved Dormitory List</h3>
+			  		</div>
+				<div class="container">
+					<div class="row">
+					<div class="col-sm-12 mt-2">
+					<table class="dormitory-list" id="dormitory-list" class="table table-hover">
+						<thead>
+							<tr>
+								<th>House Name</th>
+								<th>Owner</th>
+								<th>BIR Permit</th>
+								<th>Mayors Permit</th>
+								<th>Business License Permit</th>
+								<th>Status</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>123</td>
+								<td>123</td>
+								<td>123</td>
+								<td>123</td>
+								<td>123</td>
+								<td>123</td>
+							</tr>
+						</tbody>
+					</table>
+					</div>
+					</div>
+				</div>
+			  	</div>
+			  </div>
+			  <div class="tab-pane" id="pending" role="tabpanel">
 			  	<div class="container">
 			  		<div class="row">
 			  			<h3 class="mt-1">House Pending</h3>
@@ -93,10 +169,10 @@
 			  				<tr>
 			  					<td>Hello</td>
 			  					<td class="pl-5">
-			  						<button type="button" class="btn btn-danger approve_modal" data-id=<?php echo $house_id?> data-toggle="modal" data-target="#approve">Notify</button>
+			  						<button type="button" class="btn btn-danger approve_modal" data-id=<?php  ?> data-toggle="modal" data-target="#qwe">Notify</button>
 			  					</td>
 			  					<td class="pl-5">
-			  						<button type="button" class="btn btn-primary approve_modal" data-id=<?php echo $house_id?> data-toggle="modal" data-target="#approve">Notify</button>
+			  						<button type="button" class="btn btn-primary approve_modal" data-id=<?php ?> data-toggle="modal" data-target="#qwe">Notify</button>
 			  					</td>
 			  				</tr>
 			  			</tbody>
@@ -126,6 +202,18 @@
 	} );
 	$(document).ready(function() {
 	    $('#house-pending-list').DataTable(
+	    	{
+	    	        "lengthMenu": [[-1, 5, 10, 25], ["All", 5, 10, 25]]
+	    	    });
+	} );
+	$(document).ready(function() {
+	    $('#boarding-house-list').DataTable(
+	    	{
+	    	        "lengthMenu": [[-1, 5, 10, 25], ["All", 5, 10, 25]]
+	    	    });
+	} );
+	$(document).ready(function() {
+	    $('#dormitory-list').DataTable(
 	    	{
 	    	        "lengthMenu": [[-1, 5, 10, 25], ["All", 5, 10, 25]]
 	    	    });

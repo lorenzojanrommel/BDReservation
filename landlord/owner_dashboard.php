@@ -38,6 +38,7 @@
 				  <div class="row">
 				  	<div class="col-sm-12">
 				  		 <img class="bhod-image-display" src="../<?php echo $house_picture ?>" alt="dorm1">
+				  	<div class="hr-line"></div>
 				  	</div>
 				  	<div class="col-sm-12">
 				  		<p><b>Location:</b> <?php echo $house_address ?></p>

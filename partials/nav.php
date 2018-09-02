@@ -1,6 +1,6 @@
 <?php
   session_start();
-  require '../condb.php';
+  require '/../partials/../condb.php';
 ?>
     <div class="d-flex justify-content-center">
       <a class="navbar-brand title d-none d-lg-block" href="../admin/../../BDReservation/index.php">Boarding House & Dormitories Finder</a>
@@ -129,7 +129,7 @@
       </li>
       <li class="nav-item">
         <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="about.php">About</a>
-        <a class="nav-link d-lg-none" href="about.php">About</a>
+        <a class="nav-link d-lg-none" href="BDReservation/../about.php">About</a>
       </li>
       <?php
       }
