@@ -210,9 +210,13 @@ span.approved{
 	height: 500px;
 }
 .map{
-	min-height: 300px;
+	min-height: 500px;
 	width: 100%;
-	background-color: pink;
+	/*background-color: pink;*/
+}
+#map-display{
+	height: 500px;
+	width: 100%;
 }
 .container-cybod-house{
 	margin-top: 1em;
