@@ -57,8 +57,10 @@
             extract($row);
             $sql1 = "SELECT * FROM houses WHERE user_id = '$id'";
             $results1 = mysqli_query($conn, $sql1);
+            if (mysqli_num_rows($results1) > 0 ) {
             $row1 = mysqli_fetch_assoc($results1);
             extract($row1);
+            // echo $house_status;
             if ($house_status == 3) {
               ?>
               <li class="nav-item">
@@ -94,6 +96,14 @@
               </li>
               <?php
             }
+          }else{
+            ?>
+            <li class="nav-item">
+              <span class="nav-link border-left d-none d-sm-none d-md-none d-lg-block disabled" href="BDReservation/../../../BDReservation/landlord/add_room.php" disabled>Add Room</span>
+              <span class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/add_room.php" disabled>Add Room</span>
+            </li>
+            <?php
+          }
           ?>
         <?php
       }elseif(isset($_SESSION['username']) && $_SESSION['user_level'] == 3 && $_SESSION ['user_status'] == 1){

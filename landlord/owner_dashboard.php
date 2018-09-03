@@ -41,9 +41,15 @@
 				  	<div class="hr-line"></div>
 				  	</div>
 				  	<div class="col-sm-12">
-				  		<p><b>Location:</b> <?php echo $house_address ?></p>
+				  		<p><b>Location:</b> <span id="location"><?php echo $house_address ?></span></p>
 				  		<p><b>Phone Number:</b> <?php echo $house_phone_number ?></p>
 				  		<p><b>Description:</b> <?php echo $house_description ?></p>
+				  	</div>
+				  </div>
+				  <div class="map">
+				  	<h5>Map</h5>
+				  	<div id="map-display">
+				  		
 				  	</div>
 				  </div>
 			  </div>
@@ -64,5 +70,31 @@
 	}
 	require '../template.php';
 	require 'create_bhod_modal.php';
-
 ?>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		var location = $('span#location').text();
+		console.log(location);
+		$.ajax({
+			method : 'GET',
+			url : 'https://maps.googleapis.com/maps/api/geocode/json',
+			data : {
+				address : location,
+				key : 'AIzaSyC13PAMU-yO3K-JW2VmMmuZZ2YalWmc7GQ'
+			},
+			success : function(data){
+				// log full response
+				console.log(data);
+				// Formatted Address
+				var formattedAddress = data.results[0].formatted_address;
+				var formattedAddressOutput = `
+
+
+				`;
+			},
+			error : function(data){
+				console.log(data);
+			}
+		})
+	})
+	</script>
