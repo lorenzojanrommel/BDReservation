@@ -1,6 +1,10 @@
 <?php
   session_start();
-  require '/../partials/../condb.php';
+  if (isset($_SESSION['user_id'])) {
+  require '../condb.php';
+  }else{
+    require 'condb.php';
+  }
 ?>
     <div class="d-flex justify-content-center">
       <a class="navbar-brand title d-none d-lg-block" href="../admin/../../BDReservation/index.php">Boarding House & Dormitories Finder</a>
