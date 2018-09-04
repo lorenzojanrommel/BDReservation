@@ -349,3 +349,22 @@ div.dataTables_wrapper div.dataTables_info,
 div.dataTables_wrapper div.dataTables_paginate{
 	margin-top: 2em;
 }
+
+/*
+ *
+ * Add Room
+ *
+ */
+ .add-room-container{
+ 	min-height: 500px;
+ }
+ .add-room-button{
+ 	height: 90px;
+ 	width: 90px;
+ 	border-radius: 50%;
+ 	/*border: 1px solid #614a4a;*/
+ 	/*background-color: green;*/
+ }
+ .add-room-title{
+ 	font-size: 2em;
+ }

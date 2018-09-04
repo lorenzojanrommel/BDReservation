@@ -1,5 +1,4 @@
 <?php
-  session_start();
   if (isset($_SESSION['user_id'])) {
   require '../condb.php';
   }else{
@@ -68,15 +67,15 @@
             if ($house_status == 3) {
               ?>
               <li class="nav-item">
-                <span class="nav-link border-left d-none d-sm-none d-md-none d-lg-block disabled" href="BDReservation/../../../BDReservation/landlord/add_room.php" disabled>Add Room</span>
-                <span class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/add_room.php" disabled>Add Room</span>
+                <span class="nav-link border-left d-none d-sm-none d-md-none d-lg-block disabled" href="BDReservation/../../../BDReservation/landlord/add_room.php" disabled>Room</span>
+                <span class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/add_room.php" disabled>Room</span>
               </li>
               <?php
             }elseif ($house_status == 4) {
               ?>
               <li class="nav-item">
-                <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/landlord/add_room.php">Add Room</a>
-                <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/add_room.php">Add Room</a>
+                <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/landlord/add_room.php">Room</a>
+                <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/add_room.php">Room</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/landlord/booking.php">Booking</a>
