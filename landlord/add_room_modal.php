@@ -26,7 +26,7 @@
                       $results = mysqli_query($conn, $sql);
                       while ($row = mysqli_fetch_assoc($results)) {
                         extract($row);
-                        echo "<option value='$id'> $type </option>";
+                        echo "<option value='$type_id'> $type </option>";
                       }
                     ?>
                   </select>

@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	require 'condb.php';
+	require '../condb.php';
 	$check1 = getimagesize($_FILES["poybhd"]["tmp_name"]);
 	$check2 = getimagesize($_FILES["mpofbhd"]["tmp_name"]);
 	$check3 = getimagesize($_FILES["biroybhd"]["tmp_name"]);
