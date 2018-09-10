@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 04, 2018 at 08:24 PM
+-- Generation Time: Sep 10, 2018 at 07:49 PM
 -- Server version: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -60,15 +60,15 @@ CREATE TABLE IF NOT EXISTS `houses` (
   `house_blpp` text NOT NULL,
   `house_description` text NOT NULL,
   `house_status` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `houses`
 --
 
 INSERT INTO `houses` (`house_id`, `user_id`, `house_category_id`, `house_name`, `house_address`, `house_postcode`, `house_phone_number`, `house_number_room`, `house_picture`, `house_mp`, `house_birp`, `house_blpp`, `house_description`, `house_status`) VALUES
-(36, 5, 2, 'Sample1', 'sample1address', 2306, '09232322', '5', 'assets/img/no_image_uploaded.png', 'assets/img/no_image_uploaded.png', 'assets/img/no_image_uploaded.png', '', 'This is sample 1', 3),
-(53, 3, 1, 'QWE', 'Camiling, Tarlac, Philippines', 2306, '902323232424242', '2', 'assets/img/bhd_images/1535397801homebg.jpg', 'assets/img/bhd_mayors_permit/1535397801homebg.jpg', 'assets/img/bhd_bir_permit/1535397801homebg.jpg', 'assets/img/bhd_business_license_plate/1535397801coffee.jpg', 'QWEqeqwewqewq', 4);
+(53, 3, 1, 'QWE', 'Camiling, Tarlac, Philippines', 2306, '902323232424242', '2', 'assets/img/bhd_images/1535397801homebg.jpg', 'assets/img/bhd_mayors_permit/1535397801homebg.jpg', 'assets/img/bhd_bir_permit/1535397801homebg.jpg', 'assets/img/bhd_business_license_plate/1535397801coffee.jpg', 'QWEqeqwewqewq', 4),
+(54, 5, 1, 'Sample1', 'sample1@address', 2304, '00923092302', '2', 'assets/img/no_image_uploaded.png', 'assets/img/no_image_uploaded.png', 'assets/img/no_image_uploaded.png', 'assets/img/no_image_uploaded.png', 'This is sample 1', 3);
 
 -- --------------------------------------------------------
 
@@ -100,13 +100,22 @@ CREATE TABLE IF NOT EXISTS `rooms` (
   `room_id` int(11) NOT NULL,
   `house_id` int(11) NOT NULL,
   `room_type` int(11) NOT NULL,
+  `room_number` varchar(10) NOT NULL,
   `room_price` varchar(255) NOT NULL,
   `availability` varchar(255) NOT NULL,
   `room_pic_1` varchar(255) NOT NULL,
   `room_pic_2` varchar(255) NOT NULL,
   `room_pic_3` varchar(255) NOT NULL,
   `room_pic_4` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `rooms`
+--
+
+INSERT INTO `rooms` (`room_id`, `house_id`, `room_type`, `room_number`, `room_price`, `availability`, `room_pic_1`, `room_pic_2`, `room_pic_3`, `room_pic_4`) VALUES
+(4, 53, 1, '23', '24242', '2', 'assets/img/noimage.png', 'assets/img/noimage.png', 'assets/img/noimage.png', 'assets/img/noimage.png'),
+(5, 53, 2, '2332', '2424242', '3', 'assets/img/noimage.png', 'assets/img/noimage.png', 'assets/img/noimage.png', 'assets/img/noimage.png');
 
 -- --------------------------------------------------------
 
@@ -251,7 +260,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `houses`
 --
 ALTER TABLE `houses`
-  MODIFY `house_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=54;
+  MODIFY `house_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=55;
 --
 -- AUTO_INCREMENT for table `roles`
 --
@@ -261,7 +270,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `rooms`
 --
 ALTER TABLE `rooms`
-  MODIFY `room_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `room_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `room_types`
 --
