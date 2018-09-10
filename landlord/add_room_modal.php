@@ -13,24 +13,36 @@
       </div>
         <div class="modal-body">
           <div class="container">
-          <h3>Add Room</h3>
           <form method='POST' action='add_room_endpoint.php' enctype='multipart/form-data'>
-            <!-- Select for category -->
-            <div class="form-group">
-              <label for="room_type">Room Type</label>
-              <select class="form-control" id="room-type" name="category">
-                <option selected disabled>Room Type</option>
-                <?php
-                  $sql = "SELECT * FROM room_types";
-                  $results = mysqli_query($conn, $sql);
-                  while ($row = mysqli_fetch_assoc($results)) {
-                    extract($row);
-                    echo "<option value='$id'> $type </option>";
-                  }
-                ?>
-              </select>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <!-- Select for category -->
+                  <label for="room_type">Room Type</label>
+                  <select class="form-control" id="room-type" name="room-type">
+                    <option selected disabled>Room Type</option>
+                    <?php
+                      $sql = "SELECT * FROM room_types";
+                      $results = mysqli_query($conn, $sql);
+                      while ($row = mysqli_fetch_assoc($results)) {
+                        extract($row);
+                        echo "<option value='$id'> $type </option>";
+                      }
+                    ?>
+                  </select>
+                  <!-- end of Select for category -->
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <!-- Room Number-->
+                <div class="form-group col-sm-12">
+                    <label for="room-number">Room Number</label>
+                    <input type="text" id="room-number" name="room-number" class="form-control" placeholder="Input Room Number ">
+                 </div>
+                <!-- End of Room Number-->
+              </div>
             </div>
-            <!-- end of Select for category -->
+            <input type="hidden" name="house-id" value="<?php echo $house_id ?>">
             <div class="form-row">
               <!-- Price Room -->
               <div class="form-group col-sm-12">
@@ -69,7 +81,11 @@
                </div>
                <!-- End of Fourth Picture -->
             </div>
+          <div class="modal-footer">
+             <input type="submit" name="approve_submit" value="Add" class="btn btn-success ml-3">
+             <button type="button" class="btn btn-primary ml-1" data-dismiss="modal">Close</button>
           </form>
+          </div>
           </div>
         </div>
     </div>

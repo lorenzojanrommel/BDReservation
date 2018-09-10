@@ -48,3 +48,7 @@
 	require "add_room_modal.php";
 ?>
 
+<script type="text/javascript">
+	
+</script>
+
