@@ -368,3 +368,27 @@ div.dataTables_wrapper div.dataTables_paginate{
  .add-room-title{
  	font-size: 2em;
  }
+ img.gallery-rooms-img{
+ 	width: 300px;
+ 	height: 200px;
+ 	filter: grayscale(100%);
+ 	transition: 1s;
+ }
+ img.gallery-rooms-img:hover{
+ 	filter: grayscale(0);
+ 	transform: scale(1.1);
+ }
+ img.lb-image{
+ 	width: 700px !important;;
+ 	height: 500px !important;;
+ }
+.lb-outerContainer, .lb-dataContainer {
+    max-width: 700px;
+    max-height: 700px;
+    width: auto!important;
+    height: auto!important;
+}
+span.room-type, .room-price{
+	font-weight: bold;
+
+}

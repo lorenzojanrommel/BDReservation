@@ -11,6 +11,8 @@ session_start();
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
 <!-- Bootswatch -->
 <link href="https://bootswatch.com/4/flatly/bootstrap.min.css" rel="stylesheet">
+<!-- link lightbox -->
+<link rel="stylesheet" type="text/css" href="../assets/css/lightbox.min.css">
 <!-- Custom CSS -->
 <?php
 	if (isset($_SESSION['user_id'])) {

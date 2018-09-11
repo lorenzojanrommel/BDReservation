@@ -50,8 +50,40 @@
 								<div class="card border-primary mb-3">
 								  <div class="card-header text-center">Room No. <?php echo $room_number?></div>
 								  <div class="card-body">
-								    <h4 class="card-title">Primary card title</h4>
-								    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								  	<div class="gallery-rooms">
+								  		<div class="row">
+								  			<div class="col-sm-6">
+										  		<a href="<?php echo $room_pic_1 ?>" data-lightbox="mygallery"><img  class ="gallery-rooms-img img-fluid" src="<?php echo $room_pic_1 ?>"></a>
+								  			</div>
+					  			  			<div class="col-sm-6 mb-3">
+					  					  		<a href="<?php echo $room_pic_2 ?>" data-lightbox="mygallery"><img  class ="gallery-rooms-img img-fluid" src="<?php echo $room_pic_2 ?>"></a>
+					  			  			</div>
+
+		  			  			  			<div class="col-sm-6">
+		  			  					  		<a href="<?php echo $room_pic_3 ?>" data-lightbox="mygallery"><img  class ="gallery-rooms-img img-fluid" src="<?php echo $room_pic_3 ?>"></a>
+		  			  			  			</div>
+		  			  			  			<div class="col-sm-6">
+		  			  					  		<a href="<?php echo $room_pic_4 ?>" data-lightbox="mygallery"><img  class ="gallery-rooms-img img-fluid" src="<?php echo $room_pic_4 ?>"></a>
+		  			  			  			</div>
+								  		</div>
+								  	</div>
+								  	<?php 
+								  	if ($room_type = 1 ) {
+								  		?>
+								    	<p class="mt-2"><span class="room-type">Room Type:</span> Single Room</p>
+								  		<?php
+								  	}else{
+								  		?>
+								    	<p class="mt-2"><span class="room-type">Room Type:</span> Double Room</p>
+								  		<?php
+								  	}
+								  	?>
+								  	<p class="mt-1"><span class="room-price">Price: &#8369</span><?php echo $room_price ?> </p>
+								  	<div class="row">
+								  		<div class="col-sm-12 text-center">
+								  		<button type="button" class="btn btn-outline-warning">Edit</button>
+								  		</div>
+								  	</div>
 								  </div>
 								</div>
 								</div>
