@@ -115,8 +115,8 @@
             <a class="nav-link" href="customer_dashboard.php">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="room.php">Rooms</a>
-            <a class="nav-link d-lg-none" href="room.php">Rooms</a>
+            <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="customer_house_list.php">House</a>
+            <a class="nav-link d-lg-none" href="customer_house_list.php">House</a>
           </li>
           <li class="nav-item">
             <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="contacts.php">Contacts</a>
