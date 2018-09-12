@@ -16,7 +16,7 @@
 	if($check2 != false) {
 		$target_dir2 = "../assets/img/rooms/";
 		$target_file2 = $target_dir2.time().basename($_FILES["room-pic-2"]["name"]);
-		move_uploaded_file($_FILES["room-pic-2"]["tmp_name"], $target_file1);
+		move_uploaded_file($_FILES["room-pic-2"]["tmp_name"], $target_file2);
 	}else{
 		$no_image_uploaded = "../assets/img/noimage.png";
 		$target_file2 = $no_image_uploaded;

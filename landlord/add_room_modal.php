@@ -57,10 +57,10 @@
                </div>
               <!-- End of Room Availavility-->
               <!-- First Picture-->
-             <div class="form-group col-sm-12">
-                  <label for="room-pic-1">First Picture of Room</label>
-                  <input type="file" id="room-pic-1" name="room-pic-1" class="form-control-file" aria-describedby="fileHelp" placeholder="First Picture of Room">
-              </div>
+              <div class="form-group col-sm-12">
+                   <label for="room-pic-1">Second Picture of Room</label>
+                   <input type="file" id="room-pic-1" name="room-pic-1" class="form-control-file" aria-describedby="fileHelp" placeholder="Second Picture of Room">
+               </div>
               <!-- End of first Picture -->
               <!-- Second Picture-->
               <div class="form-group col-sm-12">
