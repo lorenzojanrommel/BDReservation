@@ -3,6 +3,8 @@
 		echo "Boarding House & Dormitories Finder || Rooms";
 	}
 	function display_content(){
+		require 'condb.php'
+		
 		?>
 			<div class="container">
 				<div class="refresh mb-5">

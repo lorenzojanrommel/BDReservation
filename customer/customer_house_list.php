@@ -29,7 +29,7 @@
 					    <!--Grid column-->
 					    <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
 					        <h3 class="mb-3 font-weight-bold dark-grey-text">
-					            <a href="show_room1.php"><strong><?php echo $house_name ?></strong></a>
+					            <a href="show_room.php?id=<?php echo $house_id?>"><strong><?php echo $house_name ?></strong></a>
 					        </h3>
 					        <p class="grey-text text-justify"><?php echo $house_address ?> </p>
 					    </div>
