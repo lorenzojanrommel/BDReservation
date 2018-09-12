@@ -12,6 +12,10 @@
 				$results = mysqli_query($conn, $sql);
 				while ($row = mysqli_fetch_assoc($results)) {
 					extract($row);
+				$sql1 = "SELECT * FROM rooms WHERE house_id = '$house_id'";
+				$results1 = mysqli_query($conn, $sql1);
+				$count_room = mysqli_num_rows($results1);
+				if ($count_room > 0) {
 					?>
 					<div class="row mt-3">
 					    <!--Grid column-->
@@ -37,6 +41,7 @@
 					</div>
 					<!--Grid row-->
 					<?php
+				}
 				};
 				?>
 				
