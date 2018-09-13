@@ -42,10 +42,6 @@
           <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="add_admin.php">Add Admin</a>
           <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/admin/add_admin.php">Add Addmin</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="../admin/../../BDReservation/about.php">About</a>
-          <a class="nav-link d-lg-none" href="../admin/../../BDReservation/about.php">About</a>
-        </li>
       <?php
       }elseif(isset($_SESSION['username']) && $_SESSION['user_level'] == 2 && $_SESSION['user_status'] == 1){
         ?>

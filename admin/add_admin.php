@@ -11,28 +11,26 @@
  			                <div class="card-header"><h4>Add New Admin</h4></div>
 
  			                <div class="card-body">
- 			                    <form method="POST" action="add_user_owner.php">
+ 			                    <form method="POST" action="add_admin_endpoint.php">
  			                    	<!-- First Name -->
  			                        <div class="form-group row">
  			                            <label for="name" class="col-md-4 col-form-label text-md-right">First Name</label>
  			                            <div class="col-md-6">
- 			                                <input id="fname" type="text" class="form-control" name="fname" placeholder="First Name" required autofocus pattern="[A-Za-z]">
- 			                                    <span class="invalid-feedback">
- 			                                    </span>
+ 			                                <input type="text" class="form-control" name="fname" placeholder="First Name" required autofocus pattern="[A-Za-z]">
  			                            </div>
  			                        </div>
  			                        <!-- Last Name -->
  			                        <div class="form-group row">
  			                            <label for="name" class="col-md-4 col-form-label text-md-right">Last Name</label>
  			                            <div class="col-md-6">
- 			                                <input id="lname" type="text" class="form-control" name="lname" placeholder="Last Name" required autofocus>
+ 			                                <input type="text" class="form-control" name="lname" placeholder="Last Name" required autofocus>
  			                            </div>
  			                        </div>
  			                        <!-- Middle Name -->
  			                        <div class="form-group row">
  			                            <label for="name" class="col-md-4 col-form-label text-md-right">Middle Name</label>
  			                            <div class="col-md-6">
- 			                                <input id="mname" type="text" class="form-control" name="mname" placeholder="Middle Name" required autofocus>
+ 			                                <input type="text" class="form-control" name="mname" placeholder="Middle Name" required autofocus>
  			                                    <span class="invalid-feedback">
  			                                    </span>
  			                            </div>
@@ -85,7 +83,7 @@
  			        </div>
  			    </div>
  			</div>
- 			<script type="text/javascript" src="../assets/js/admin_validate_password.js"></script>
+ 			<script type="text/javascript" src="../assets/js/validate_password.js"></script>
  			<script type="text/javascript" src="../assets/js/validate_username_exist.js"></script>
  			<script type="text/javascript" src="../assets/js/validate_email_exist.js"></script>
  			<script type="text/javascript" src="../assets/js/validate_email.js"></script>

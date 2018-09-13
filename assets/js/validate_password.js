@@ -13,7 +13,7 @@ function validate(){
 		$('#msgconfirmpass').css("color", "green");
 		$('#register_submit').removeAttr('disabled');
 		return true;
-	}else if (password !== null && confirm_password !== null){
+	}else if (password == null && confirm_password == null){
 		$('#msgconfirmpass').hide();
 	}
 
