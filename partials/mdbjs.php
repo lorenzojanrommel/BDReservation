@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 <!-- JQuery -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- Bootstrap tooltips -->
@@ -15,7 +13,7 @@ session_start();
 <!-- <script type="text/javascript" src="/assets/js/datatable-custom.js"></script> -->
 
 <?php
-	if (isset($_SESSION['id']) && $_SESSION['user_level'] == '2' && $_SESSION['user_level'] == '3') {
+	if (isset($_SESSION['user_id']) && $_SESSION['user_level'] == '2' && $_SESSION['user_level'] == '3') {
 		?>
 		<script type="text/javascript" src="../assets/js/lightbox-plus-jquery.min.js"></script>
 		

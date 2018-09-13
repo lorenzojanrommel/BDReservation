@@ -27,12 +27,31 @@
 		}
 	}elseif(isset($_POST['register'])){
 			$username = htmlspecialchars($_POST['username']);
+			if (empty($username)) {
+				echo "empty";
+			}else{
 			$sql = "SELECT * FROM users WHERE username = '$username'";
 			$results = mysqli_query($conn, $sql);
 			if (mysqli_num_rows($results)>0) {
 				echo "invalid";
 			}else{
 				echo "valid";
+			}
+			}
+	}elseif(isset($_POST['email_ver'])){
+			$email = htmlspecialchars($_POST['email']);
+			if (empty($email)) {
+				echo "is";
+			}else{
+			$sql = "SELECT * FROM users WHERE user_email = '$email'";
+			$results = mysqli_query($conn, $sql);
+			if (mysqli_num_rows($results)>0) {
+				echo "email_exist";
+			}elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+				echo "invalid_format";
+			}else{
+				echo "email_available";
+			}
 			}
 	}else{
 		header('Location: index.php');

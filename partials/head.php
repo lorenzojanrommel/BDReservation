@@ -12,7 +12,13 @@ session_start();
 <!-- Bootswatch -->
 <link href="https://bootswatch.com/4/flatly/bootstrap.min.css" rel="stylesheet">
 <!-- link lightbox -->
+<?php
+if (isset($_SESSION['user_id']) && $_SESSION['user_level'] == '2' && $_SESSION['user_level'] == '3') {
+	?>
 <link rel="stylesheet" type="text/css" href="../assets/css/lightbox.min.css">
+<?php
+}
+?>
 <!-- Custom CSS -->
 <?php
 	if (isset($_SESSION['user_id'])) {

@@ -172,7 +172,7 @@
 			  								$user = mysqli_query($conn, $sql1);
 			  								$row1 = mysqli_fetch_assoc($user);
 			  								extract($row1);
-			  								echo "$user_fname";?></td>
+			  								echo $user_fname,str_repeat('&nbsp;', 1),substr($user_mname, 0, 1).".".str_repeat('&nbsp;', 1),ucfirst($user_lname);?></td>
 			  							<!-- End of boarding house owner -->
 			  							<!-- Boarding House BIR permit -->
 			  							<td><button type="button" class="btn btn-info view-bir" data-id=<?php echo $house_id?> data-toggle="modal" data-target="#view-bir-picture">View</button></td>
@@ -231,7 +231,7 @@
 			  					$user = mysqli_query($conn, $all_house_owner);
 			  					$all_house_row = mysqli_fetch_assoc($user);
 			  					extract($all_house_row);
-			  					echo "$user_fname";?></td>
+			  					echo $user_fname,str_repeat('&nbsp;', 1),substr($user_mname, 0, 1).".".str_repeat('&nbsp;', 1),ucfirst($user_lname);?></td>
 			  				<!-- End of  house owner -->
 			  				<!--  House BIR permit -->
 			  				<td class="text-center"><button type="button" class="btn btn-info view-bir" data-id=<?php echo $house_id?> data-toggle="modal" data-target="#view-bir-picture">View</button></td>
