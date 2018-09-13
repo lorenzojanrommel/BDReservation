@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!-- JQuery -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- Bootstrap tooltips -->
@@ -10,4 +13,12 @@
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 <!-- <script type="text/javascript" src="/assets/js/datatable-custom.js"></script> -->
-<script type="text/javascript" src="../assets/js/lightbox-plus-jquery.min.js"></script>
+
+<?php
+	if (isset($_SESSION['id']) && $_SESSION['user_level'] == '2' && $_SESSION['user_level'] == '3') {
+		?>
+		<script type="text/javascript" src="../assets/js/lightbox-plus-jquery.min.js"></script>
+		
+		<?php
+	}
+?>

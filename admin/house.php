@@ -42,14 +42,38 @@
 			  					</tr>
 			  				</thead>
 			  				<tbody>
+			  					<?php
+			  					$bh_approved = "SELECT * FROM houses WHERE house_status = '4' AND house_category_id = '1'";
+			  					$bh_results = mysqli_query($conn, $bh_approved);
+			  					while ($bh_row = mysqli_fetch_assoc($bh_results)) {
+			  						extract($bh_row);
+			  					
+			  					?>
 			  					<tr>
-			  						<td>123</td>
-			  						<td>123</td>
-			  						<td>123</td>
-			  						<td>123</td>
-			  						<td>123</td>
-			  						<td>123</td>
+			  						<td><?php echo $house_name ?></td>
+			  						<td class="p-1">
+			  							<?php
+			  							$bh_owner = "SELECT `user_fname`, `user_lname`, `user_mname` FROM users WHERE id = '$user_id'";
+			  							$bh_owner_results = mysqli_query($conn, $bh_owner);
+			  							$bh_owner_row = mysqli_fetch_assoc($bh_owner_results);
+			  							extract($bh_owner_row);
+			  							echo $user_fname,str_repeat('&nbsp;', 1),substr($user_mname, 0, 1).".".str_repeat('&nbsp;', 1),ucfirst($user_lname);
+			  							?>
+			  						</td>
+			  						<!-- View BIR -->
+			  						<td class="text-center"><button type="button" class="btn btn-info view-bir" data-id=<?php echo $house_id?> data-toggle="modal" data-target="#view-bir-picture">View</button></td>
+			  						<!-- End view bir -->
+			  						<!-- View mayors permit -->
+			  						<td class="text-center"><button type="button" class="btn btn-success view-mayors-permit" data-id="<?php echo $house_id ?>" data-toggle="modal" data-target="#view-mayors-permit-picture">View</button></td>
+			  						<!-- End view mayors permit -->
+			  						<!-- View business plate -->
+			  						<td class="text-center"><button type="button" class="btn btn-warning view-business-plate" data-id="<?php echo $house_id ?>" data-toggle="modal" data-target="#view-business-plate">View</button></td>
+			  						<!-- End view Business plate -->
+			  						<td>Approved</td>
 			  					</tr>
+			  					<?php
+			  					}
+			  					?>
 			  				</tbody>
 			  			</table>
 			  			</div>
@@ -77,14 +101,37 @@
 							</tr>
 						</thead>
 						<tbody>
+							<?php
+							$d_approved = "SELECT * FROM houses WHERE house_status = '4' AND house_category_id = '2'";
+							$d_results = mysqli_query($conn, $d_approved);
+							while ($d_row = mysqli_fetch_assoc($d_results)) {
+								extract($d_row);
+							?>
 							<tr>
-								<td>123</td>
-								<td>123</td>
-								<td>123</td>
-								<td>123</td>
-								<td>123</td>
-								<td>123</td>
+								<td><?php echo $house_name ?></td>
+								<td>
+									<?php
+									$d_owner = "SELECT `user_fname`, `user_lname`, `user_mname` FROM users WHERE id = '$user_id'";
+									$d_owner_results = mysqli_query($conn, $d_owner);
+									$d_owner_row = mysqli_fetch_assoc($d_owner_results);
+									extract($d_owner_row);
+									echo $user_fname,str_repeat('&nbsp;', 1),substr($user_mname, 0, 1).".".str_repeat('&nbsp;', 1),ucfirst($user_lname);
+									?>
+								</td>
+								<!-- View BIR -->
+								<td class="text-center"><button type="button" class="btn btn-info view-bir" data-id=<?php echo $house_id?> data-toggle="modal" data-target="#view-bir-picture">View</button></td>
+								<!-- End view bir -->
+								<!-- View mayors permit -->
+								<td class="text-center"><button type="button" class="btn btn-success view-mayors-permit" data-id="<?php echo $house_id ?>" data-toggle="modal" data-target="#view-mayors-permit-picture">View</button></td>
+								<!-- End view mayors permit -->
+								<!-- View business plate -->
+								<td class="text-center"><button type="button" class="btn btn-warning view-business-plate" data-id="<?php echo $house_id ?>" data-toggle="modal" data-target="#view-business-plate">View</button></td>
+								<!-- End view Business plate -->
+								<td>Approved</td>
 							</tr>
+							<?php
+							};
+							?>
 						</tbody>
 					</table>
 					</div>
@@ -161,20 +208,47 @@
 			  			<thead>
 			  				<tr>
 			  					<th>House Name</th>
-			  					<th class="pl-5">Ban</th>
-			  					<th>Notify</th>
+			  					<th>Owner</th>
+			  					<th>BIR Permit</th>
+			  					<th>Mayors Permit</th>
+			  					<th>Business License Permit</th>
+			  					<th>Status</th>
 			  				</tr>
 			  			</thead>
 			  			<tbody>
-			  				<tr>
-			  					<td>Hello</td>
-			  					<td class="pl-5">
-			  						<button type="button" class="btn btn-danger approve_modal" data-id=<?php  ?> data-toggle="modal" data-target="#qwe">Notify</button>
-			  					</td>
-			  					<td class="pl-5">
-			  						<button type="button" class="btn btn-primary approve_modal" data-id=<?php ?> data-toggle="modal" data-target="#qwe">Notify</button>
-			  					</td>
+			  				<?php
+			  					$all_house = "SELECT * FROM houses WHERE house_status = '4'";
+			  					$all_house_results = mysqli_query($conn, $all_house);
+			  					while ($row = mysqli_fetch_assoc($all_house_results)) {
+			  						extract($row)
+			  					?>
+			  				<tr class="mb-5">
+			  				<td><?php echo"$house_name" ?></td>
+			  				<!-- end of  house name -->
+			  				<!--  House Owner -->
+			  				<td><?php 
+			  					$all_house_owner = "SELECT * FROM users WHERE id = '$user_id'";
+			  					$user = mysqli_query($conn, $all_house_owner);
+			  					$all_house_row = mysqli_fetch_assoc($user);
+			  					extract($all_house_row);
+			  					echo "$user_fname";?></td>
+			  				<!-- End of  house owner -->
+			  				<!--  House BIR permit -->
+			  				<td class="text-center"><button type="button" class="btn btn-info view-bir" data-id=<?php echo $house_id?> data-toggle="modal" data-target="#view-bir-picture">View</button></td>
+			  				<!-- End of  house permit -->
+			  				<!--  house Mayors Permit -->
+			  				<td class="text-center"><button type="button" class="btn btn-success view-mayors-permit" data-id="<?php echo $house_id ?>" data-toggle="modal" data-target="#view-mayors-permit-picture">View</button></td>
+			  				<!-- End of  house permit -->
+			  				<!-- Business Plate -->
+			  				<td class="text-center"><button type="button" class="btn btn-warning view-business-plate" data-id="<?php echo $house_id ?>" data-toggle="modal" data-target="#view-business-plate">View</button></td>
+			  				<!-- End business Plate -->
+			  				<!--  house status -->
+			  				<td> Approved</td>
+			  				<!-- End of  house status -->
 			  				</tr>
+			  				<?php
+			  					}
+			  				?>
 			  			</tbody>
 			  		</table>
 			  		</div>
