@@ -19,7 +19,7 @@
                 <div class="form-group">
                   <!-- Select for category -->
                   <label for="room_type">Room Type</label>
-                  <select class="form-control" id="room-type" name="room-type">
+                  <select class="form-control" id="room-type" name="room-type" required>
                     <option selected disabled>Room Type</option>
                     <?php
                       $sql = "SELECT * FROM room_types";

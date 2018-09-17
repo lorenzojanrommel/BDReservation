@@ -1,6 +1,6 @@
 <?php
-	if (isset($_SESSION['user_id']) && $_SESSION['user_level'] == 1) {
-
+	session_start();
+	if (isset($_SESSION['user_id']) && $_SESSION['user_level'] == '1') {
  	function display_title(){
  	echo "Boarding House & Dormitories Finder || Add Admin";
  	}

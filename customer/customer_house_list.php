@@ -5,8 +5,8 @@
 	function display_content(){
 		require '../condb.php';
 		?>
-			<div class="container">
-				<h3 class="rooms">House</h3>
+			<div class="container house-list-container">
+				<h3 class="house">House</h3>
 				<?php 
 				$sql = "SELECT * FROM houses WHERE house_status = '4' ";
 				$results = mysqli_query($conn, $sql);

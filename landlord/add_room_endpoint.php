@@ -1,4 +1,5 @@
 <?php
+	if (isset($_POST['room-type'])) {
 	session_start();
 	require '../condb.php';
 	$check1 = getimagesize($_FILES["room-pic-1"]["tmp_name"]);
@@ -59,5 +60,10 @@
 
 	$sql = "INSERT INTO rooms (house_id, room_type, room_number, room_price, availability, room_pic_1, room_pic_2, room_pic_3, room_pic_4) VALUES ('$house_id', '$room_type', '$room_number', '$room_price', '$room_avail', '$room_pic1', '$room_pic2', '$room_pic3', '$room_pic4')";
 	mysqli_query($conn, $sql) or die (mysqli_error($conn));
+	// var_dump(mysqli_error);
 	header('location: add_room.php');
+	}else{
+		// header('location: add_room.php');
+		header('location: room_type_error_msg.php');
+	}
 ?>

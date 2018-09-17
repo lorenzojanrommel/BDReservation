@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title><?php display_title(); ?> </title>
+	<title><?php 
+	session_start();
+	display_title(); ?> </title>
 	<?php require "partials/head.php" ?>
 </head>
 <body>

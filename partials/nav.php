@@ -39,7 +39,7 @@
           <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/admin/user_list.php">User List</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="add_admin.php">Add Admin</a>
+          <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/admin/add_admin.php">Add Admin</a>
           <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/admin/add_admin.php">Add Addmin</a>
         </li>
       <?php

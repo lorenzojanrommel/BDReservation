@@ -173,7 +173,10 @@ textarea.form-control {
   background-color: transparent;
   color: #fff;
 }
-h3.rooms{
+.house-list-container{
+	height: 500px;
+}
+h3.house{
 	margin-top: 1em;
 	font-weight: bold;
 	font-size: 2.5em;
@@ -391,4 +394,7 @@ div.dataTables_wrapper div.dataTables_paginate{
 span.room-type, .room-price{
 	font-weight: bold;
 
+}
+.room_msg_error{
+	height: 500px;
 }
