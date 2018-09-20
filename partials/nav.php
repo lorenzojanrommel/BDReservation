@@ -6,7 +6,7 @@
   }
 ?>
     <div class="d-flex justify-content-center">
-      <a class="navbar-brand title d-none d-lg-block" href="../admin/../../BDReservation/index.php">Boarding House & Dormitories Finder</a>
+      <!-- <a class="navbar-brand title d-none d-lg-block" href="../admin/../../BDReservation/index.php">Boarding House & Dormitories Finder</a> -->
     </div>
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-center">
@@ -78,14 +78,6 @@
                 <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/booking.php">Booking</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/landlord/room_availability.php">Room Availability</a>
-                <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/room_availability.php">Room Availability</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/landlord/find.php">Find</a>
-                <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/find.php">Find</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/landlord/payments.php">Payments</a>
                 <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/payments.php">Payments</a>
               </li>
@@ -129,8 +121,8 @@
         <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="room.php">Rooms</a>
-        <a class="nav-link d-lg-none" href="room.php">Rooms</a>
+        <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="houses.php">Houses</a>
+        <a class="nav-link d-lg-none" href="houses.php">Houses</a>
       </li>
       <li class="nav-item">
         <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="contacts.php">Contacts</a>

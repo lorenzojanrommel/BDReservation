@@ -53,7 +53,23 @@
 				  	<p class="mt-1"><span class="room-price">Availability: </span><?php echo $availability ?> </p>
 				  	<div class="row">
 				  		<div class="col-sm-12 text-center">
-				  		<button type="button" class="btn btn-outline-warning">Reserve</button>
+				  			<?php
+				  			$customer_id = $_SESSION['user_id'];
+				  			$reserve = "SELECT * FROM reservations WHERE customer_id = '$customer_id'";
+				  			$reserve_results = mysqli_query($conn, $reserve);
+				  			$row = mysqli_num_rows($reserve_results);
+				  			if ($row >= 1) {
+				  				?>
+				  				<h6>You Already Reserve a Room</h6>
+				  				<?
+				  			}else{
+				  			?>
+				  			<form method="POST" action="reservation.php?room=<?php echo $room_id?>">
+				  		<input type="submit" value="Reserve" class="btn btn-outline-warning" name="goToreservation">
+				  		</form>
+				  		<?php
+				  		}
+				  		?>
 				  		</div>
 				  	</div>
 				  </div>

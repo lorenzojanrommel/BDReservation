@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 17, 2018 at 08:07 AM
+-- Generation Time: Sep 20, 2018 at 11:07 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.1.12
 
@@ -81,11 +81,20 @@ INSERT INTO `houses` (`house_id`, `user_id`, `house_category_id`, `house_name`, 
 CREATE TABLE `reservations` (
   `reservation_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
+  `owner_id` int(11) NOT NULL,
   `room_id` int(11) NOT NULL,
   `reservation_status` int(11) NOT NULL,
   `room_price` varchar(100) NOT NULL,
+  `update_reserve_date` varchar(255) NOT NULL,
   `reserve_date` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `reservations`
+--
+
+INSERT INTO `reservations` (`reservation_id`, `customer_id`, `owner_id`, `room_id`, `reservation_status`, `room_price`, `update_reserve_date`, `reserve_date`) VALUES
+(16, 4, 3, 15, 3, '4,242', 'September 21, 2018 4:30 am', 'September 21, 2018 4:30 am');
 
 -- --------------------------------------------------------
 
@@ -119,6 +128,7 @@ CREATE TABLE `rooms` (
   `room_type` int(11) NOT NULL,
   `room_number` varchar(10) NOT NULL,
   `room_price` varchar(255) NOT NULL,
+  `room_customer_no` int(11) NOT NULL,
   `availability` varchar(255) NOT NULL,
   `room_pic_1` varchar(255) NOT NULL,
   `room_pic_2` varchar(255) NOT NULL,
@@ -130,8 +140,8 @@ CREATE TABLE `rooms` (
 -- Dumping data for table `rooms`
 --
 
-INSERT INTO `rooms` (`room_id`, `house_id`, `room_type`, `room_number`, `room_price`, `availability`, `room_pic_1`, `room_pic_2`, `room_pic_3`, `room_pic_4`) VALUES
-(15, 53, 2, '23', '4242', '6', '../assets/img/noimage.png', '../assets/img/noimage.png', '../assets/img/noimage.png', '../assets/img/noimage.png');
+INSERT INTO `rooms` (`room_id`, `house_id`, `room_type`, `room_number`, `room_price`, `room_customer_no`, `availability`, `room_pic_1`, `room_pic_2`, `room_pic_3`, `room_pic_4`) VALUES
+(15, 53, 2, '23', '4242', 0, '6', '../assets/img/noimage.png', '../assets/img/noimage.png', '../assets/img/noimage.png', '../assets/img/noimage.png');
 
 -- --------------------------------------------------------
 
@@ -192,6 +202,7 @@ CREATE TABLE `users` (
   `user_birthdate` varchar(255) NOT NULL,
   `user_picture` varchar(255) NOT NULL,
   `user_email` varchar(255) NOT NULL,
+  `user_phone_number` varchar(15) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `create_date` datetime NOT NULL,
@@ -202,12 +213,12 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `role_id`, `status_id`, `user_fname`, `user_lname`, `user_mname`, `user_address`, `user_gender`, `user_birthdate`, `user_picture`, `user_email`, `username`, `password`, `create_date`, `update_date`) VALUES
-(1, 1, 1, 'Admin', 'Admin', '', 'Admin address', 'm', '04/27/2018', '', 'admin@test.com', 'admin', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(2, 2, 1, 'Jan', 'Lorenzo', 'kj', 'NA', '', 'NA', 'NA', 'jan@gmail.com', 'mel', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(3, 2, 1, 'Owner', 'Owner', 'Owner', 'NA', '', 'NA', 'NA', 'owner@gmail.com', 'owner', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(4, 3, 1, 'Customer', 'Customer', 'Customer', 'NA', '', 'NA', 'NA', 'customer@gmail.com', 'customer', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(5, 2, 1, 'Owner2', 'Owner2', 'Owner2', 'NA', '', 'NA', 'NA', 'owner2@test.test', 'owner2', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `users` (`id`, `role_id`, `status_id`, `user_fname`, `user_lname`, `user_mname`, `user_address`, `user_gender`, `user_birthdate`, `user_picture`, `user_email`, `user_phone_number`, `username`, `password`, `create_date`, `update_date`) VALUES
+(1, 1, 1, 'Admin', 'Admin', '', 'Admin address', 'm', '04/27/2018', '', 'admin@test.com', '', 'admin', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(2, 2, 1, 'Jan', 'Lorenzo', 'kj', 'NA', '', 'NA', 'NA', 'jan@gmail.com', '', 'mel', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(3, 2, 1, 'Owner', 'Owner', 'Owner', 'Bacabac Camiling,Tarlac', '', 'NA', 'NA', 'owner@gmail.com', '0923232323', 'owner', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(4, 3, 1, 'Customer', 'Customer', 'Customer', 'Libueg Camiling,Tarlac', '', 'NA', 'NA', 'customer@gmail.com', '09280522001', 'customer', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(5, 2, 1, 'Owner2', 'Owner2', 'Owner2', 'NA', '', 'NA', 'NA', 'owner2@test.test', '', 'owner2', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 --
 -- Indexes for dumped tables
@@ -235,7 +246,8 @@ ALTER TABLE `reservations`
   ADD PRIMARY KEY (`reservation_id`),
   ADD KEY `customer_id` (`customer_id`),
   ADD KEY `room_id` (`room_id`),
-  ADD KEY `reservation_status` (`reservation_status`);
+  ADD KEY `reservation_status` (`reservation_status`),
+  ADD KEY `owner_id` (`owner_id`);
 
 --
 -- Indexes for table `roles`
@@ -292,7 +304,7 @@ ALTER TABLE `houses`
 -- AUTO_INCREMENT for table `reservations`
 --
 ALTER TABLE `reservations`
-  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -341,8 +353,9 @@ ALTER TABLE `houses`
 --
 ALTER TABLE `reservations`
   ADD CONSTRAINT `reservations_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `reservations_ibfk_2` FOREIGN KEY (`room_id`) REFERENCES `rooms` (`room_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `reservations_ibfk_3` FOREIGN KEY (`reservation_id`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `reservations_ibfk_4` FOREIGN KEY (`room_id`) REFERENCES `rooms` (`room_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `reservations_ibfk_5` FOREIGN KEY (`reservation_status`) REFERENCES `status` (`id`),
+  ADD CONSTRAINT `reservations_ibfk_6` FOREIGN KEY (`owner_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `rooms`
