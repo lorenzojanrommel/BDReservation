@@ -72,7 +72,7 @@
 										<button class="btn btn-outline-warning approve_reservation_modal" data-id=<?php echo $reservation_id?> data-toggle="modal" data-target="#approve_reservation">Accept</button>
 									</div>
 
-									<div class="col-sm-6 text-center"><button class="btn btn-outline-danger">Decline</button></div>
+									<div class="col-sm-6 text-center"><button class="btn btn-outline-danger decline_reservation_modal" data-id=<?php echo $reservation_id?> data-toggle="modal" data-target="#decline_reservation">Decline</button></div>
 								</div>
 							</td>
 						</tr>
@@ -97,6 +97,7 @@
 	}
 	require "../template.php";
 	require "approve_modal.php";
+	require "decline_modal.php";
 ?>
 
 <script type="text/javascript">
@@ -113,6 +114,22 @@
 			success: function(data){
 				// console.log(data);
 				$('#approve_reservation_body').html(data);
+			}
+		})
+	})
+	$('.decline_reservation_modal').click(function() {
+		var id = $(this).data('id');
+		// console.log(id);
+		$.ajax({
+			method: 'post',
+			url: 'decline_modal_body.php',
+			data: {
+				// edit: true,
+				id : id
+			},
+			success: function(data){
+				// console.log(data);
+				$('#decline_reservation_modal').html(data);
 			}
 		})
 	})
