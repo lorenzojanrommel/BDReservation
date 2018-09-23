@@ -103,7 +103,7 @@
 <script type="text/javascript">
 	$('.approve_reservation_modal').click(function() {
 		var id = $(this).data('id');
-		console.log(id);
+		// console.log(id);
 		$.ajax({
 			method: 'post',
 			url: 'approve_reservation_modal_body.php',

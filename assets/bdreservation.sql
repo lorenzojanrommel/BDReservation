@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.6
--- https://www.phpmyadmin.net/
+-- version 4.4.14
+-- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Sep 20, 2018 at 11:07 PM
--- Server version: 10.1.29-MariaDB
--- PHP Version: 7.1.12
+-- Host: 127.0.0.1
+-- Generation Time: Sep 23, 2018 at 08:36 PM
+-- Server version: 5.6.26
+-- PHP Version: 5.6.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -28,10 +26,10 @@ SET time_zone = "+00:00";
 -- Table structure for table `categories`
 --
 
-CREATE TABLE `categories` (
+CREATE TABLE IF NOT EXISTS `categories` (
   `id` int(11) NOT NULL,
   `house_category` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `categories`
@@ -47,7 +45,7 @@ INSERT INTO `categories` (`id`, `house_category`) VALUES
 -- Table structure for table `houses`
 --
 
-CREATE TABLE `houses` (
+CREATE TABLE IF NOT EXISTS `houses` (
   `house_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `house_category_id` int(11) NOT NULL,
@@ -62,7 +60,7 @@ CREATE TABLE `houses` (
   `house_blpp` text NOT NULL,
   `house_description` text NOT NULL,
   `house_status` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `houses`
@@ -78,23 +76,24 @@ INSERT INTO `houses` (`house_id`, `user_id`, `house_category_id`, `house_name`, 
 -- Table structure for table `reservations`
 --
 
-CREATE TABLE `reservations` (
+CREATE TABLE IF NOT EXISTS `reservations` (
   `reservation_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
   `owner_id` int(11) NOT NULL,
   `room_id` int(11) NOT NULL,
   `reservation_status` int(11) NOT NULL,
   `room_price` varchar(100) NOT NULL,
+  `payment` varchar(255) NOT NULL,
   `update_reserve_date` varchar(255) NOT NULL,
   `reserve_date` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `reservations`
 --
 
-INSERT INTO `reservations` (`reservation_id`, `customer_id`, `owner_id`, `room_id`, `reservation_status`, `room_price`, `update_reserve_date`, `reserve_date`) VALUES
-(16, 4, 3, 15, 3, '4,242', 'September 21, 2018 4:30 am', 'September 21, 2018 4:30 am');
+INSERT INTO `reservations` (`reservation_id`, `customer_id`, `owner_id`, `room_id`, `reservation_status`, `room_price`, `payment`, `update_reserve_date`, `reserve_date`) VALUES
+(24, 4, 3, 15, 3, '4,242', '0', 'September 24, 2018 2:02 am', 'September 23, 2018 11:17 pm');
 
 -- --------------------------------------------------------
 
@@ -102,10 +101,10 @@ INSERT INTO `reservations` (`reservation_id`, `customer_id`, `owner_id`, `room_i
 -- Table structure for table `roles`
 --
 
-CREATE TABLE `roles` (
+CREATE TABLE IF NOT EXISTS `roles` (
   `id` int(11) NOT NULL,
   `role` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `roles`
@@ -122,7 +121,7 @@ INSERT INTO `roles` (`id`, `role`) VALUES
 -- Table structure for table `rooms`
 --
 
-CREATE TABLE `rooms` (
+CREATE TABLE IF NOT EXISTS `rooms` (
   `room_id` int(11) NOT NULL,
   `house_id` int(11) NOT NULL,
   `room_type` int(11) NOT NULL,
@@ -133,15 +132,17 @@ CREATE TABLE `rooms` (
   `room_pic_1` varchar(255) NOT NULL,
   `room_pic_2` varchar(255) NOT NULL,
   `room_pic_3` varchar(255) NOT NULL,
-  `room_pic_4` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `room_pic_4` varchar(255) NOT NULL,
+  `update_date` varchar(255) NOT NULL,
+  `created_date` varchar(255) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `rooms`
 --
 
-INSERT INTO `rooms` (`room_id`, `house_id`, `room_type`, `room_number`, `room_price`, `room_customer_no`, `availability`, `room_pic_1`, `room_pic_2`, `room_pic_3`, `room_pic_4`) VALUES
-(15, 53, 2, '23', '4242', 0, '6', '../assets/img/noimage.png', '../assets/img/noimage.png', '../assets/img/noimage.png', '../assets/img/noimage.png');
+INSERT INTO `rooms` (`room_id`, `house_id`, `room_type`, `room_number`, `room_price`, `room_customer_no`, `availability`, `room_pic_1`, `room_pic_2`, `room_pic_3`, `room_pic_4`, `update_date`, `created_date`) VALUES
+(15, 53, 2, '23', '4242', 5, '6', '../assets/img/noimage.png', '../assets/img/noimage.png', '../assets/img/noimage.png', '../assets/img/noimage.png', 'September 24, 2018 1:28 am', 'September 24, 2018 1:28 am');
 
 -- --------------------------------------------------------
 
@@ -149,10 +150,10 @@ INSERT INTO `rooms` (`room_id`, `house_id`, `room_type`, `room_number`, `room_pr
 -- Table structure for table `room_types`
 --
 
-CREATE TABLE `room_types` (
+CREATE TABLE IF NOT EXISTS `room_types` (
   `type_id` int(11) NOT NULL,
   `type` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `room_types`
@@ -168,10 +169,10 @@ INSERT INTO `room_types` (`type_id`, `type`) VALUES
 -- Table structure for table `status`
 --
 
-CREATE TABLE `status` (
+CREATE TABLE IF NOT EXISTS `status` (
   `id` int(11) NOT NULL,
   `status` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `status`
@@ -190,7 +191,7 @@ INSERT INTO `status` (`id`, `status`) VALUES
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL,
   `role_id` int(11) NOT NULL,
   `status_id` int(11) NOT NULL,
@@ -207,7 +208,7 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `create_date` datetime NOT NULL,
   `update_date` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
@@ -292,50 +293,42 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `houses`
 --
 ALTER TABLE `houses`
-  MODIFY `house_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
-
+  MODIFY `house_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=55;
 --
 -- AUTO_INCREMENT for table `reservations`
 --
 ALTER TABLE `reservations`
-  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
+  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `rooms`
 --
 ALTER TABLE `rooms`
-  MODIFY `room_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
+  MODIFY `room_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `room_types`
 --
 ALTER TABLE `room_types`
-  MODIFY `type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+  MODIFY `type_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `status`
 --
 ALTER TABLE `status`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- Constraints for dumped tables
 --
@@ -370,7 +363,6 @@ ALTER TABLE `rooms`
 ALTER TABLE `users`
   ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`),
   ADD CONSTRAINT `users_ibfk_2` FOREIGN KEY (`status_id`) REFERENCES `status` (`id`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
