@@ -57,16 +57,17 @@
 				  			$customer_id = $_SESSION['user_id'];
 				  			$reserve = "SELECT * FROM reservations WHERE customer_id = '$customer_id'";
 				  			$reserve_results = mysqli_query($conn, $reserve);
-				  			$row = mysqli_num_rows($reserve_results);
-				  			if ($row >= 1) {
+				  			$reserve_row = mysqli_num_rows($reserve_results);
+				  			// echo $reserve_row;
+				  			if ($reserve_row >= 1) {
 				  				?>
 				  				<h6>You Already Reserve a Room</h6>
-				  				<?
+				  				<?php
 				  			}else{
 				  			?>
 				  			<form method="POST" action="reservation.php?room=<?php echo $room_id?>">
-				  		<input type="submit" value="Reserve" class="btn btn-outline-warning" name="goToreservation">
-				  		</form>
+				  			<input type="submit" value="Reserve" class="btn btn-outline-warning" name="goToreservation">
+				  			</form>
 				  		<?php
 				  		}
 				  		?>

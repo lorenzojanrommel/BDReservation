@@ -11,8 +11,8 @@
 	$status = 3;
 	$date = date("F j, Y g:i a");
 	// echo $room_price;
-	$sql = "INSERT INTO reservations (customer_id, owner_id, room_id, reservation_status, room_price, update_reserve_date , reserve_date)
-			VALUES ('$customer_id', '$owner_id', '$room_id', '$status', '$price', '$date', '$date')";
+	$sql = "INSERT INTO reservations (customer_id, owner_id, room_id, reservation_status, room_price, payment, update_reserve_date , reserve_date)
+			VALUES ('$customer_id', '$owner_id', '$room_id', '$status', '$price', '0', '$date', '$date')";
 	mysqli_query($conn, $sql) or die (mysqli_error($conn));
 	header('location: reservation_successfully.php');
 

@@ -18,14 +18,17 @@
 						<th>Address</th>
 						<th>Room Number</th>
 						<th>Payment</th>
+						<th>First Payment</th>
 						<th>Approve/Decline</th>
 						</tr>
 					</thead>
 					<tbody>
 						<?php
 						$user = $_SESSION['user_id'];
-						$sql1 = "SELECT * FROM reservations JOIN rooms ON (reservations.room_id = rooms.room_id) JOIN houses ON (rooms.house_id = houses.house_id) JOIN users ON (houses.user_id = users.id) WHERE owner_id = '$user' ORDER BY update_reserve_date DESC";
+						$sql1 = "SELECT * FROM reservations JOIN rooms ON (reservations.room_id = rooms.room_id) JOIN houses ON (rooms.house_id = houses.house_id) JOIN users ON (houses.user_id = users.id) WHERE owner_id = '$user' AND reservation_status = '3' ORDER BY update_reserve_date DESC";
 						$results = mysqli_query($conn, $sql1);
+						$count_row = mysqli_num_rows($results);
+						if ($count_row > 0 ) {
 						while ($row = mysqli_fetch_assoc($results)){
 						extract($row)
 						?>
@@ -58,16 +61,31 @@
 								echo number_format($room_price);
 								?>
 							</td>
+							<td class="text-center">
+								<?php
+								echo number_format($payment);
+								?>
+							</td>
 							<td>
 								<div class="row">
-									<div class="col-sm-6 text-center"><button class="btn btn-outline-warning">Accept</button></div>
+									<div class="col-sm-6 text-center">
+										<button class="btn btn-outline-warning approve_reservation_modal" data-id=<?php echo $reservation_id?> data-toggle="modal" data-target="#approve_reservation">Accept</button>
+									</div>
+
 									<div class="col-sm-6 text-center"><button class="btn btn-outline-danger">Decline</button></div>
 								</div>
 							</td>
 						</tr>
 						<?php
 						}
+					}else{
 						?>
+						<tr>
+						<td colspan="6"> No Results Found</td>
+						</tr>
+						<?php
+						}
+					?>
 					</tbody>
 
 				</table>
@@ -78,5 +96,24 @@
 
 	}
 	require "../template.php";
+	require "approve_modal.php";
 ?>
 
+<script type="text/javascript">
+	$('.approve_reservation_modal').click(function() {
+		var id = $(this).data('id');
+		console.log(id);
+		$.ajax({
+			method: 'post',
+			url: 'approve_reservation_modal_body.php',
+			data: {
+				// edit: true,
+				id : id
+			},
+			success: function(data){
+				// console.log(data);
+				$('#approve_reservation_body').html(data);
+			}
+		})
+	})
+</script>
