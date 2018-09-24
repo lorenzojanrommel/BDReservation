@@ -1,6 +1,6 @@
 <?php
-	session_start();
-	if (isset($_SESSION['user_id']) && $_SESSION['user_level'] == '1') {
+// 	session_start();
+// 	if (isset($_SESSION['user_id']) && $_SESSION['user_level'] == '1') {
  	function display_title(){
  	echo "Boarding House & Dormitories Finder || Add Admin";
  	}
@@ -18,21 +18,21 @@
  			                        <div class="form-group row">
  			                            <label for="name" class="col-md-4 col-form-label text-md-right">First Name</label>
  			                            <div class="col-md-6">
- 			                                <input type="text" class="form-control" name="fname" placeholder="First Name" required autofocus pattern="[A-Za-z]">
+ 			                                <input type="text" class="form-control fname" name="fname" placeholder="First Name" required autofocus onkeyup="this.value=this.value.replace(/[^A-Za-z]/g,'');">
  			                            </div>
  			                        </div>
  			                        <!-- Last Name -->
  			                        <div class="form-group row">
  			                            <label for="name" class="col-md-4 col-form-label text-md-right">Last Name</label>
  			                            <div class="col-md-6">
- 			                                <input type="text" class="form-control" name="lname" placeholder="Last Name" required autofocus>
+ 			                                <input type="text" class="form-control" name="lname" placeholder="Last Name" required autofocus onkeyup="this.value=this.value.replace(/[^A-Za-z]/g,'');">
  			                            </div>
  			                        </div>
  			                        <!-- Middle Name -->
  			                        <div class="form-group row">
  			                            <label for="name" class="col-md-4 col-form-label text-md-right">Middle Name</label>
  			                            <div class="col-md-6">
- 			                                <input type="text" class="form-control" name="mname" placeholder="Middle Name" required autofocus>
+ 			                                <input type="text" class="form-control" name="mname" placeholder="Middle Name" required autofocus onkeyup="this.value=this.value.replace(/[^A-Za-z]/g,'');">
  			                                    <span class="invalid-feedback">
  			                                    </span>
  			                            </div>
@@ -44,6 +44,16 @@
  			                            <div class="col-md-6">
  			                                <input id="email" type="email" class="form-control" name="email" required autofocus oninput="return validate_email()" placeholder="Email Address">
  			                                <strong><p id="confirm_email"></p></strong>
+ 			                            </div>
+ 			                        </div>
+ 			                        <!-- Phone Number -->
+ 			                        <div class="form-group row">
+ 			                            <label for="phone_numer" class="col-md-4 col-form-label text-md-right">Phone Number</label>
+ 			                            <div class="col-md-6">
+ 			                                <input type="number" class="form-control" name="phone_numer" placeholder="Phone Name" required autofocus min="1" max="10" step="2" ondrop="return false;" onpaste="return false;" onkeypress="return event.charCode>=48 && event.charCode<=57">
+ 			                                    <span class="invalid-feedback">
+ 			                                    </span>
+
  			                            </div>
  			                        </div>
  			                        <!-- Username -->
@@ -59,7 +69,7 @@
  			                            <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
 
  			                            <div class="col-md-6">
- 			                                <input id="admin_password" type="password" class="form-control" name="password" minlength="6" required  oninput="return validate()" placeholder="Password">
+ 			                                <input id="password" type="password" class="form-control" name="password" minlength="6" required  oninput="return validate()" placeholder="Password">
  			                            </div>
  			                        </div>
  			                        <!-- Confirm password -->
@@ -86,13 +96,13 @@
  			    </div>
  			</div>
  			<script type="text/javascript" src="../assets/js/validate_password.js"></script>
- 			<script type="text/javascript" src="../assets/js/validate_username_exist.js"></script>
+ 			<script type="text/javascript" src="../assets/js/admin_validate_username_exist.js"></script>
  			<script type="text/javascript" src="../assets/js/validate_email_exist.js"></script>
- 			<script type="text/javascript" src="../assets/js/validate_email.js"></script>
+ 			<script type="text/javascript" src="../assets/js/admin_validate_email.js"></script>
  		<?php
  	}
  	require '../template.php';
- 	}else{
- 		header('Location: ../login.php');
- 	}
+ 	// }else{
+ 	// 	header('Location: ../login.php');
+ 	// }
 ?>
