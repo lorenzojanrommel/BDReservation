@@ -398,3 +398,14 @@ span.room-type, .room-price{
 .room_msg_error{
 	height: 500px;
 }
+
+/*
+ *
+ *Add Admin
+ *
+ */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
