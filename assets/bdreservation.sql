@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 23, 2018 at 08:36 PM
+-- Generation Time: Sep 24, 2018 at 10:30 PM
 -- Server version: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -206,9 +206,9 @@ CREATE TABLE IF NOT EXISTS `users` (
   `user_phone_number` varchar(15) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `create_date` datetime NOT NULL,
-  `update_date` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+  `create_date` varchar(100) NOT NULL,
+  `update_date` varchar(100) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
@@ -219,7 +219,8 @@ INSERT INTO `users` (`id`, `role_id`, `status_id`, `user_fname`, `user_lname`, `
 (2, 2, 1, 'Jan', 'Lorenzo', 'kj', 'NA', '', 'NA', 'NA', 'jan@gmail.com', '', 'mel', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (3, 2, 1, 'Owner', 'Owner', 'Owner', 'Bacabac Camiling,Tarlac', '', 'NA', 'NA', 'owner@gmail.com', '0923232323', 'owner', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (4, 3, 1, 'Customer', 'Customer', 'Customer', 'Libueg Camiling,Tarlac', '', 'NA', 'NA', 'customer@gmail.com', '09280522001', 'customer', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(5, 2, 1, 'Owner2', 'Owner2', 'Owner2', 'NA', '', 'NA', 'NA', 'owner2@test.test', '', 'owner2', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(5, 2, 1, 'Owner2', 'Owner2', 'Owner2', 'NA', '', 'NA', 'NA', 'owner2@test.test', '', 'owner2', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(6, 1, 1, 'Mel', 'Antonio', 'Lorenzo', 'NA', '', 'NA', 'NA', 'misterfewwords@gmail.com', '09122235050', 'melmel', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 'September 25, 2018 4:23 am', 'September 25, 2018 4:23 am');
 
 --
 -- Indexes for dumped tables
@@ -328,7 +329,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- Constraints for dumped tables
 --
