@@ -409,3 +409,61 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none; 
   margin: 0; 
 }
+
+
+/*
+ *
+ *Owner Register
+ *
+ */
+
+ .owner-reg-container{
+ 	background: transparent url('../img/owner_reg.png') no-repeat center center fixed;
+ 	max-width: 100%;
+ 	left: 0;
+ 	min-height: 650px;
+ 	float: left;
+ 	-moz-opacity: 0.3;
+ 	-khtml-opacity: 0.3;
+ 	opacity: 0.7;
+ }
+ .reg-label{
+ 	/*font-weight: bold;*/
+ 	font-size: 1.3em;
+ 	font-family: 'Francois One', sans-serif;
+ 	color: #000;
+ 	/*text-shadow: 10px 5px 5px #000;*/
+ }
+ form#reg-own-form{
+ 	position: absolute;
+/*    top: 20px;
+    left: 20px;*/
+    width: 100%;
+    overflow: hidden;
+    clear: both;
+ }
+ div.cover{
+ 	position: absolute;
+ 	top: 50px;
+ 	left: 20px;
+ 	width: 100%;
+ 	overflow: hidden;
+ 	clear: both;
+ }
+ .title-reg-own{
+ 	/*font-weight: bold;*/
+ 	font-size: 1.5em;
+ 	font-family: 'Francois One', sans-serif;
+ 	color: #000;
+ }
+ /*
+  *
+  *Edit Profile
+  *
+  */
+
+ .img-circle{
+ 	height: 100px;
+ 	width: 100px;
+ 	border-radius: 50%;
+ }

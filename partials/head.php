@@ -33,3 +33,4 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_level'] == '2' && $_SESSION['
 <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
