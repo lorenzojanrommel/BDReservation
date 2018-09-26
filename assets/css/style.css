@@ -543,3 +543,11 @@ img.avatar-admin{
 	/*border-radius: 50%;*/
 	object-fit: cover;
 }
+/*
+ *
+ *Change password
+ *
+ */
+ .change-password{
+ 	font-family: 'Francois One', sans-serif;
+ 	}

@@ -11,7 +11,6 @@
 		extract($row);
 		?>
 		<div class="container-fluid emp-profile">
-		            <form method="post">
 		                <div class="row">
 		                    <div class="col-md-4">
 		                        <div class="profile-img">
@@ -44,8 +43,12 @@
 		                        </div>
 		                    </div>
 		                    <div class="col-md-2">
-		                        <a href="edit_profile.php?edit=edit"><input class="profile-edit-btn" name="edit_profile" value="Edit Profile"/> </a>
-		                        <a href="edit_profile.php?edit=edit"><input class="profile-edit-btn" name="edit_profile" value="Change Password"/> </a>
+		                        	<form action="edit_profile.php?edit=edit" method="POST">
+		                        		<button type="submit" name="edit_profile" class="profile-edit-btn">Edit Profile</button>
+		                            </form>
+		                        	<form action="change_password.php?change=change" method="POST" class="mt-2">
+		                        		<button type="submit" name="edit_profile" class="profile-edit-btn">Change Password</button>
+		                            </form>
 		                    </div>
 		                </div>
 		                <div class="row">
@@ -110,8 +113,7 @@
 		                            </div>
 		                        </div>
 		                    </div>
-		                </div>
-		            </form>           
+		                </div>           
 		        </div>
 		<?php
 
