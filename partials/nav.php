@@ -136,10 +136,16 @@
       }
       if (isset($_SESSION['username'])) {
        ?>
-       <li class="nav-item">
-        <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="../../BDReservation/logout.php">Logout</a>
-        <a class="nav-link d-lg-none" href="../logout.php">Logout</a>
-       </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle border-left d-none d-sm-none d-md-none d-lg-block" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Profile</a>
+        <a class="nav-link dropdown-toggle d-lg-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Profile</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="view_profile.php">Account Settings</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="../../BDReservation/logout.php">Logout</a>
+        </div>
+      </li>
        <?php
       }else{
       ?>
