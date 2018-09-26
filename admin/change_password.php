@@ -101,12 +101,24 @@
 			},
 			success:function(data){
 				console.log(data);
-				if (data == 'success') {
+				if (data == 'Successfully Changed Password') {
+					$('#success_message').removeAttr('hidden');
 					$('#success_message').fadeIn().html(data);
 					setTimeout(function(){  
 					$('#success_message').fadeOut("Slow");  
 					}, 3000);
-
+				}else if (data == 'New password and Confirm Password do not Match!'){
+					$('#error_message').removeAttr('hidden');
+					$('#error_message').fadeIn().html(data);
+					setTimeout(function(){  
+					$('#error_message').fadeOut("Slow");  
+					}, 3000);
+				}else if (data == 'Your Current password do not match with your real password.'){
+					$('#error_message').removeAttr('hidden');
+					$('#error_message').fadeIn().html(data);
+					setTimeout(function(){  
+					$('#error_message').fadeOut("Slow");  
+					}, 3000);
 				}
 			}
 		})

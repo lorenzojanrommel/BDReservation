@@ -12,9 +12,9 @@
 	extract($row);
 	if ($current_password == $password) {
 		if ($new_password == $confirm_password) {
-			echo "success";
+			echo "Successfully Changed Password";
 		}else{
-			echo "fail";
+			echo "New password and Confirm Password do not Match!";
 		}
 	}else{
 		echo "Your Current password do not match with your real password.";
