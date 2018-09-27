@@ -4,28 +4,36 @@
 	if(isset($_POST['login'])){
 		$username = htmlspecialchars($_POST['username']);
 		$password = sha1($_POST['password']);
-		$sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+		// $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+		$sql = "SELECT * FROM users WHERE username = '$username'";
 		$results = mysqli_query($conn, $sql);
 		if (mysqli_num_rows($results)> 0) {
-			$row = mysqli_fetch_assoc($results);
-			// extract($row);
-			$_SESSION['username'] = $username;
-			$_SESSION['fname'] = $row['user_fname'];
-			$_SESSION['user_status'] = $row['status_id'];
-			$_SESSION['user_level'] = $row['role_id'];
-			$_SESSION['user_id'] = $row['id'];
-		}
-		if ($_SESSION['user_level'] == 1) {
-			header('Location: admin/dashboard.php');
-			exit();
-		}elseif($_SESSION['user_level'] == 2){
-			header('Location: landlord/owner_dashboard.php');
-			exit();
-		}elseif($_SESSION['user_level'] == 3){
-			header('Location: customer/customer_dashboard.php');
-			exit();
+			$user = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+			$user_results = mysqli_query($conn, $user);
+			if (mysqli_num_rows($user_results)>0) {
+				$row = mysqli_fetch_assoc($user_results);
+				// extract($row);
+				$_SESSION['username'] = $username;
+				$_SESSION['fname'] = $row['user_fname'];
+				$_SESSION['user_status'] = $row['status_id'];
+				$_SESSION['user_level'] = $row['role_id'];
+				$_SESSION['user_id'] = $row['id'];
+			
+			if ($_SESSION['user_level'] == 1) {
+				header('Location: admin/dashboard.php');
+				exit();
+			}elseif($_SESSION['user_level'] == 2){
+				header('Location: landlord/owner_dashboard.php');
+				exit();
+			}elseif($_SESSION['user_level'] == 3){
+				header('Location: customer/customer_dashboard.php');
+				exit();
+			}
+			}else{
+				header('Location: login.php?password=not_match');
+			}
 		}else{
-			header('Location: login.php');
+			header('Location: login.php?user=not_found');
 		}
 	}elseif(isset($_POST['register'])){
 			$username = htmlspecialchars($_POST['username']);

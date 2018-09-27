@@ -10,6 +10,26 @@
 				        <div class="card card-default">
 				            <div class="card-header">Login</div>
 				            <div class="card-body">
+				            	<?php
+				            	ob_start();
+				            	$full_url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+				            	if (strpos($full_url, "user=not_found") == true) {
+				            		?>
+				            		<div class="alert alert-dismissible alert-danger">
+				            		  <button type="button" class="close" data-dismiss="alert">&times;</button>
+				            		  <span>The Username you've entered doesn't match any account.</span>
+				            		</div>
+				            		<?php
+				            	}elseif (strpos($full_url, "password=not_match") == true) {
+				            		?>
+				            		<div class="alert alert-dismissible alert-danger">
+				            		  <button type="button" class="close" data-dismiss="alert">&times;</button>
+				            		  <span>The password you've entered is incorrect.</span>
+				            		</div>
+				            		<?php
+				            	}
+				            	?>
+				            	
 				                <form method="POST" action="authenticate.php">
 				                	<!-- Email Address -->
 				                    <div class="form-group row">
