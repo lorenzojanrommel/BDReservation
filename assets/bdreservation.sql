@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 25, 2018 at 11:39 PM
+-- Generation Time: Sep 27, 2018 at 10:47 PM
 -- Server version: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -218,10 +218,10 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `role_id`, `status_id`, `user_fname`, `user_lname`, `user_mname`, `user_address`, `user_gender`, `user_birthdate`, `user_picture`, `user_email`, `user_phone_number`, `username`, `password`, `create_date`, `update_date`) VALUES
-(1, 1, 1, 'Admin', 'Admin', '', 'Admin address', 'm', '04/27/2018', '', 'admin@test.com', '', 'admin', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(1, 1, 1, 'Admin', 'Admin', 'Admin', 'Admin address', 'm', '2018-08-29', '../assets/img/owner_pictures/15380520817cdee8236a997c7c49c05b8a0e46f89e51a7e361_hq.jpg', 'admin@test.com', '122223550', 'admin', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', 'September 27, 2018 8:41 pm'),
 (2, 2, 1, 'Jan', 'Lorenzo', 'kj', 'NA', '', 'NA', 'NA', 'jan@gmail.com', '', 'mel', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(3, 2, 1, 'Owner', 'Owner', 'Owner', 'Bacabac Camiling,Tarlac', '', 'NA', 'NA', 'owner@gmail.com', '0923232323', 'owner', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(4, 3, 1, 'Customer', 'Customer', 'Customer', 'Libueg Camiling,Tarlac', '', 'NA', 'NA', 'customer@gmail.com', '09280522001', 'customer', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(3, 2, 1, 'Owner', 'Owner', 'Owner', 'Bacabac Camiling,Tarlac', 'm', '2018-09-05', '../assets/img/owner_pictures/15380617637cdee8236a997c7c49c05b8a0e46f89e51a7e361_hq.jpg', 'owner@gmail.com', '0923232323', 'owner', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', 'September 27, 2018 11:25 pm'),
+(4, 3, 1, 'Customer', 'Customer', 'Customer', 'Libueg Camiling,Tarlac', 'm', '2018-09-21', '../assets/img/owner_pictures/15380624927cdee8236a997c7c49c05b8a0e46f89e51a7e361_hq.jpg', 'customer@gmail.com', '09280522001', 'customer', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', 'September 27, 2018 11:34 pm'),
 (5, 2, 1, 'Owner2', 'Owner2', 'Owner2', 'NA', '', 'NA', 'NA', 'owner2@test.test', '', 'owner2', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (6, 1, 1, 'Mel', 'Antonio', 'Lorenzo', 'NA', '', 'NA', 'NA', 'misterfewwords@gmail.com', '09122235050', 'melmel', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 'September 25, 2018 4:23 am', 'September 25, 2018 4:23 am'),
 (7, 1, 1, 'Wesley', 'Sebastian', 'Q', 'NA', '', 'NA', 'NA', 'wes@gmail.com', '09122222222', 'wes', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 'September 25, 2018 6:16 pm', 'September 25, 2018 6:16 pm'),

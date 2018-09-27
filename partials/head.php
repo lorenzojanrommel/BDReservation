@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
 <!-- Bootswatch -->
 <link href="https://bootswatch.com/4/flatly/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 <!-- link lightbox -->
 <?php
 if (isset($_SESSION['user_id']) && $_SESSION['user_level'] == '2' && $_SESSION['user_level'] == '3') {
