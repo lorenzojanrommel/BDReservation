@@ -7,7 +7,7 @@
 		$id = $_GET['id'];
 		?>
 		<div class="container">
-		<a href="customer_house_list.php" class="btn btn-outline-info mt-5 mb-3">Go Back</a>
+		<a href="house.php?id=<?php echo $id?>" class="btn btn-outline-info mt-5 mb-3">Go Back</a>
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="row">
