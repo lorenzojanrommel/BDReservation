@@ -24,6 +24,8 @@
 		}elseif($_SESSION['user_level'] == 3){
 			header('Location: customer/customer_dashboard.php');
 			exit();
+		}else{
+			header('Location: login.php');
 		}
 	}elseif(isset($_POST['register'])){
 			$username = htmlspecialchars($_POST['username']);

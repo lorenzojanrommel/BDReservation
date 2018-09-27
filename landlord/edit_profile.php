@@ -3,6 +3,7 @@
 		echo "Boarding House & Dormitories Finder";
 	}
 	function display_content(){
+		if (isset($_GET['edit'])) {
 		?>
 		<?php
 		require '../condb.php';
@@ -63,20 +64,61 @@
 			            <label class="col-sm-3 control-label">Gender:</label>
 			            <div class="col-sm-8">
 			            	<div class="row">
-			            		<div class="col-sm-6 text-center">
-			            			<!-- Group of default radios - option 1 -->
-			            			<div class="custom-control custom-radio">
-			            			  <input type="radio" class="custom-control-input" id="male" name="gender" required value="m">
-			            			  <label class="custom-control-label" for="male">Male</label>
-			            			</div>
-			            		</div>
-			            		<div class="col-sm-6 text-center">
-			            			<!-- Group of default radios - option 2 -->
-			            			<div class="custom-control custom-radio">
-			            			  <input type="radio" class="custom-control-input" id="female" name="gender" required value="f">
-			            			  <label class="custom-control-label" for="female">Female</label>
-			            			</div>
-			            		</div>
+			            			<?php
+			            				if ($user_gender == 'm') {
+			            					?>
+			            					<div class="col-sm-6 text-center">
+			            						<!-- Group of default radios - option 1 -->
+			            						<div class="custom-control custom-radio">
+			            						  <input type="radio" class="custom-control-input" id="male" name="gender" required value="m" checked>
+			            						  <label class="custom-control-label" for="male">Male</label>
+			            						</div>
+			            					</div>
+			            					<div class="col-sm-6 text-center">
+			            						<!-- Group of default radios - option 2 -->
+			            						<div class="custom-control custom-radio">
+			            						  <input type="radio" class="custom-control-input" id="female" name="gender" required value="f">
+			            						  <label class="custom-control-label" for="female">Female</label>
+			            						</div>
+			            					</div>
+			            					<?php
+			            				}elseif($user_gender == 'f'){
+			            					?>
+			            					<div class="col-sm-6 text-center">
+			            						<!-- Group of default radios - option 1 -->
+			            						<div class="custom-control custom-radio">
+			            						  <input type="radio" class="custom-control-input" id="male" name="gender" required value="m">
+			            						  <label class="custom-control-label" for="male">Male</label>
+			            						</div>
+			            					</div>
+			            					<div class="col-sm-6 text-center">
+			            						<!-- Group of default radios - option 2 -->
+			            						<div class="custom-control custom-radio">
+			            						  <input type="radio" class="custom-control-input" id="female" name="gender" required value="f" checked>
+			            						  <label class="custom-control-label" for="female">Female</label>
+			            						</div>
+			            					</div>
+			            					<?php
+			            				}else{
+			            					?>
+			            					<div class="col-sm-6 text-center">
+			            						<!-- Group of default radios - option 1 -->
+			            						<div class="custom-control custom-radio">
+			            						  <input type="radio" class="custom-control-input" id="male" name="gender" required value="m">
+			            						  <label class="custom-control-label" for="male">Male</label>
+			            						</div>
+			            					</div>
+			            					<div class="col-sm-6 text-center">
+			            						<!-- Group of default radios - option 2 -->
+			            						<div class="custom-control custom-radio">
+			            						  <input type="radio" class="custom-control-input" id="female" name="gender" required value="f">
+			            						  <label class="custom-control-label" for="female">Female</label>
+			            						</div>
+			            					</div>
+			            					<?php
+			            				}
+			            			?>
+
 			            	</div>
 			            </div>
 			          </div>
@@ -84,7 +126,7 @@
 			            <label class="col-sm-3 control-label">Birthdate:</label>
 			            <div class="col-sm-8">
 			              <input class="form-control" type="date" name="bday" max="3000-12-31" 
-        min="1000-01-01" required>
+        min="1000-01-01" required value="<?php echo $user_birthdate?>">
 			            </div>
 			          </div>
 			          <div class="form-group">
@@ -110,31 +152,33 @@
 			            <div class="col-sm-8">
 			            	<div class="row">
 			            		<div class="col-sm-6 text-center">
-			              			<input type="submit" class="btn btn-primary" value="Save Changes">
+			              			<input type="submit" class="btn btn-primary" name="save" value="Save Changes">
 			            		</div>
 			            		<div class="col-sm-6 text-center">
-			              			<input type="reset" class="btn btn-default" value="Cancel">
+			        			</form>
+			        				<a href="view_profile.php" class="btn btn-default">Cancel</a>
 			            		</div>
 			            	</div>
 			            </div>
 			          </div>
-			        </form>
 			      </div>
 			  </div>
 		</div>
 	</div>
-	<script
-	  src="https://code.jquery.com/jquery-3.3.1.min.js"
-	  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-	  crossorigin="anonymous"></script>
-	<script type="text/javascript">
-		$('.custom-file-input').on('change',function(){
-		  $(this).next('.form-control-file').addClass("selected").html($(this).val());
-		})
-	</script>
 		<?php
 
+	}else{
+		?>
+		<div class="container p-5 room_msg_error">
+			<div class="row">
+				<div class="col-sm-12">
+					<h4 class="text-center text-danger">Unauthorized Web Page</h4>
+					<p class="text-center"><a href="view_profile.php"><button class="btn btn-outline-warning">Go back!</button></a></p>
+				</div>
+			</div>
+		</div>
+		<?php
 	}
+		}
 	require "../template.php";
 ?>
-
