@@ -35,8 +35,6 @@
 			  					<tr>
 			  						<th>House Name</th>
 			  						<th>Owner</th>
-			  						<th>BIR Permit</th>
-			  						<th>Mayors Permit</th>
 			  						<th>Business License Permit</th>
 			  						<th>Status</th>
 			  					</tr>
@@ -60,12 +58,6 @@
 			  							echo $user_fname,str_repeat('&nbsp;', 1),substr($user_mname, 0, 1).".".str_repeat('&nbsp;', 1),ucfirst($user_lname);
 			  							?>
 			  						</td>
-			  						<!-- View BIR -->
-			  						<td class="text-center"><button type="button" class="btn btn-info view-bir" data-id=<?php echo $house_id?> data-toggle="modal" data-target="#view-bir-picture">View</button></td>
-			  						<!-- End view bir -->
-			  						<!-- View mayors permit -->
-			  						<td class="text-center"><button type="button" class="btn btn-success view-mayors-permit" data-id="<?php echo $house_id ?>" data-toggle="modal" data-target="#view-mayors-permit-picture">View</button></td>
-			  						<!-- End view mayors permit -->
 			  						<!-- View business plate -->
 			  						<td class="text-center"><button type="button" class="btn btn-warning view-business-plate" data-id="<?php echo $house_id ?>" data-toggle="modal" data-target="#view-business-plate">View</button></td>
 			  						<!-- End view Business plate -->
