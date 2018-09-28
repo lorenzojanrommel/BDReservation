@@ -10,6 +10,8 @@
 				<?php 
 				$sql = "SELECT * FROM houses WHERE house_status = '4' ";
 				$results = mysqli_query($conn, $sql);
+				$count = mysqli_num_rows($results);
+				if($count > 0) {
 				while ($row = mysqli_fetch_assoc($results)) {
 					extract($row);
 				$sql1 = "SELECT * FROM rooms WHERE house_id = '$house_id'";
@@ -22,7 +24,7 @@
 					    <div class="col-lg-5 col-xl-4 mb-4">
 					        <!--Featured image-->
 					        <div class="view overlay rounded z-depth-1">
-					            <img class="img-fluid" src="<?php echo $house_picture ?>" alt="boarding1">
+					            <img class="img-fluid house-picture" src="<?php echo $house_picture ?>" alt="boarding1">
 					            <a>
 					                <div class="mask rgba-white-slight"></div>
 					            </a>
@@ -42,7 +44,12 @@
 					<!--Grid row-->
 					<?php
 				}
-				};
+				}
+			}else{
+				?>
+				<h6>No registered house found!</h6>
+				<?php	
+			};
 				?>
 				
 			</div>

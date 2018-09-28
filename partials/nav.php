@@ -1,6 +1,10 @@
 <?php
+  ob_start();
+  $full_url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
   if (isset($_SESSION['user_id'])) {
   require '../condb.php';
+  }elseif(strpos($full_url, "success=register") == true){
+    require '../condb.php';
   }else{
     require 'condb.php';
   }
@@ -166,6 +170,7 @@
       Welcome <?php 
         if (isset($_SESSION['fname'])) {
           echo $_SESSION['fname'];
+          echo $_SESSION['user_level'];
         }else {
           echo "Guest!";
         }

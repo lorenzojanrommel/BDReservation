@@ -19,10 +19,16 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_level'] == '2' && $_SESSION['
 ?>
 <!-- Custom CSS -->
 <?php
+	ob_start();
+	$full_url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 	if (isset($_SESSION['user_id'])) {
 		?>
 		<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 	<?php
+	}elseif(strpos($full_url, "success=register") == true){
+		?>
+		<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+		<?php
 	}else{
 		?>
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
