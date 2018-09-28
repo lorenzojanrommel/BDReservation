@@ -50,15 +50,14 @@ session_start();
 
 	$sql = "INSERT INTO users (role_id, status_id, user_fname, user_lname, user_mname, user_address, user_gender, user_birthdate, user_picture, user_email, user_phone_number,username, password, create_date, update_date) VALUES ('2', '1', '$fname', '$lname', '$mname', '$address', '$gender', '$bday', '$picture', '$email', '$phone', '$username', '$password', '$create_date', '$update_date')";
 	mysqli_query($conn, $sql) or die (mysqli_error($conn));
-	$sql = "SELECT * FROM users WHERE username = '$username'";
-	$results = mysqli_query($conn, $sql);
-	$row = mysqli_fetch_assoc($results);
-	$_SESSION['user_id'] = $id;
+	$login = "SELECT * FROM users WHERE username = '$username'";
+	$login_results = mysqli_query($conn, $login);
+	$login_row = mysqli_fetch_assoc($login_results);
+	extract($login_row);
 	$_SESSION['username'] = $username;
 	$_SESSION['fname'] = $fname;
-	$_SESSION['user_level'] = $user_level;
-	$_SESSION['user_status'] = $row['user_status'];
-	header('location: landlord/edit_profile.php);
-
-
+	$_SESSION['user_level'] = $role_id;
+	$_SESSION['user_status'] = $status_id;
+	$_SESSION['user_id'] = $id;
+	header('location: landlord/edit_profile.php?success=register');
 ?>

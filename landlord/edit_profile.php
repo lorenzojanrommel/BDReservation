@@ -3,9 +3,9 @@
 		echo "Boarding House & Dormitories Finder";
 	}
 	function display_content(){
-		if (isset($_GET['edit'])) {
-		?>
-		<?php
+		ob_start();
+		$full_url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+		if (isset($_GET['edit']) || strpos($full_url, "success=register") == true) {
 		require '../condb.php';
 		$id = $_SESSION['user_id'];
 		$sql = "SELECT * FROM users WHERE id = $id";
@@ -21,7 +21,7 @@
 			      <!-- left column -->
 			      <div class="col-sm-3">
 			        <div class="text-center">
-			          <img src="<?php echo $user_picture; ?>" class="avatar img-circle" alt="avatar">
+			          <img src="../<?php echo $user_picture; ?>" class="avatar img-circle" alt="avatar">
 			          <h6><?php echo $user_fname,str_repeat('&nbsp;', 1),substr($user_mname, 0, 1).".".str_repeat('&nbsp;', 1),ucfirst($user_lname); ?></h6>
 			        </div>
 			      </div>

@@ -170,7 +170,6 @@
       Welcome <?php 
         if (isset($_SESSION['fname'])) {
           echo $_SESSION['fname'];
-          echo $_SESSION['user_level'];
         }else {
           echo "Guest!";
         }

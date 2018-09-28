@@ -6,8 +6,6 @@
 		ob_start();
 		$full_url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 		if (isset($_GET['edit']) || strpos($full_url, "success=register") == true) {
-		?>
-		<?php
 		require '../condb.php';
 		$id = $_SESSION['user_id'];
 		$sql = "SELECT * FROM users WHERE id = $id";

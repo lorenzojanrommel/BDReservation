@@ -1,6 +1,8 @@
 <?php
 	session_start();
 	require '../condb.php';
+	if (isset($_POST['category'])) {
+	
 	$check1 = getimagesize($_FILES["poybhd"]["tmp_name"]);
 	$check2 = getimagesize($_FILES["mpofbhd"]["tmp_name"]);
 	$check3 = getimagesize($_FILES["biroybhd"]["tmp_name"]);
@@ -68,4 +70,7 @@
 			VALUES ('$user_id' , '$category' , '$bhd_name', '$bhd_address', '$bhd_postcode', '$bdh_pnumber', '$bdh_number_room', '$bhd_image', '$bhd_mp_image', '$bhd_bir_image', '$bhd_blp_image', '$bhd_description', '3')";
 	mysqli_query($conn, $sql) or die (mysqli_error($conn));
 	header('location: owner_dashboard.php');
+}else{
+	header('location: owner_dashboard.php?category=empty');
+}
 ?>

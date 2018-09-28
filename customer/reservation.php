@@ -98,14 +98,6 @@
 					    </div>
 					    <div class="row">
 					    	<div class="col-sm-12">
-					    		<span><span class="font-weight-bold">Half Payment:</span> &#8369</span>
-					    		<?php 
-					    		$d = .50;
-					    		$c = $room_price;
-					    		echo number_format($d*$c);
-					    		?>
-					    	</div>
-					    	<div class="col-sm-12">
 					    		<h6><span class="font-weight-bold">Rules: </span>No Payment: You will be given 3 days to pay or go in the Boarding/Dormitory or else your reservation will be void</h6>
 					    	</div>
 
