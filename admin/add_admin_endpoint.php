@@ -25,7 +25,7 @@
 	if (isset($_POST['picture'])) {
 		$picture = htmlspecialchars($_POST['picture']);
 	}else{
-		$picture = 'NA';
+		$picture = '../assets/img/default.jpg';
 	}
 	if (isset($_POST['email'])) {
 		$email = htmlspecialchars($_POST['email']);

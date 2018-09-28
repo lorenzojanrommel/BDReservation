@@ -59,19 +59,19 @@
 		}else{
 			?>
 			<div class="container">
-				<div class="container-cybod m-5 p-5">
+				<div class="container-cybod m-5 p-1">
 					<?php
 					ob_start();
 					$full_url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 					if (strpos($full_url, "category=empty") == true) {
 						?>
-					<div class="alert alert-dismissible alert-danger text-center" id="error_message">
+					<div class="alert alert-dismissible alert-danger text-center mt-2 pl-2 pr-2" id="error_message">
  			        <button type="button" class="close" data-dismiss="alert">&times;</button>
  			        <span> Please select your house category Dormitory/Boarding House</span>
  			        </div>
- 			        <h3 class="cybod pt-5 pl-5 pr-5 text-center">Create Your Boarding House/Dormitory</h3>
+ 			        <h3 class="cybod pt-2 pl-5 pr-5 text-center">Create Your Boarding House/Dormitory</h3>
  			        <div class="button-click text-center">
- 			        	<button type="button" class="btn btn-outline-warning c-button" data-toggle="modal" data-target="#create_bhod">Click Here</button>
+ 			        	<button type="button" class="btn btn-outline-warning c-button mb-5" data-toggle="modal" data-target="#create_bhod">Click Here</button>
  			        </div>
  			        <?php
  			    	}else{

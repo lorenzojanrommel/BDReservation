@@ -56,7 +56,7 @@
  			                        <div class="form-group row">
  			                            <label for="phone_numer" class="col-md-4 col-form-label text-md-right">Phone Number</label>
  			                            <div class="col-md-6">
- 			                                <input type="tel" class="form-control phone_numer" name="phone_numer" placeholder="Phone Name" required autofocus ondrop="return false;" onpaste="return false;" onkeypress="return event.charCode>=48 && event.charCode<=57" pattern='[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}' title='Phone Number (Format: +99(99)9999-9999)'>
+ 			                                <input type="tel" class="form-control phone_numer" name="phone_numer" placeholder="Phone Name" required autofocus ondrop="return false;" onpaste="return false;" onkeypress="return event.charCode>=48 && event.charCode<=57" pattern='{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}' title='Phone Number (Format: +99(99)9999-9999)'>
  			                                    <span class="invalid-feedback">
  			                                    </span>
 
