@@ -81,7 +81,7 @@
 				<div class="container">
 					<div class="row">
 					<div class="col-sm-12 mt-2">
-					<table class="dormitory-list" id="dormitory-list" class="table table-hover">
+						<table class="dormitory-list w-auto table-responsive" id="dormitory-list" class="table table-hover">
 						<thead>
 							<tr>
 								<th>House Name</th>
@@ -90,7 +90,7 @@
 								<th>Status</th>
 							</tr>
 						</thead>
-						<tbody>
+						<tbody class="dormitory-body">
 							<?php
 							$d_approved = "SELECT * FROM houses WHERE house_status = '4' AND house_category_id = '2'";
 							$d_results = mysqli_query($conn, $d_approved);
@@ -128,7 +128,7 @@
 			  		<div class="row">
 			  			<h3 class="mt-1">House Pending</h3>
 			  			<div class="col-sm-12 mt-2">
-			  				<table class="house-pending-list" id="house-pending-list" class="table table-hover">
+			  				<table class="house-pending-list w-auto table-responsive" id="house-pending-list" class="table table-hover">
 			  					<thead>
 			  						<tr>
 			  							<th>House Name</th>
@@ -180,7 +180,7 @@
 			  		<div class="row">
 			  		<h3 class="mt-1">House List</h3>
 			  		<div class="col-sm-12 mt-2">
-			  		<table class="house-list" id="house-list" class="table table-hover">
+			  			<table class="house-list w-auto table-responsive" id="house-list" class="table table-hover">
 			  			<thead>
 			  				<tr>
 			  					<th>House Name</th>
