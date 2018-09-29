@@ -7,9 +7,9 @@
 	extract($row);
 	?>
 	<div class="container">
-		<h3 class="text-center"><?php if ($house_category_id = 'Boarding House') {
+		<h3 class="text-center"><?php if ($house_category_id == 1) {
 			echo "Boarding House";
-		}elseif($house_category_id = 'Dormitory'){
+		}elseif($house_category_id == 2){
 			echo "Dormitory";
 		}?></h3>
 		<h6 class="text-center">House Type</h6>
