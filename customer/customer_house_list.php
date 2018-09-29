@@ -45,7 +45,7 @@
 					    <div class="col-lg-5 col-xl-4 mb-4">
 					        <!--Featured image-->
 					        <div class="view overlay rounded z-depth-1">
-					            <img class="img-fluid house-picture" src="../<?php echo $house_picture ?>" alt="boarding1">
+					            <img class="img-fluid house-picture" src="<?php echo $house_picture ?>" alt="boarding1">
 					            <a>
 					                <div class="mask rgba-white-slight"></div>
 					            </a>

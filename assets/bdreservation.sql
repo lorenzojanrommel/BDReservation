@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 27, 2018 at 10:47 PM
+-- Generation Time: Sep 29, 2018 at 08:25 PM
 -- Server version: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -51,24 +51,20 @@ CREATE TABLE IF NOT EXISTS `houses` (
   `house_category_id` int(11) NOT NULL,
   `house_name` varchar(255) NOT NULL,
   `house_address` varchar(255) NOT NULL,
-  `house_postcode` int(11) NOT NULL,
   `house_phone_number` text NOT NULL,
   `house_number_room` text NOT NULL,
   `house_picture` text NOT NULL,
-  `house_mp` text NOT NULL,
-  `house_birp` text NOT NULL,
   `house_blpp` text NOT NULL,
   `house_description` text NOT NULL,
   `house_status` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20180002 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `houses`
 --
 
-INSERT INTO `houses` (`house_id`, `user_id`, `house_category_id`, `house_name`, `house_address`, `house_postcode`, `house_phone_number`, `house_number_room`, `house_picture`, `house_mp`, `house_birp`, `house_blpp`, `house_description`, `house_status`) VALUES
-(53, 3, 1, 'QWE', 'Camiling, Tarlac, Philippines', 2306, '902323232424242', '4', 'assets/img/bhd_images/1535397801homebg.jpg', 'assets/img/bhd_mayors_permit/1535397801homebg.jpg', 'assets/img/bhd_bir_permit/1535397801homebg.jpg', 'assets/img/bhd_business_license_plate/1535397801coffee.jpg', 'QWEqeqwewqewq', 4),
-(54, 5, 1, 'Sample1', 'sample1@address', 2304, '00923092302', '2', 'assets/img/no_image_uploaded.png', 'assets/img/no_image_uploaded.png', 'assets/img/no_image_uploaded.png', 'assets/img/no_image_uploaded.png', 'This is sample 1', 3);
+INSERT INTO `houses` (`house_id`, `user_id`, `house_category_id`, `house_name`, `house_address`, `house_phone_number`, `house_number_room`, `house_picture`, `house_blpp`, `house_description`, `house_status`) VALUES
+(20180001, 20180003, 1, 'Wilbert', 'Luna st Camiling, Tarlac', '09122235050', '4', '../assets/img/bhd_images/1538244608garden-house-lawn-462358.jpg', '../assets/img/bhd_business_license_permit/1538244608172149-342x264-business-license-small.jpg', 'This is wilbert boarding house', 4);
 
 -- --------------------------------------------------------
 
@@ -86,14 +82,7 @@ CREATE TABLE IF NOT EXISTS `reservations` (
   `payment` varchar(255) NOT NULL,
   `update_reserve_date` varchar(255) NOT NULL,
   `reserve_date` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `reservations`
---
-
-INSERT INTO `reservations` (`reservation_id`, `customer_id`, `owner_id`, `room_id`, `reservation_status`, `room_price`, `payment`, `update_reserve_date`, `reserve_date`) VALUES
-(26, 4, 3, 17, 4, '23', '0', 'September 25, 2018 6:03 pm', 'September 25, 2018 6:02 pm');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -135,17 +124,14 @@ CREATE TABLE IF NOT EXISTS `rooms` (
   `room_pic_4` varchar(255) NOT NULL,
   `update_date` varchar(255) NOT NULL,
   `created_date` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20180002 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `rooms`
 --
 
 INSERT INTO `rooms` (`room_id`, `house_id`, `room_type`, `room_number`, `room_price`, `room_customer_no`, `availability`, `room_pic_1`, `room_pic_2`, `room_pic_3`, `room_pic_4`, `update_date`, `created_date`) VALUES
-(15, 53, 2, '23', '4242', 5, '6', '../assets/img/noimage.png', '../assets/img/noimage.png', '../assets/img/noimage.png', '../assets/img/noimage.png', 'September 24, 2018 1:28 am', 'September 24, 2018 1:28 am'),
-(16, 53, 1, '4', '123', 0, '2', '../assets/img/noimage.png', '../assets/img/noimage.png', '../assets/img/noimage.png', '../assets/img/noimage.png', '', ''),
-(17, 53, 1, '3', '23', 1, '3', '../assets/img/noimage.png', '../assets/img/noimage.png', '../assets/img/noimage.png', '../assets/img/noimage.png', 'September 25, 2018 6:03 pm', ''),
-(18, 53, 1, '23', '3232', 0, '6', '../assets/img/noimage.png', '../assets/img/noimage.png', '../assets/img/noimage.png', '../assets/img/noimage.png', 'September 25, 2018 5:29 pm', '');
+(20180001, 20180001, 1, '20', '1', 0, '2', '../assets/img/rooms/153824531841589723_225681178304084_4378082055708213248_n.png', '../assets/img/rooms/153824531841755160_294291808024141_4237312780299927552_n.png', '../assets/img/rooms/153824531842509435_574304356320404_942698424724094976_n.png', '../assets/img/rooms/153824531842513370_1154350681384798_8591029675516493824_n.png', '', '');
 
 -- --------------------------------------------------------
 
@@ -211,7 +197,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(255) NOT NULL,
   `create_date` varchar(100) NOT NULL,
   `update_date` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20180004 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
@@ -219,13 +205,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `role_id`, `status_id`, `user_fname`, `user_lname`, `user_mname`, `user_address`, `user_gender`, `user_birthdate`, `user_picture`, `user_email`, `user_phone_number`, `username`, `password`, `create_date`, `update_date`) VALUES
 (1, 1, 1, 'Admin', 'Admin', 'Admin', 'Admin address', 'm', '2018-08-29', '../assets/img/owner_pictures/15380520817cdee8236a997c7c49c05b8a0e46f89e51a7e361_hq.jpg', 'admin@test.com', '122223550', 'admin', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', 'September 27, 2018 8:41 pm'),
-(2, 2, 1, 'Jan', 'Lorenzo', 'kj', 'NA', '', 'NA', 'NA', 'jan@gmail.com', '', 'mel', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(3, 2, 1, 'Owner', 'Owner', 'Owner', 'Bacabac Camiling,Tarlac', 'm', '2018-09-05', '../assets/img/owner_pictures/15380617637cdee8236a997c7c49c05b8a0e46f89e51a7e361_hq.jpg', 'owner@gmail.com', '0923232323', 'owner', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', 'September 27, 2018 11:25 pm'),
-(4, 3, 1, 'Customer', 'Customer', 'Customer', 'Libueg Camiling,Tarlac', 'm', '2018-09-21', '../assets/img/owner_pictures/15380624927cdee8236a997c7c49c05b8a0e46f89e51a7e361_hq.jpg', 'customer@gmail.com', '09280522001', 'customer', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', 'September 27, 2018 11:34 pm'),
-(5, 2, 1, 'Owner2', 'Owner2', 'Owner2', 'NA', '', 'NA', 'NA', 'owner2@test.test', '', 'owner2', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(6, 1, 1, 'Mel', 'Antonio', 'Lorenzo', 'NA', '', 'NA', 'NA', 'misterfewwords@gmail.com', '09122235050', 'melmel', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 'September 25, 2018 4:23 am', 'September 25, 2018 4:23 am'),
-(7, 1, 1, 'Wesley', 'Sebastian', 'Q', 'NA', '', 'NA', 'NA', 'wes@gmail.com', '09122222222', 'wes', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 'September 25, 2018 6:16 pm', 'September 25, 2018 6:16 pm'),
-(8, 2, 1, 'Kobe', 'Agustine', 'J', 'NA', 'm', '2018-09-12', '../assets/img/owner_pictures/1537911519Chibi-Star-Guardian-Soraka-by-Xyrise-HD-Wallpaper-Background-Fan-Art-Artwork-League-of-Legends-lol-Thumbnail.jpg', 'jemar@gmail.com', '639122235050', 'jemar', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 'September 26, 2018 2:21 am', 'September 26, 2018 5:38 am');
+(20180002, 3, 1, 'Wesley', 'Sebastian', 'S', 'NA', 'm', '2018-09-11', 'assets/img/default.jpg', 'wesley@gmail.com', '09122235050', 'wesley', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 'September 30, 2018 2:02 am', 'September 30, 2018 2:03 am'),
+(20180003, 2, 1, 'Wilbert', 'Garcia', 'G', 'NA', 'm', '2018-09-21', 'assets/img/default.jpg', 'wilbert@gmail.com', '09122235050', 'wilbert', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 'September 30, 2018 2:08 am', 'September 30, 2018 2:09 am');
 
 --
 -- Indexes for dumped tables
@@ -304,12 +285,12 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `houses`
 --
 ALTER TABLE `houses`
-  MODIFY `house_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=55;
+  MODIFY `house_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20180002;
 --
 -- AUTO_INCREMENT for table `reservations`
 --
 ALTER TABLE `reservations`
-  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=27;
+  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `roles`
 --
@@ -319,7 +300,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `rooms`
 --
 ALTER TABLE `rooms`
-  MODIFY `room_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
+  MODIFY `room_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20180002;
 --
 -- AUTO_INCREMENT for table `room_types`
 --
@@ -334,7 +315,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20180004;
 --
 -- Constraints for dumped tables
 --
