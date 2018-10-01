@@ -37,10 +37,18 @@
 							?>
 						</div>
 						</div>
-						<div class="alert alert-dismissible alert-success text-center" id="success_message">
- 			        	 <button type="button" class="close" data-dismiss="alert">&times;</button>
- 			        	 <span>Sucessfully Updated!</span>
- 			        	</div>
+						<?php
+						ob_start();
+						$full_url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+						if (strpos($full_url, "success=success") == true) {
+							?>
+							<div class="alert alert-dismissible alert-success text-center" id="success_message">
+ 			        	 	<button type="button" class="close" data-dismiss="alert">&times;</button>
+ 			        	 	<span>Sucessfully Updated!</span>
+ 			        		</div>
+							<?php
+						}
+						?>
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="row">

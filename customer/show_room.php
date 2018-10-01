@@ -50,11 +50,13 @@
 				  	}
 				  	?>
 				  	<p class="mt-1"><span class="room-price">Price: &#8369</span><?php echo $room_price ?> </p>
-				  	<p class="mt-1"><span class="room-price">Availability: </span><?php echo $availability ?> </p>
+				  	<p><span class="room-availability">Availability: </span><span><?php echo $room_customer_no;?></span><span>/</span><?php echo $availability; ?> </p>
 				  	<div class="row">
 				  		<div class="col-sm-12 text-center">
 				  			<?php
 				  			$customer_id = $_SESSION['user_id'];
+				  			if ($availability > $room_customer_no) {
+				  			
 				  			$reserve = "SELECT * FROM reservations WHERE customer_id = '$customer_id'";
 				  			$reserve_results = mysqli_query($conn, $reserve);
 				  			$reserve_row = mysqli_num_rows($reserve_results);
@@ -70,6 +72,11 @@
 				  			</form>
 				  		<?php
 				  		}
+				  	}else{
+				  		?>
+				  		<h6>This Room is full</h6>
+				  		<?php
+				  	}
 				  		?>
 				  		</div>
 				  	</div>

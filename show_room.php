@@ -50,7 +50,7 @@
 				  	}
 				  	?>
 				  	<p class="mt-1"><span class="room-price">Price: &#8369</span><?php echo number_format($room_price) ?> </p>
-				  	<p class="mt-1"><span class="room-price">Availability: </span><?php echo $availability ?> </p>
+				  	<p><span class="room-availability">Availability: </span><span><?php echo $room_customer_no;?></span><span>/</span><?php echo $availability; ?> </p></span>
 				  	<div class="row">
 				  		<div class="col-sm-12 text-center">
 				  		<a class="btn btn-outline-warning" name="goToreservation" href="login.php">Reserve</a>

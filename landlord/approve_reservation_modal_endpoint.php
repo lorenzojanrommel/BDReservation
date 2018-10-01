@@ -16,7 +16,7 @@
 								WHERE reservation_id = '$id'";
 		$sql1 = "UPDATE rooms SET 
 								room_customer_no = '$customer_no',
-								update_date = '$date'
+								updated_date = '$date'
 								WHERE room_id = '$room_id'";
 		mysqli_query($conn, $sql) or die(mysqli_error($conn));
 		mysqli_query($conn, $sql1) or die(mysqli_error($conn));

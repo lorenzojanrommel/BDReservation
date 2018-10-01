@@ -11,7 +11,7 @@
 		extract($house_row);
 		?>
 		<div class="house-view-container mb-5 pb-1">
-			<div class="container-fluid mt-3 p-5">
+			<div class="container mt-3 p-5">
 				<div class="row border-house-view">
 					<div class="col-sm-12">
 					<h3 class="text-center house-name"><?php echo $house_name?></h3>
@@ -48,7 +48,15 @@
 						  	</div>
 						  </div>
 						  </div>
-						  <div class="tab-pane fade" id="location" role="tabpanel" aria-labelledby="location-tab">...</div>
+						  <div class="tab-pane fade" id="location" role="tabpanel" aria-labelledby="location-tab">
+					  		<div class="map" onload="initMap">
+					  			<h5>Map</h5>
+					  			<div id="map-display">
+					  				<!-- <p id="lat">15.69</p>
+					  				<p id="lng">120.41</p> -->
+					  			</div>
+						  	</div>
+						  </div>
 						</div>
 						<!-- end tab -->
 					</div>

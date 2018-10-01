@@ -90,6 +90,6 @@ if (isset($_POST['edit_room_button'])) {
 							WHERE room_id = $room_id";
 	// echo $sql;
 	mysqli_query($conn, $sql) or die (mysqli_error($conn));
-	header('Location: add_room.php?success=$room_id');
+	header('Location: add_room.php?success=success');
 }
 ?>
