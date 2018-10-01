@@ -7,7 +7,9 @@
 	extract($row);
 	?>
 	<div class="container">
+		<div class="col-sm-12">
 		<img class="img-fluid" src="../<?php echo $house_mp ?>" alt="<?php echo $house_name ?>">
+		</div>
 	</div>
 		<div class="modal-footer">
 	  		<button type="button" class="btn btn-primary ml-1" data-dismiss="modal">Close</button>

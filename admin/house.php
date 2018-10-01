@@ -162,7 +162,7 @@
 			  							<!-- Boarding house status -->
 			  							<td>
 			  								<button type="button" class="btn btn-primary approve_modal" data-id=<?php echo $house_id?> data-toggle="modal" data-target="#approve">Approve</button>
-			  							<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deny">Deny</button>
+			  							<button type="button" class="btn btn-danger deny_modal" data-id=<?php echo $house_id?> data-toggle="modal" data-target="#deny">Deny</button>
 			  							</td>
 			  							<!-- End of boarding house status -->
 			  							</tr>
@@ -187,6 +187,7 @@
 			  					<th>Owner</th>
 			  					<th>Business License Permit</th>
 			  					<th>Status</th>
+			  					<th>House Category</th>
 			  				</tr>
 			  			</thead>
 			  			<tbody>
@@ -212,6 +213,17 @@
 			  				<!--  house status -->
 			  				<td> Approved</td>
 			  				<!-- End of  house status -->
+			  				<?php 
+			  					if ($house_category_id == 1) {
+			  						?>
+			  						<td>Boarding House</td>
+			  						<?php
+			  					}else{
+			  						?>
+			  						<td>Dormitory</td>
+			  						<?php
+			  					}
+			  				?></td>
 			  				</tr>
 			  				<?php
 			  					}
@@ -231,6 +243,7 @@
 	require 'approve_modal.php';
 	require 'view_bir_picture_modal.php';
 	// require 'approve_house_modal_body.php';
+	require 'deny_modal.php';
 	require 'view_mayors_permit_modal.php';
 	require 'view_business_plate_modal.php';
 ?>
@@ -272,6 +285,22 @@
 			success: function(data){
 				// console.log(data);
 				$('#approve_house_body').html(data);
+			}
+		})
+	})
+	$('.deny_modal').click(function() {
+		var id = $(this).data('id');
+		// console.log(id);
+		$.ajax({
+			method: 'post',
+			url: 'deny_house_modal_body.php',
+			data: {
+				// edit: true,
+				id : id
+			},
+			success: function(data){
+				// console.log(danger);
+				$('#deny_house_body').html(data);
 			}
 		})
 	})
