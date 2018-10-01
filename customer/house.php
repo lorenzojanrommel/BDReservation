@@ -48,7 +48,15 @@
 						  	</div>
 						  </div>
 						  </div>
-						  <div class="tab-pane fade" id="location" role="tabpanel" aria-labelledby="location-tab">...</div>
+						  <div class="tab-pane fade" id="location" role="tabpanel" aria-labelledby="location-tab">
+						  	<div class="map" onload="initMap">
+						  		<h5>Map</h5>
+						  		<div id="map-display">
+						  			<!-- <p id="lat">15.69</p>
+						  			<p id="lng">120.41</p> -->
+						  		</div>
+						  	</div>
+						  </div>
 						</div>
 						<!-- end tab -->
 					</div>

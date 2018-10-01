@@ -37,6 +37,10 @@
 							?>
 						</div>
 						</div>
+						<div class="alert alert-dismissible alert-success text-center" id="success_message">
+ 			        	 <button type="button" class="close" data-dismiss="alert">&times;</button>
+ 			        	 <span>Sucessfully Updated!</span>
+ 			        	</div>
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="row">
@@ -79,7 +83,7 @@
 								  	}
 								  	?>
 								  	<p><span class="room-price">Price: &#8369</span><?php echo number_format($room_price); ?> </p>
-								  	<p><span class="room-availability">Availability: </span><span><?php echo $room_customer_no; ?></span><span>/</span> <?php echo $availability; ?> </p>
+								  	<p><span class="room-availability">Availability: </span><span><?php echo $room_customer_no;?></span><span>/</span><?php echo $availability; ?> </p>
 								  	<div class="row">
 								  		<div class="col-sm-12 text-center">
 								  			<form method="POST" action="edit_room.php?id=<?php echo $room_id; ?>">

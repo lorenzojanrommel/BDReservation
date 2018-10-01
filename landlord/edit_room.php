@@ -13,7 +13,7 @@
 		?>
 		<div class="container">
 			<h2 class="mt-5">Edit this Room</h2>
-		<form method='POST' action='add_room_endpoint.php' enctype='multipart/form-data'>
+		<form method='POST' action='edit_room_endpoint.php?id=<?php echo $room_id; ?>' enctype='multipart/form-data'>
 		  <div class="row">
 		    <div class="col-sm-6">
 		      <div class="form-group">
@@ -94,8 +94,10 @@
 		     <!-- End of Fourth Picture -->
 		  </div>
 		<div class="modal-footer">
-		   <input type="submit" name="approve_submit" value="Add" class="btn btn-success ml-3">
-		   <button type="button" class="btn btn-primary ml-1" data-dismiss="modal">Close</button>
+		   <input type="submit" name="edit_room_button" value="Save" class="btn btn-success ml-3">
+		</form>
+		<form action="add_room.php">
+		   <button type="submit" class="btn btn-primary ml-1" data-dismiss="modal">Close</button>
 		</form>
 		</div>
 	</div>
