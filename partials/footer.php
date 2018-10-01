@@ -13,10 +13,10 @@
             </div>
             <!--/.First column-->
 
-            <hr class="clearfix w-100 d-md-none">
+            <!-- <hr class="clearfix w-100 d-md-none"> -->
 
             <!--Second column-->
-            <div class="col-md-2 mx-auto">
+ <!--            <div class="col-md-2 mx-auto">
                 <h5 class="text-uppercase mb-4 mt-3 font-weight-bold">Products</h5>
                 <ul class="list-unstyled">
                     <li><a class="footer-a-tag" href="#!">Product 1</a></li>
@@ -24,13 +24,13 @@
                     <li><a class="footer-a-tag" href="#!">Product 3</a></li>
                     <li><a class="footer-a-tag" href="#!">Product 4</a></li>
                 </ul>
-            </div>
+            </div> -->
             <!--/.Second column-->
 
-            <hr class="clearfix w-100 d-md-none">
-
+           <!--  <hr class="clearfix w-100 d-md-none">
+ -->
             <!--Third column-->
-            <div class="col-md-2 mx-auto">
+     <!--        <div class="col-md-2 mx-auto">
                 <h5 class="text-uppercase mb-4 mt-3 font-weight-bold">Services</h5>
                 <ul class="list-unstyled">
                     <li><a class="footer-a-tag" href="#!">Service 1</a></li>
@@ -38,10 +38,10 @@
                     <li><a class="footer-a-tag" href="#!">Service 3</a></li>
                     <li><a class="footer-a-tag" href="#!">Service 4</a></li>
                 </ul>
-            </div>
+            </div> -->
             <!--/.Third column-->
 
-            <hr class="clearfix w-100 d-md-none">
+            <!-- <hr class="clearfix w-100 d-md-none"> -->
     </div>
     <!--/.Footer Links-->
     <!--Social buttons-->

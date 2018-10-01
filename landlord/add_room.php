@@ -16,10 +16,10 @@
 				<div class="col-sm-12">
 					<div class="add-room-container mt-2">
 						<div class="row">
-						<div class="col-sm-11">
+						<div class="col-sm-11 col-md-10">
 						<h2>Room List</h2>
 						</div>
-						<div class="col-sm-1">
+						<div class="col-sm-1 col-md-2 text-md-left">
 							<?php
 							$sql2 = "SELECT room_id FROM rooms WHERE house_id = '$house_id'";
 							$results2= mysqli_query($conn, $sql2);
@@ -70,15 +70,16 @@
 								  	<?php 
 								  	if ($room_type = 1 ) {
 								  		?>
-								    	<p class="mt-2"><span class="room-type">Room Type:</span> Single Room</p>
+								    	<p class="mt-2"><span class="room-type">Room Type:</span> Male Only</p>
 								  		<?php
 								  	}else{
 								  		?>
-								    	<p class="mt-2"><span class="room-type">Room Type:</span> Double Room</p>
+								    	<p class="mt-2"><span class="room-type">Room Type:</span> Female Only </p>
 								  		<?php
 								  	}
 								  	?>
-								  	<p class="mt-1"><span class="room-price">Price: &#8369</span><?php echo $room_price ?> </p>
+								  	<p><span class="room-price">Price: &#8369</span><?php echo number_format($room_price); ?> </p>
+								  	<p>Availability: <?php echo number_format($room_price); ?> </p>
 								  	<div class="row">
 								  		<div class="col-sm-12 text-center">
 								  		<button type="button" class="btn btn-outline-warning">Edit</button>

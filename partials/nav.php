@@ -17,19 +17,7 @@
 <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> -->
 	<div class="d-flex justify-content-center">
   <a class="navbar-brand title d-none d-md-block d-lg-none mr-5 pr-5" href="index.php">Boarding House & Dormitories Finder</a>
-  <?php 
-    if (isset($_SESSION['user_id'])) {
-      ?>
-      <a class="navbar-brand title d-sm-block d-md-none" href="index.php">
-        <div class="text-center"><img src="../assets/img/bhod_logo.png" class="img-fluid logo">BH&DF</div></a>
-      <?
-    }else{
-  ?>
-  <a class="navbar-brand title d-sm-block d-md-none" href="index.php">
-    <div class="text-center"><img src="assets/img/bhod_logo.png" class="img-fluid logo">BH&DF</div></a>
-    <?php
-    }
-    ?>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -97,10 +85,10 @@
                 <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/landlord/payments.php">Payments</a>
                 <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/payments.php">Payments</a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/landlord/cancel.php">Cancel</a>
                 <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/cancel.php">Cancel</a>
-              </li>
+              </li> -->
               <?php
             }
           }else{
@@ -122,10 +110,10 @@
             <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="customer_house_list.php">House</a>
             <a class="nav-link d-lg-none" href="customer_house_list.php">House</a>
           </li>
-          <li class="nav-item">
+  <!--         <li class="nav-item">
             <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="contacts.php">Contacts</a>
             <a class="nav-link d-lg-none" href="contacts.php">Contacts</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="about.php">About</a>
             <a class="nav-link d-lg-none" href="about.php">About</a>
@@ -140,10 +128,10 @@
         <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="houses.php">Houses</a>
         <a class="nav-link d-lg-none" href="houses.php">Houses</a>
       </li>
-      <li class="nav-item">
+<!--       <li class="nav-item">
         <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="contacts.php">Contacts</a>
         <a class="nav-link d-lg-none" href="contacts.php">Contacts</a>
-      </li>
+      </li> -->
       <li class="nav-item">
         <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="about.php">About</a>
         <a class="nav-link d-lg-none" href="BDReservation/../about.php">About</a>

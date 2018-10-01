@@ -147,6 +147,9 @@
 			</div>
 		<?php
 	}
-	require 'template.php';
-
+	if (isset($_SESSION['user_id'])) {
+		require '../template.php';
+	}else{
+		require 'template.php';
+	}
 ?>
