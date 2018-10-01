@@ -72,7 +72,7 @@
 					<img src="../assets/img/places/church.png" class="img-fluid" alt="church">
 					</div>
 					</div>
-				<div class="col-sm-12 col-md-12 col-lg-6 places">
+				<div class="col-sm-6 col-md-12 col-lg-6 places">
 					<div class="container">
 					<h5 class="mt-5 place-title">Roman Catholic Diocese of Tarlac</h5>
 					<p class="text-justify mt-2 place-text">The Roman Catholic Diocese of Tarlac is a diocese of the Roman Catholic Church comprising the whole civil province of Tarlac in the Philippines. The seat of Roman Rite Latin Church diocese is the Saint Sebastian Cathedral in Tarlac City.</p>

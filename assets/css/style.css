@@ -728,9 +728,9 @@ h4.guide-title{
   span.and{
     margin-left: 0;
   }
-  span.finder{
+/*  span.finder{
     margin-left: 70px;
-  }
+  }*/
   .guide-fbm{
     font-size: 1.2em;
   }
@@ -747,7 +747,7 @@ h4.guide-title{
     transform: rotate(90deg);
   }
   .place-img{
-    height: 230px;
+    height: auto;
     width: 100%;
   }
   .place-title{
