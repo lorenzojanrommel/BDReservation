@@ -36,14 +36,14 @@
          <div class="form-row">
           <!-- Name of boarding house/dormitory -->
              <div class="form-group col-sm-6">
-                  <label for="NOYBHOD">Name</label>
+                  <label for="NOYBHOD">Business Name</label>
                   <input type="text" id="noybhd" name="noybhd" class="form-control" placeholder="Name of Your Boarding House/Dormitory" required>
               </div>
            <!-- End of name of boarding house -->
            <!-- Address -->
              <div class="form-group col-sm-6">
-                  <label for="Address">Address</label>
-                  <input type="text" id="address" name="aoybhd" class="form-control" placeholder="Address of Your Boarding House/Dormitory" required>
+                  <label for="Address">Business Location</label>
+                  <input type="text" id="address" name="aoybhd" class="form-control" placeholder="ex. Morales Bldg, F. tañedo st. Brgy. San Nicolas, Tarlac City." title="ex. Morales Bldg, F. tañedo st. Brgy. San Nicolas, Tarlac City." required>
               </div>
            <!-- End address -->
            <!-- Phone Number -->
@@ -71,6 +71,12 @@
               <input type="file" id="blppoybhd" name="blppoybhd" class="form-control-file" aria-describedby="fileHelp" placeholder="Business License Permit Picture of Your Boarding House/Dormitory">
           </div>
          <!-- End of Business License Permit Picture -->
+         <!-- Confirm Business Plate no -->
+         <div class="form-group col-sm-6">
+              <label for="bussiness_place_no">Business Plate Number</label>
+              <input type="text" id="bussiness_place_no" name="bussiness_place_no" class="form-control" placeholder="Business Plate Number" required ondrop="return false;" onpaste="return false;" onkeypress="return event.charCode>=48 && event.charCode<=57" title='4658'>
+          </div>
+         <!-- End confirm Business plate No -->
          <!-- Description of the boarding house or dormitory -->
          <div class="form-group col-sm-12">
               <label for="birpicture">Description</label>

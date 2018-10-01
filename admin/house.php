@@ -314,7 +314,7 @@
 				id : id
 			},
 			success:function(data){
-				console.log(data);
+				// console.log(data);
 				$('#bplate_house_body').html(data);
 			}
 		})

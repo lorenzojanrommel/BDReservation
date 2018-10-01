@@ -31,6 +31,8 @@
 	$bdh_pnumber = htmlspecialchars($_POST['pnoybhd']);
 	// Number of Rooms
 	$bdh_number_room = htmlspecialchars($_POST['rnumber']);
+	// Bussiness Plate Number 
+	$bussiness_place_no = htmlspecialchars($_POST['bussiness_place_no']);
 	// Image of boarding house or dormitory
 	$bhd_image = $target_file1;
 	// Business License Permit
@@ -41,9 +43,9 @@
 	$user_id = $_SESSION['user_id'];
 
 
-	$sql = "INSERT INTO houses (user_id, house_category_id, house_name, house_address, house_phone_number, house_number_room, house_picture, house_blpp, house_description, house_status) 
-			VALUES ('$user_id' , '$category' , '$bhd_name', '$bhd_address', '$bdh_pnumber', '$bdh_number_room', '$bhd_image', '$bhd_blp_image', '$bhd_description', '3')";
-	echo $sql;
+	$sql = "INSERT INTO houses (user_id, house_category_id, house_name, house_address, house_phone_number, house_number_room, house_picture, house_blpp, house_business_no, house_description, house_status) 
+			VALUES ('$user_id' , '$category' , '$bhd_name', '$bhd_address', '$bdh_pnumber', '$bdh_number_room', '$bhd_image', '$bhd_blp_image', '$bussiness_place_no', '$bhd_description', '3')";
+	// echo $sql;
 	mysqli_query($conn, $sql) or die (mysqli_error($conn));
 	header('location: owner_dashboard.php?create=success');
 }else{

@@ -18,11 +18,6 @@ session_start();
 	}else{
 		$gender = 'NA';
 	}
-	if (isset($_POST['bday'])) {
-		$bday = htmlspecialchars($_POST['bday']);
-	}else{
-		$bday = 'NA';
-	}
 	if (isset($_POST['picture'])) {
 		$picture = htmlspecialchars($_POST['picture']);
 	}else{

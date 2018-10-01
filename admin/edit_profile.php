@@ -39,25 +39,25 @@
 			          <div class="form-group">
 			            <label class="col-sm-3 control-label">First name:</label>
 			            <div class="col-sm-8">
-			              <input class="form-control" type="text" name="fname" value="<?php echo $user_fname; ?>" oninput="this.value=this.value.replace(/[^A-Za-z]/g,'');">
+			              <input class="form-control" type="text" name="fname" value="<?php echo $user_fname; ?>" oninput="this.value=this.value.replace(/[^A-Za-z\s]/g,'');">
 			            </div>
 			          </div>
 			          <div class="form-group">
 			            <label class="col-sm-3 control-label">Last name:</label>
 			            <div class="col-sm-8">
-			              <input class="form-control" type="text" name="lname" value="<?php echo $user_lname; ?>" oninput="this.value=this.value.replace(/[^A-Za-z]/g,'');">
+			              <input class="form-control" type="text" name="lname" value="<?php echo $user_lname; ?>" oninput="this.value=this.value.replace(/[^A-Za-z\s]/g,'');">
 			            </div>
 			          </div>
 			          <div class="form-group">
 			            <label class="col-sm-3 control-label">Middle name:</label>
 			            <div class="col-sm-8">
-			              <input class="form-control" type="text" name="mname" value="<?php echo $user_mname; ?>" oninput="this.value=this.value.replace(/[^A-Za-z]/g,'');">
+			              <input class="form-control" type="text" name="mname" value="<?php echo $user_mname; ?>" oninput="this.value=this.value.replace(/[^A-Za-z\s]/g,'');">
 			            </div>
 			          </div>
 			          <div class="form-group">
 			            <label class="col-sm-3 control-label">Address:</label>
 			            <div class="col-sm-8">
-			              <input class="form-control" type="text" name="address" value="<?php echo $user_address; ?>" oninput="this.value=this.value.replace(/[^A-Za-z]/g,'');">
+			              <input class="form-control" type="text" name="address" value="<?php echo $user_address; ?>" oninput="this.value=this.value.replace(/[^A-Za-z\s]/g,'');">
 			            </div>
 			          </div>
 			          <div class="form-group">
