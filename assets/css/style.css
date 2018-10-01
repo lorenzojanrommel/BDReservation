@@ -6,6 +6,10 @@
 html,body {
 	font-family: 'Moserrat', sans-serif;
 }
+.logo{
+  height: 50px;
+  width: 22%;
+}
 .title{
 	font-weight: bold;
 	font-size: 1.5em;
@@ -47,7 +51,7 @@ a.footer-a-tag {
 }
 .footer-title{
 	color: #fff;
-	font-family: 'Great Vibes', cursive;
+	font-family: 'Francois One', sans-serif;
 	font-size: 3em;
 	text-shadow: 10px 5px 5px #000;
 	letter-spacing: 1.5px;
@@ -458,7 +462,7 @@ input[type=number]::-webkit-outer-spin-button {
     margin-bottom: 3%;
     border-radius: 0.5rem;
     background: #fff;
-    height: 500px;
+    min-height: 500px;
 }
 .profile-img{
     text-align: center;
@@ -610,4 +614,204 @@ img.house-picture{
      border: none;
      outline: none;
      box-shadow: none;
+ }
+ .panel-heading {
+     padding: 0
+ }
+ .panel-heading a {
+     display: block;
+     padding: 20px 10px;
+ }
+ .panel-heading a.collapsed {
+     background: #fff
+ }
+ .panel-heading a {
+     background: #f7f7f7;
+     border-radius: 5px;
+ }
+ .panel-heading a:after {
+     content: '-'
+ }
+ .panel-heading a.collapsed:after {
+     content: '+'
+ }
+ .nav.nav-tabs li a,
+ .nav.nav-tabs li.active > a:hover,
+ .nav.nav-tabs li.active > a:active,
+ .nav.nav-tabs li.active > a:focus {
+     border-bottom-width: 0px;
+     outline: none;
+ }
+ .nav.nav-tabs li a {
+     padding-top: 20px;
+     padding-bottom: 20px;
+ }
+ .tab-pane {
+     background: #fff;
+     padding: 10px;
+     border: 1px solid #ddd;
+     margin-top: -1px;
+     min-height: 500px;
+ }
+table.dataTable {
+  min-height: 400px;
+}
+.fbm-container{
+  min-height: 400px;
+  width: 100%;
+  /*background: #28a745;*/
+}
+.guide-fbm{
+  font-family: 'Francois One', sans-serif;
+  font-size: 2em;
+}
+h4.guide-title{
+  margin-top: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+.guide-text{
+   font-family: 'Montserrat', sans-serif;
+}
+.arrow-guide{
+  width: 100px;
+  margin-top: 50px;
+  height: 100px;
+  /*background: #000;*/
+  margin-left: 5px;
+}
+.place-img{
+  padding: 0;
+  height: 300px;
+}
+.place-container{
+  min-height: 700px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.places{
+  /*min-height: 300px;*/
+  height: auto;
+  padding: 0;
+  margin: 0;
+}
+.place-text{
+  text-indent: 50px;
+  font-size: 1.5em;
+  font-family: 'Montserrat', sans-serif;
+}
+.place-title{
+  font-family: 'Anton', sans-serif;
+  font-size: 2em;
+}
+.place-img{
+  /*min-height: 100%;*/
+  height: auto;
+  width: 100%;
+
+}
+.place-img-container{
+  padding: 0;
+  margin: 0;
+}
+
+/*
+ *
+ *Mobile
+ *
+ */
+ @media only screen and (max-width: 480px){
+  h1.title-header{
+    font-size: 1.6em;
+  }
+  span.and{
+    margin-left: 0;
+  }
+  span.finder{
+    margin-left: 70px;
+  }
+  .guide-fbm{
+    font-size: 1.2em;
+  }
+  .guide-title{
+    font-size: 1em;
+  }
+  .guide-text{
+    font-size: .8em;
+  }
+  .arrow-guide{
+    height: 77px;
+    width: 100%;
+    margin-top: 0;
+    transform: rotate(90deg);
+  }
+  .place-img{
+    height: 230px;
+    width: 100%;
+  }
+  .place-title{
+    font-size: 1.3em;
+  }
+  .place-text{
+    font-size: 1em;
+  }
+  .places{
+    min-height: 250px;
+    width: 100%;
+  }
+  .footer-title{
+    font-size: 2em;
+  }
+ }
+ /*
+  *
+  * Tablet
+  *
+  */
+@media only screen and (min-width: 481px) and (max-width: 960px) {
+  h1.title-header{
+    font-size: 3.5em;
+  }
+  span.finder{
+    margin-left: 90px;
+  }
+  .arrow-guide{
+    width: 100%;
+    min-height: 20px;
+    transform: rotate(90deg);
+  }
+  .place{
+    width: 100%;
+  }
+  .place-img{
+    min-height: 550px;
+  }
+  .places{
+    min-height: 200px;
+  }
+  .footer-title{
+    font-size: 2em;
+  }
+}
+@media (max-width: 961px){
+
+}
+ /* used for sidebar tab/collapse*/
+ @media (max-width: 991px) {
+   .visible-tabs {
+     display: none;
+   }
+ }
+
+ @media (min-width: 992px) {
+   .visible-tabs {
+     display: block !important;
+   }
+ }
+
+ @media (min-width: 992px) {
+   .hidden-tabs {
+     display: none !important;
+   }
  }
