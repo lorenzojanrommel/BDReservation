@@ -12,9 +12,10 @@
 	extract($row);
 	if ($current_password == $password) {
 		if ($new_password == $confirm_password && $new_password != NULL && $confirm_password != NULL) {
+			$newly_password = sha1($new_password);
 			date_default_timezone_set('Asia/Manila');
 			$update_date = date("F j, Y g:i a");
-			$pass = "UPDATE users SET password = '$new_password',
+			$pass = "UPDATE users SET password = '$newly_password',
 									  update_date = '$update_date'
 									  WHERE id = '$id'";
 			mysqli_query($conn, $pass) or die (mysqli_error($conn));

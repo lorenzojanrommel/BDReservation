@@ -1,5 +1,4 @@
 <?php
-	if (isset($_SESSION['user_id']) && $_SESSION['user_level'] == 1) {
 	$id = $_POST['id'];
 	require '../condb.php';
 	$sql = "SELECT * FROM houses WHERE house_id = '$id'";
@@ -23,8 +22,3 @@
 		</div>
 		</form>
 	</div>
-	<?php
-	}else{
-		header('Location: ../login.php');
-	}
-?>

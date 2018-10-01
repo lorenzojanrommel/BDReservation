@@ -18,7 +18,7 @@
 					</div>
 					<div class="col-sm-12">
 						<div class="img-container house_picture">
-						<img src="../<?php echo $house_picture; ?>" class="house_picture" alt="<?php echo $house_name;?>">
+						<img src="<?php echo $house_picture; ?>" class="house_picture" alt="<?php echo $house_name;?>">
 						</div>
 					</div>
 					<div class="col-sm-12 mt-3">

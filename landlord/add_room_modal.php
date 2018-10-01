@@ -37,7 +37,7 @@
                 <!-- Room Number-->
                 <div class="form-group col-sm-12">
                     <label for="room-number">Room Number</label>
-                    <input type="text" id="room-number" name="room-number" class="form-control" placeholder="Input Room Number ">
+                    <input type="text" id="room-number" name="room-number" class="form-control" placeholder="Input Room Number" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
                  </div>
                 <!-- End of Room Number-->
               </div>
@@ -47,18 +47,18 @@
               <!-- Price Room -->
               <div class="form-group col-sm-12">
                   <label for="price">Price</label>
-                  <input type="text" id="price" name="price" class="form-control" placeholder="Input your Room Price">
+                  <input type="text" id="price" name="price" class="form-control" placeholder="Input your Room Price" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
                </div>
               <!-- End of Price Room-->
               <!-- Room Availavility -->
               <div class="form-group col-sm-12">
                   <label for="availability">Room Availability</label>
-                  <input type="number" id="availability" name="availability" class="form-control" min="1" max="6">
+                  <input type="number" id="availability" name="availability" class="form-control" min="1" max="8" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
                </div>
               <!-- End of Room Availavility-->
               <!-- First Picture-->
               <div class="form-group col-sm-12">
-                   <label for="room-pic-1">Second Picture of Room</label>
+                   <label for="room-pic-1">First Picture of Room</label>
                    <input type="file" id="room-pic-1" name="room-pic-1" class="form-control-file" aria-describedby="fileHelp" placeholder="Second Picture of Room">
                </div>
               <!-- End of first Picture -->
