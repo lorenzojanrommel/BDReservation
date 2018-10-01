@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 29, 2018 at 08:25 PM
+-- Generation Time: Oct 01, 2018 at 10:51 PM
 -- Server version: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -55,16 +55,18 @@ CREATE TABLE IF NOT EXISTS `houses` (
   `house_number_room` text NOT NULL,
   `house_picture` text NOT NULL,
   `house_blpp` text NOT NULL,
+  `house_business_no` varchar(100) NOT NULL,
   `house_description` text NOT NULL,
   `house_status` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=20180002 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20180003 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `houses`
 --
 
-INSERT INTO `houses` (`house_id`, `user_id`, `house_category_id`, `house_name`, `house_address`, `house_phone_number`, `house_number_room`, `house_picture`, `house_blpp`, `house_description`, `house_status`) VALUES
-(20180001, 20180003, 1, 'Wilbert', 'Luna st Camiling, Tarlac', '09122235050', '4', '../assets/img/bhd_images/1538244608garden-house-lawn-462358.jpg', '../assets/img/bhd_business_license_permit/1538244608172149-342x264-business-license-small.jpg', 'This is wilbert boarding house', 4);
+INSERT INTO `houses` (`house_id`, `user_id`, `house_category_id`, `house_name`, `house_address`, `house_phone_number`, `house_number_room`, `house_picture`, `house_blpp`, `house_business_no`, `house_description`, `house_status`) VALUES
+(20180001, 20180003, 1, 'Wilbert', 'Luna st Camiling, Tarlac', '09122235050', '4', '../assets/img/bhd_images/1538244608garden-house-lawn-462358.jpg', '../assets/img/bhd_business_license_permit/1538244608172149-342x264-business-license-small.jpg', '4687', 'This is wilbert boarding house', 4),
+(20180002, 20180004, 2, 'Rommel', 'Morales Bldg, F. taÃ±edo st. Brgy. San Nicolas, Tarlac City', '09122235050', '2', '../assets/img/bhd_images/153841690442490-b600.jpg', '../assets/img/bhd_business_license_permit/153841690442882964_273771560011558_2717328948076740608_n.png', '5847', 'Rommel place', 4);
 
 -- --------------------------------------------------------
 
@@ -82,7 +84,14 @@ CREATE TABLE IF NOT EXISTS `reservations` (
   `payment` varchar(255) NOT NULL,
   `update_reserve_date` varchar(255) NOT NULL,
   `reserve_date` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `reservations`
+--
+
+INSERT INTO `reservations` (`reservation_id`, `customer_id`, `owner_id`, `room_id`, `reservation_status`, `room_price`, `payment`, `update_reserve_date`, `reserve_date`) VALUES
+(2, 20180002, 20180004, 20180002, 4, '1', '0', 'October 2, 2018 4:10 am', 'October 2, 2018 4:10 am');
 
 -- --------------------------------------------------------
 
@@ -122,16 +131,17 @@ CREATE TABLE IF NOT EXISTS `rooms` (
   `room_pic_2` varchar(255) NOT NULL,
   `room_pic_3` varchar(255) NOT NULL,
   `room_pic_4` varchar(255) NOT NULL,
-  `update_date` varchar(255) NOT NULL,
+  `updated_date` varchar(255) NOT NULL,
   `created_date` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=20180002 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20180003 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `rooms`
 --
 
-INSERT INTO `rooms` (`room_id`, `house_id`, `room_type`, `room_number`, `room_price`, `room_customer_no`, `availability`, `room_pic_1`, `room_pic_2`, `room_pic_3`, `room_pic_4`, `update_date`, `created_date`) VALUES
-(20180001, 20180001, 1, '20', '1', 0, '2', '../assets/img/rooms/153824531841589723_225681178304084_4378082055708213248_n.png', '../assets/img/rooms/153824531841755160_294291808024141_4237312780299927552_n.png', '../assets/img/rooms/153824531842509435_574304356320404_942698424724094976_n.png', '../assets/img/rooms/153824531842513370_1154350681384798_8591029675516493824_n.png', '', '');
+INSERT INTO `rooms` (`room_id`, `house_id`, `room_type`, `room_number`, `room_price`, `room_customer_no`, `availability`, `room_pic_1`, `room_pic_2`, `room_pic_3`, `room_pic_4`, `updated_date`, `created_date`) VALUES
+(20180001, 20180001, 1, '20', '1', 0, '2', '../assets/img/rooms/153824531841589723_225681178304084_4378082055708213248_n.png', '../assets/img/rooms/153824531841755160_294291808024141_4237312780299927552_n.png', '../assets/img/rooms/153824531842509435_574304356320404_942698424724094976_n.png', '../assets/img/rooms/153824531842513370_1154350681384798_8591029675516493824_n.png', '', ''),
+(20180002, 20180002, 1, '4', '1', 4, '5', '../assets/img/rooms/1538422060dedea38309b41ead6e18bcb4fc130355.jpg', '../assets/img/rooms/1538422100download.jpg', '../assets/img/rooms/1538422100gettyimages-691047659-1515518661.jpg', '../assets/img/rooms/1538422100slide_01.jpg', 'October 2, 2018 4:10 am', 'October 2, 2018 3:31 am');
 
 -- --------------------------------------------------------
 
@@ -149,8 +159,8 @@ CREATE TABLE IF NOT EXISTS `room_types` (
 --
 
 INSERT INTO `room_types` (`type_id`, `type`) VALUES
-(1, 'Single'),
-(2, 'Double');
+(1, 'Male'),
+(2, 'Female');
 
 -- --------------------------------------------------------
 
@@ -197,7 +207,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(255) NOT NULL,
   `create_date` varchar(100) NOT NULL,
   `update_date` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=20180004 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20180005 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
@@ -206,7 +216,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`id`, `role_id`, `status_id`, `user_fname`, `user_lname`, `user_mname`, `user_address`, `user_gender`, `user_birthdate`, `user_picture`, `user_email`, `user_phone_number`, `username`, `password`, `create_date`, `update_date`) VALUES
 (1, 1, 1, 'Admin', 'Admin', 'Admin', 'Admin address', 'm', '2018-08-29', '../assets/img/owner_pictures/15380520817cdee8236a997c7c49c05b8a0e46f89e51a7e361_hq.jpg', 'admin@test.com', '122223550', 'admin', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', 'September 27, 2018 8:41 pm'),
 (20180002, 3, 1, 'Wesley', 'Sebastian', 'S', 'NA', 'm', '2018-09-11', 'assets/img/default.jpg', 'wesley@gmail.com', '09122235050', 'wesley', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 'September 30, 2018 2:02 am', 'September 30, 2018 2:03 am'),
-(20180003, 2, 1, 'Wilbert', 'Garcia', 'G', 'NA', 'm', '2018-09-21', 'assets/img/default.jpg', 'wilbert@gmail.com', '09122235050', 'wilbert', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 'September 30, 2018 2:08 am', 'September 30, 2018 2:09 am');
+(20180003, 2, 1, 'Wilbert', 'Garcia', 'G', 'NA', 'm', '2018-09-21', 'assets/img/default.jpg', 'wilbert@gmail.com', '09122235050', 'wilbert', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 'September 30, 2018 2:08 am', 'September 30, 2018 2:09 am'),
+(20180004, 2, 1, 'Jan Rommel', 'Lorenzo', 'a', 'NA', 'm', '2018-10-11', 'assets/img/default.jpg', 'janrommel@gmail.com', '09122235050', 'rommel', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 'October 2, 2018 1:21 am', 'October 2, 2018 1:39 am');
 
 --
 -- Indexes for dumped tables
@@ -285,12 +296,12 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `houses`
 --
 ALTER TABLE `houses`
-  MODIFY `house_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20180002;
+  MODIFY `house_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20180003;
 --
 -- AUTO_INCREMENT for table `reservations`
 --
 ALTER TABLE `reservations`
-  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `roles`
 --
@@ -300,7 +311,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `rooms`
 --
 ALTER TABLE `rooms`
-  MODIFY `room_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20180002;
+  MODIFY `room_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20180003;
 --
 -- AUTO_INCREMENT for table `room_types`
 --
@@ -315,7 +326,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20180004;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20180005;
 --
 -- Constraints for dumped tables
 --
