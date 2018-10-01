@@ -18,21 +18,21 @@
  			                    	<div class="form-group row">
  			                    	    <label for="name" class="col-md-4 col-form-label text-md-right reg-label">First Name</label>
  			                    	    <div class="col-md-6">
- 			                    	        <input type="text" class="form-control fname" name="fname" placeholder="First Name" required autofocus oninput="this.value=this.value.replace(/[^A-Za-z]/g,'');">
+ 			                    	        <input type="text" class="form-control fname" name="fname" placeholder="First Name" required autofocus oninput="this.value=this.value.replace(/[^A-Za-z\s]/g,'');">
  			                    	    </div>
  			                    	</div>
  			                        <!-- Last Name -->
  			                        <div class="form-group row">
  			                            <label for="name" class="col-md-4 col-form-label text-md-right reg-label">Last Name</label>
  			                            <div class="col-md-6">
- 			                                <input id="lname" type="text" class="form-control" name="lname" placeholder="Last Name" required autofocus oninput="this.value=this.value.replace(/[^A-Za-z]/g,'');">
+ 			                                <input id="lname" type="text" class="form-control" name="lname" placeholder="Last Name" required autofocus oninput="this.value=this.value.replace(/[^A-Za-z\s]/g,'');">
  			                            </div>
  			                        </div>
  			                        <!-- Middle Name -->
  			                        <div class="form-group row">
  			                            <label for="name" class="col-md-4 col-form-label text-md-right reg-label">Middle Name</label>
  			                            <div class="col-md-6">
- 			                                <input id="mname" type="text" class="form-control" name="mname" placeholder="Middle Name" required autofocus oninput="this.value=this.value.replace(/[^A-Za-z]/g,'');">
+ 			                                <input id="mname" type="text" class="form-control" name="mname" placeholder="Middle Name" required autofocus oninput="this.value=this.value.replace(/[^A-Za-z\s]/g,'');">
  			                                    <span class="invalid-feedback">
  			                                    </span>
  			                            </div>

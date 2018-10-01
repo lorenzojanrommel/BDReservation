@@ -79,10 +79,12 @@
 								  	}
 								  	?>
 								  	<p><span class="room-price">Price: &#8369</span><?php echo number_format($room_price); ?> </p>
-								  	<p>Availability: <?php echo number_format($room_price); ?> </p>
+								  	<p><span class="room-availability">Availability: </span><span><?php echo $room_customer_no; ?></span><span>/</span> <?php echo $availability; ?> </p>
 								  	<div class="row">
 								  		<div class="col-sm-12 text-center">
-								  		<button type="button" class="btn btn-outline-warning">Edit</button>
+								  			<form method="POST" action="edit_room.php?id=<?php echo $room_id; ?>">
+								  				<button type="submit" class="btn btn-outline-warning">Edit</button>
+								  			</form>
 								  		</div>
 								  	</div>
 								  </div>
