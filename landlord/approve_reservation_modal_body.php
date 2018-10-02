@@ -1,13 +1,13 @@
 <?php
 	require '../condb.php';
 	$id = $_POST['id'];
-	$sql = "SELECT * FROM reservations";
+	$sql = "SELECT * FROM reservations WHERE reservation_id = '$id'";
 	$results = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_assoc($results);
 	extract($row)
 	?>
 	<div class="container">
-		<form method="post" action="approve_reservation_modal_endpoint.php?id=<?php echo $reservation_id?>">
+		<form method="post" action="approve_reservation_modal_endpoint.php?id=<?php echo $reservation_id; ?>">
 			<h5 class="p-2">
 				<?php 
 					$user = "SELECT * FROM users WHERE id = '$customer_id'";
