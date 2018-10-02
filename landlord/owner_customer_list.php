@@ -57,7 +57,19 @@
 			    				?></td>
 			    				<td><?php echo $user_phone_number; ?></td>
 			    				<td><?php echo $user_address; ?></td>
-			    				<td>3</td>
+			    				<td><?php
+			    					date_default_timezone_set('Asia/Manila');
+			    					$date = date_create($update_reserve_date);
+			    					date_modify($date, '+3 day');
+			    					$day_left = date_format($date, 'F j, Y g:i a');
+			    					// $remain = strtotime($day_left) - strtotime($update_reserve_date);
+			    					// // echo $remain;
+			    					// // // $remaining = $update_reserve_date - $day_left;
+			    					// $hours_remaining = floor(($remain % 86400) / 3600);
+			    					// $days_remaining = floor($remain / 86400);
+			    					// // echo $days_remaining;
+			    					// echo $hours_remaining;
+			    				?></td>
 			    				<td>Delete</td>
 			    			</tr>
 			    			<?php
