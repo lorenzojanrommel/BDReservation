@@ -30,6 +30,10 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_level'] != '1') {
 		?>
 		<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 		<?php
+	}elseif(!isset($_SESSION['login']) && strpos($full_url, "customer/") == true || strpos($full_url, "landlord/") == true){
+		?>
+		<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+		<?php
 	}else{
 		?>
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">

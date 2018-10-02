@@ -1,6 +1,10 @@
 <?php
 	session_start();
 	require 'condb.php';
+	if (isset($_SESSION['redirect'])) {
+	$url = $_SESSION['redirect'];
+	}
+	// echo $url;
 	if(isset($_POST['login'])){
 		$username = htmlspecialchars($_POST['username']);
 		$password = sha1($_POST['password']);
@@ -18,6 +22,7 @@
 				$_SESSION['user_status'] = $row['status_id'];
 				$_SESSION['user_level'] = $row['role_id'];
 				$_SESSION['user_id'] = $row['id'];
+				$_SESSION['login'] = TRUE;
 			
 			if ($_SESSION['user_level'] == 1) {
 				header('Location: admin/dashboard.php');
@@ -26,8 +31,16 @@
 				header('Location: landlord/owner_dashboard.php');
 				exit();
 			}elseif($_SESSION['user_level'] == 3){
+				if (isset($url)) {
+					if (isset($_SESSION['login'])) {
+					// echo $url;
+					header('Location: '.$url.'');
+					}
+				}else{
+					// echo "Hello";
 				header('Location: customer/customer_dashboard.php');
 				exit();
+				}
 			}
 			}else{
 				header('Location: login.php?password=not_match');

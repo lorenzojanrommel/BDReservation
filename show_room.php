@@ -53,7 +53,9 @@
 				  	<p><span class="room-availability">Availability: </span><span><?php echo $room_customer_no;?></span><span>/</span><?php echo $availability; ?> </p></span>
 				  	<div class="row">
 				  		<div class="col-sm-12 text-center">
-				  		<a class="btn btn-outline-warning" name="goToreservation" href="login.php">Reserve</a>
+				  		<form method="POST" action="customer/reservation.php?room=<?php echo $room_id?>">
+				  		<input type="submit" value="Reserve" class="btn btn-outline-warning" name="goToreservation">
+				  		</form>
 				  		</div>
 				  	</div>
 				  </div>

@@ -3,7 +3,9 @@
   $full_url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
   if (isset($_SESSION['user_id'])) {
   require '../condb.php';
-  }elseif(strpos($full_url, "success=register") == true){
+  }elseif(strpos($full_url, "customer/") == true){
+    require '../condb.php';
+  }elseif(!isset($_SESSION['login']) && strpos($full_url, "customer/") == true || strpos($full_url, "landlord/") == true){
     require '../condb.php';
   }else{
     require 'condb.php';

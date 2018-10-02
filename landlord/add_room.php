@@ -80,11 +80,11 @@
 								  		</div>
 								  	</div>
 								  	<?php 
-								  	if ($room_type = 1 ) {
+								  	if ($room_type == '1' ) {
 								  		?>
 								    	<p class="mt-2"><span class="room-type">Room Type:</span> Male Only</p>
 								  		<?php
-								  	}else{
+								  	}elseif($room_type == '2'){
 								  		?>
 								    	<p class="mt-2"><span class="room-type">Room Type:</span> Female Only </p>
 								  		<?php
