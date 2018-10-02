@@ -83,9 +83,13 @@
                 <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/landlord/booking.php">Booking</a>
                 <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/booking.php">Booking</a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/landlord/payments.php">Payments</a>
                 <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/payments.php">Payments</a>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/landlord/owner_customer_list.php">Customer List</a>
+                <a class="nav-link d-lg-none" href="BDReservation/../../../BDReservation/landlord/owner_customer_list.php">Customer List</a>
               </li>
               <!-- <li class="nav-item">
                 <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="BDReservation/../../../BDReservation/landlord/cancel.php">Cancel</a>

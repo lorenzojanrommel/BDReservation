@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['login'])) {
+if (!isset($_SESSION['user_id'])) {
 		$_SESSION['redirect'] = $_SERVER['REQUEST_URI'];
 		// echo $_SESSION['redirect'];
 		header('location: ../login.php');

@@ -715,6 +715,15 @@ h4.guide-title{
   padding: 0;
   margin: 0;
 }
+/*
+ *
+ * Owner Customer List
+ *
+ *
+ */
+ .owner-customer-list{
+  padding: 0;
+ }
 
 /*
  *
