@@ -18,7 +18,7 @@
 						<th>Address</th>
 						<th>Room Number</th>
 						<th>Payment</th>
-						<th>First Payment</th>
+						<th>Date</th>
 						<th>Approve/Decline</th>
 						</tr>
 					</thead>
@@ -63,16 +63,28 @@
 							</td>
 							<td class="text-center">
 								<?php
-								echo number_format($payment);
+								echo $reserve_date;
 								?>
 							</td>
 							<td>
 								<div class="row">
 									<div class="col-sm-6 text-center">
+										<?php 
+											$count_customer = "SELECT * FROM rooms WHERE room_id = '$room_id'";
+											$count_customer_results = mysqli_query($conn, $count_customer);
+											$count_customer_row = mysqli_fetch_assoc($count_customer_results);
+											extract($count_customer_row);
+											if ($availability > $room_customer_no) {
+										?>
 										<button class="btn btn-outline-warning approve_reservation_modal" data-id=<?php echo $reservation_id?> data-toggle="modal" data-target="#approve_reservation">Accept</button>
+										<?php
+									}else{
+										?>
+											<h6>This Room is Full</h6>
+										<?php
+									}
+									?>
 									</div>
-
-									<div class="col-sm-6 text-center"><button class="btn btn-outline-danger decline_reservation_modal" data-id=<?php echo $reservation_id?> data-toggle="modal" data-target="#decline_reservation">Decline</button></div>
 								</div>
 							</td>
 						</tr>
@@ -117,20 +129,20 @@
 			}
 		})
 	})
-	$('.decline_reservation_modal').click(function() {
-		var id = $(this).data('id');
-		// console.log(id);
-		$.ajax({
-			method: 'post',
-			url: 'decline_modal_body.php',
-			data: {
-				// edit: true,
-				id : id
-			},
-			success: function(data){
-				// console.log(data);
-				$('#decline_reservation_modal').html(data);
-			}
-		})
-	})
+	// $('.decline_reservation_modal').click(function() {
+	// 	var id = $(this).data('id');
+	// 	// console.log(id);
+	// 	$.ajax({
+	// 		method: 'post',
+	// 		url: 'decline_modal_body.php',
+	// 		data: {
+	// 			// edit: true,
+	// 			id : id
+	// 		},
+	// 		success: function(data){
+	// 			// console.log(data);
+	// 			$('#decline_reservation_modal').html(data);
+	// 		}
+	// 	})
+	// })
 </script>
