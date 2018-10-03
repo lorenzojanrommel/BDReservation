@@ -35,9 +35,9 @@
 						  <div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="about-tab">
 						  <div class="row p-3">
 						  	<div class="col-sm-6">
-						  		<h6><span class="about-house-view">Address:</span> <?php
+						  		<h6><span class="about-house-view">Address:</span> <span id="loc"><?php
 						  		echo $house_address;
-						  		?></h6>
+						  		?></span></h6>
 						  		<h6><span class="about-house-view">Phone Number:</span> <?php echo $house_phone_number; ?></h6>
 						  		<h6><span class="about-house-view">House Description: </span> <?php
 						  		echo $house_description; 
@@ -45,10 +45,15 @@
 						  		</h6>
 						  	</div>
 						  	<div class="col-sm-6">
+						  		<div class="container" id="map-lat-lng">
+						  			<p id="lat"></p>
+						  			<p id="lng"></p>
+						  		</div>
 						  	</div>
 						  </div>
 						  </div>
 						  <div class="tab-pane fade" id="location" role="tabpanel" aria-labelledby="location-tab">
+						  	
 					  		<div class="map" onload="initMap">
 					  			<h5>Map</h5>
 					  			<div id="map-display">
@@ -74,55 +79,62 @@
 
 	}
 	require "template.php";
-?>
+?>	
+	<script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfbli7Zq07Uw96NZlB0DxA5uzQVaBTFa0&callback=initMap">
+    </script>
 	<script type="text/javascript">
-//	$(document).ready(function() {
-//		var location = $('span#location').text();
-//		console.log(location);
-//		$.ajax({
-//			method : 'GET',
-//			url : 'https://maps.googleapis.com/maps/api/geocode/json',
-//			data : {
-//				address : location,
-//				key : 'AIzaSyC13PAMU-yO3K-JW2VmMmuZZ2YalWmc7GQ'
-//			},
-//			success : function(data){
-//				// log full response
-//				console.log(data);
-//				// Formatted Address
-//				var formattedAddress = data.results[0].formatted_address;
-//				var lat = data.results[0].geometry.location.lat;
-//				var lng = data.results[0].geometry.location.lng;
-//				console.log(lat);
-//				console.log(lng);
-//			},
-//			error : function(data){
-//				console.log(data);
-//			}
-//		})
-//	}) 
+	$(document).ready(function() {
+		var location = $('span#loc').text();
+		// console.log(location);
+		$.ajax({
+			method : 'GET',
+			url : 'https://maps.googleapis.com/maps/api/geocode/json',
+			data : {
+				address : location,
+				key : 'AIzaSyBfbli7Zq07Uw96NZlB0DxA5uzQVaBTFa0'
+			},
+			success : function(data){
+				// log full response
+				// console.log(data);
+				// Formatted Address
+				var formattedAddress = data.results[0].formatted_address;
+				var lat = data.results[0].geometry.location.lat;
+				var lng = data.results[0].geometry.location.lng;
+				// $('p.lat').html(data);
+				$('p#lat').text(lat);
+				$('p#lng').text(lng);
+				// console.log(lat);
+				// console.log(lng);
+			},
+			error : function(data){
+				console.log(data);
+			}
+		})
+	}) 
 	function initMap() {
-		// var getLat = $('#lat').text();
-		// var getLng = $('#lng').text();
-		// console.log(getLng);
+		var getLng = document.getElementById("lng").innerHTML;
+		var getLat = document.getElementById("lat").innerHTML;
+		// var getLat = $('.map-lat-lng').find('p#lat').text();
+		// var getLng = $('.map-lat-lng').find('p#lng').text();
 		// console.log(getLat);
+		// console.log(getLng);
 		// Map Option
 		var options = {
-			zoom : 11,
+			zoom : 13,
 			center : {
-					lat: 15.4755,
-					lng: 120.5963}
+					lat: parseFloat(getLat),
+					lng: parseFloat(getLng) }
 		}
-		// New Map
+		// console.log(options);
+		// // New Map
 		var map = new google.maps.Map(document.getElementById('map-display'), options);
+		// console.log(map);
 		// Add Market
 		// var logo = '../assets/img/bhod_logo.png';
 		var marker = new google.maps.Marker({
-			position: {lat:15.4755, lng:120.5963},
+			position: {lat: parseFloat(getLat), lng: parseFloat(getLng) },
 			map : map,
 		})
 	}
 	</script>
-	<script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfbli7Zq07Uw96NZlB0DxA5uzQVaBTFa0&callback=initMap">
-    </script>
