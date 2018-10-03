@@ -21,7 +21,7 @@
 			      <!-- left column -->
 			      <div class="col-sm-3">
 			        <div class="text-center">
-			          <img src="../<?php echo $user_picture; ?>" class="avatar img-circle" alt="avatar">
+			          <img src="<?php echo $user_picture; ?>" class="avatar img-circle" alt="avatar">
 			          <h6><?php echo $user_fname,str_repeat('&nbsp;', 1),substr($user_mname, 0, 1).".".str_repeat('&nbsp;', 1),ucfirst($user_lname); ?></h6>
 			        </div>
 			      </div>
