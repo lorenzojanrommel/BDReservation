@@ -14,7 +14,7 @@
 		                <div class="row">
 		                    <div class="col-md-4">
 		                        <div class="profile-img">
-		                            <img class="avatar-admin" src="../<?php echo $user_picture?>" alt=""/>
+		                            <img class="avatar-admin" src="<?php echo $user_picture?>" alt=""/>
 		                            <!-- <div class="file btn btn-lg btn-primary">
 		                                Change Photo
 		                                <input type="file" name="file"/>

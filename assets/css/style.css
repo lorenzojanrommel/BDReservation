@@ -195,7 +195,7 @@ img.img-view-room {
     border-top: 1px solid #cecece;
 }
 
-span.pending {
+span.pending, span.denied {
 	color: red;
 	margin-left: .3em;
 }

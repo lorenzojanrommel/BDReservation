@@ -17,6 +17,18 @@
 			extract($house);
 			?>
 			<div class="container">
+				<?php
+						ob_start();
+						$full_url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+						if (strpos($full_url, "success=success") == true) {
+							?>
+							<div class="alert alert-dismissible alert-success text-center mt-3" id="success_message">
+ 			        	 	<button type="button" class="close" data-dismiss="alert">&times;</button>
+ 			        	 	<span>Sucessfully Updated!</span>
+ 			        		</div>
+							<?php
+						}
+						?>
 				<div class="container-cybod-house">
 				  <div class="row">
 				  	<div class="col-sm-1 edit-house-button text-right">
@@ -34,7 +46,11 @@
 				    		}elseif($house_status == 4){
 				    	?>
 				      <p class="bhod-status-display"><b>Status:</b><span class="approved">Approved</span></p>
-				  	<?php }?>
+				  	<?php }elseif($house_status == 5){
+				  		?>
+				      <p class="bhod-status-display"><b>Status:</b><span class="denied">Denied</span></p>
+				      <?php
+				  	}?>
 				    </div>
 				  </div>
 				  <div class="hr-line"></div>
@@ -44,6 +60,17 @@
 				  	<div class="hr-line"></div>
 				  	</div>
 				  	<div class="col-sm-12">
+				  		<p><b>House Category:</b><?php 
+				  			if ($house_category_id == 1) {
+				  				?>
+				  				<span>Boarding House</span>
+				  				<?php
+				  			}else{
+				  				?>
+				  				<span>Dormitory</span>
+				  				<?php
+				  			}
+				  		?></p>
 				  		<p><b>Location:</b> <span id="loc"><?php echo $house_address ?></span></p>
 				  		<p><b>Phone Number:</b> <?php echo $house_phone_number ?></p>
 				  		<p><b>Description:</b> <?php echo $house_description ?></p>
