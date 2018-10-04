@@ -29,7 +29,7 @@
 			  		</div>
 			  		<div class="container">
 			  			<div class="row">
-			  			<div class="col-sm-12 mt-2">
+			  			<div class="col-sm-12 mt-2 approve-list-tab">
 			  			<table class="boarding-house-list w-auto table-responsive" id="boarding-house-list" class="table table-hover">
 			  				<thead>
 			  					<tr>
@@ -59,7 +59,7 @@
 			  							?>
 			  						</td>
 			  						<!-- View business plate -->
-			  						<td class="text-center"><button type="button" class="btn btn-warning view-business-plate" data-id="<?php echo $house_id ?>" data-toggle="modal" data-target="#view-business-plate">View</button></td>
+			  						<td class="text-center"><button type="button" class="btn btn-warning view-business-plate view-button-bh-list" data-id="<?php echo $house_id ?>" data-toggle="modal" data-target="#view-business-plate">View</button></td>
 			  						<!-- End view Business plate -->
 			  						<td>Approved</td>
 			  					</tr>
@@ -76,11 +76,11 @@
 			  <div class="tab-pane  approve-list-container" id="dormitory" role="tabpanel">
 			  	<div class="container  approve-list-container">
 			  		<div class="col-sm-12">
-			  		<h3>Approved Dormitory List</h3>
+			  		<h3 class="approve-list">Approved Dormitory List</h3>
 			  		</div>
 				<div class="container">
 					<div class="row">
-					<div class="col-sm-12 mt-2">
+					<div class="col-sm-12 mt-2 approve-list-tab">
 						<table class="dormitory-list w-auto table-responsive" id="dormitory-list" class="table table-hover">
 						<thead>
 							<tr>
@@ -109,7 +109,7 @@
 									?>
 								</td>
 								<!-- View business plate -->
-								<td class="text-center"><button type="button" class="btn btn-warning view-business-plate" data-id="<?php echo $house_id ?>" data-toggle="modal" data-target="#view-business-plate">View</button></td>
+								<td class="text-center"><button type="button" class="btn btn-warning view-business-plate view-button-d-list" data-id="<?php echo $house_id ?>" data-toggle="modal" data-target="#view-business-plate">View</button></td>
 								<!-- End view Business plate -->
 								<td>Approved</td>
 							</tr>

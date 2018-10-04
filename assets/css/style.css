@@ -839,6 +839,9 @@ h4.guide-title{
       font-size: 1.1em;
       font-weight: bold;
      }
+     .approve-list-tab{
+      padding: 5px;
+     }
      .approve-list-container{
       padding: 0;
      }
@@ -851,6 +854,13 @@ h4.guide-title{
      }
      table.dataTable{
       min-height: 200px
+     }
+     table.dataTable td, table.dataTable th{
+      font-size: .6em;
+     }
+     .view-button-bh-list, .view-button-d-list{
+      padding: 3px;
+      font-size: 1.1em;
      }
  }
  /*
