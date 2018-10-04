@@ -75,7 +75,7 @@
 				                </form>
 				                <!-- Sign up -->
 				                <div class="hr_line"></div>
-				                	<div class="col s12 center login-flex pl-5 ml-2">
+				                	<div class="col s12 center login-flex ml-2">
 				                		<a href="register.php" class="mr-1"><small class="signup">Sign Up for Owner Boarding House / Dormitories</small></a>
 				                		or
 				                		<a href="register_customer.php" class="ml-1"><small class="signup">Sign Up for Customer Boarding House / Dormitories</small></a>

@@ -8,7 +8,7 @@
 
 		<div class="container mt-3 mb-5 pd-5">
 			  <ul class="nav nav-tabs" role="tablist">
-			  <li class="nav-item">
+			  <li class="nav-item house-tab-list">
 			    <a class="nav-link active" data-toggle="tab" href="#boarding_house" role="tab" aria-controls="boarding_house">Boarding House</a>
 			  </li>
 			  <li class="nav-item">
@@ -22,10 +22,10 @@
 			  </li>
 			</ul>
 			<div class="tab-content">
-			  <div class="tab-pane active" id="boarding_house" role="tabpanel">
-			  	<div class="container">
+			  <div class="tab-pane active approve-list-container" id="boarding_house" role="tabpanel">
+			  	<div class="container approve-list-container">
 			  		<div class="col-sm-12">
-			  		<h3 class="mt-1">Approved Boarding House List</h3>
+			  		<h3 class="mt-1 approve-list">Approved Boarding House List</h3>
 			  		</div>
 			  		<div class="container">
 			  			<div class="row">
@@ -73,8 +73,8 @@
 			  		</div>
 			  	</div>
 			  </div>
-			  <div class="tab-pane" id="dormitory" role="tabpanel">
-			  	<div class="container">
+			  <div class="tab-pane  approve-list-container" id="dormitory" role="tabpanel">
+			  	<div class="container  approve-list-container">
 			  		<div class="col-sm-12">
 			  		<h3>Approved Dormitory List</h3>
 			  		</div>

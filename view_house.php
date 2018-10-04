@@ -11,7 +11,7 @@
 		extract($house_row);
 		?>
 		<div class="house-view-container mb-5 pb-1">
-			<div class="container mt-3 p-5">
+			<div class="container mt-3">
 				<div class="row border-house-view">
 					<div class="col-sm-12">
 					<h3 class="text-center house-name"><?php echo $house_name?></h3>
@@ -34,15 +34,15 @@
 						<div class="tab-content" id="myTabContent">
 						  <div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="about-tab">
 						  <div class="row p-3">
-						  	<div class="col-sm-6">
+						  	<div class="col-sm-12">
 						  		<h6><span class="about-house-view">Address:</span> <span id="loc"><?php
 						  		echo $house_address;
 						  		?></span></h6>
 						  		<h6><span class="about-house-view">Phone Number:</span> <?php echo $house_phone_number; ?></h6>
-						  		<h6><span class="about-house-view">House Description: </span> <?php
+						  		<h6><span class="about-house-view">House Description: </span><div class="house-description"><?php
 						  		echo $house_description; 
 						  		?>
-						  		</h6>
+						  		</div></h6>
 						  	</div>
 						  </div>
 						  </div>
