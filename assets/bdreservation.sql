@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 01, 2018 at 10:51 PM
+-- Generation Time: Oct 04, 2018 at 09:01 PM
 -- Server version: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -57,16 +57,19 @@ CREATE TABLE IF NOT EXISTS `houses` (
   `house_blpp` text NOT NULL,
   `house_business_no` varchar(100) NOT NULL,
   `house_description` text NOT NULL,
-  `house_status` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=20180003 DEFAULT CHARSET=latin1;
+  `house_status` int(11) NOT NULL,
+  `updated_date` varchar(100) NOT NULL,
+  `created_date` varchar(100) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=20180004 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `houses`
 --
 
-INSERT INTO `houses` (`house_id`, `user_id`, `house_category_id`, `house_name`, `house_address`, `house_phone_number`, `house_number_room`, `house_picture`, `house_blpp`, `house_business_no`, `house_description`, `house_status`) VALUES
-(20180001, 20180003, 1, 'Wilbert', 'Luna st Camiling, Tarlac', '09122235050', '4', '../assets/img/bhd_images/1538244608garden-house-lawn-462358.jpg', '../assets/img/bhd_business_license_permit/1538244608172149-342x264-business-license-small.jpg', '4687', 'This is wilbert boarding house', 4),
-(20180002, 20180004, 2, 'Rommel', 'Morales Bldg, F. taÃ±edo st. Brgy. San Nicolas, Tarlac City', '09122235050', '2', '../assets/img/bhd_images/153841690442490-b600.jpg', '../assets/img/bhd_business_license_permit/153841690442882964_273771560011558_2717328948076740608_n.png', '5847', 'Rommel place', 4);
+INSERT INTO `houses` (`house_id`, `user_id`, `house_category_id`, `house_name`, `house_address`, `house_phone_number`, `house_number_room`, `house_picture`, `house_blpp`, `house_business_no`, `house_description`, `house_status`, `updated_date`, `created_date`) VALUES
+(20180001, 20180003, 2, 'Wilbert', 'Luna st Camiling, Tarlac', '09122235050', '5', '../assets/img/bhd_images/153867885575977-b1200.jpg', '../assets/img/bhd_business_license_permit/1538244608172149-342x264-business-license-small.jpg', '4687', 'This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, This is wilbert boarding house, ', 4, 'October 5, 2018 2:47 am', 'October 5, 2018 2:56 am'),
+(20180002, 20180004, 2, 'Rommel', 'Morales Bldg, F. taÃ±edo st. Brgy. San Nicolas, Tarlac City', '09122235050', '2', '../assets/img/bhd_images/153841690442490-b600.jpg', '../assets/img/bhd_business_license_permit/153841690442882964_273771560011558_2717328948076740608_n.png', '5847', 'Rommel place', 4, 'October 5, 2018 2:56 am', 'October 5, 2018 2:56 am'),
+(20180003, 20180005, 1, 'Jemar', 'Morales Bldg, F. taÃ±edo st. Brgy. San Nicolas, Tarlac City', '09122235050', '5', '../assets/img/bhd_images/153867936375977-b1200.jpg', '../assets/img/bhd_business_license_permit/1538679363153841690442882964_273771560011558_2717328948076740608_n.png', '0247', 'Jemar house description ', 5, 'October 5, 2018 2:56 am', 'October 5, 2018 2:56 am');
 
 -- --------------------------------------------------------
 
@@ -207,7 +210,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(255) NOT NULL,
   `create_date` varchar(100) NOT NULL,
   `update_date` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=20180005 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20180006 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
@@ -217,7 +220,8 @@ INSERT INTO `users` (`id`, `role_id`, `status_id`, `user_fname`, `user_lname`, `
 (1, 1, 1, 'Admin', 'Admin', 'Admin', 'Admin address', 'm', '2018-08-29', '../assets/img/owner_pictures/15380520817cdee8236a997c7c49c05b8a0e46f89e51a7e361_hq.jpg', 'admin@test.com', '122223550', 'admin', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', 'September 27, 2018 8:41 pm'),
 (20180002, 3, 1, 'Wesley', 'Sebastian', 'S', 'NA', 'm', '2018-09-11', 'assets/img/default.jpg', 'wesley@gmail.com', '09122235050', 'wesley', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 'September 30, 2018 2:02 am', 'September 30, 2018 2:03 am'),
 (20180003, 2, 1, 'Wilbert', 'Garcia', 'G', 'NA', 'm', '2018-09-21', 'assets/img/default.jpg', 'wilbert@gmail.com', '09122235050', 'wilbert', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 'September 30, 2018 2:08 am', 'September 30, 2018 2:09 am'),
-(20180004, 2, 1, 'Jan Rommel', 'Lorenzo', 'a', 'NA', 'm', '2018-10-11', 'assets/img/default.jpg', 'janrommel@gmail.com', '09122235050', 'rommel', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 'October 2, 2018 1:21 am', 'October 2, 2018 1:39 am');
+(20180004, 2, 1, 'Jan Rommel', 'Lorenzo', 'a', 'NA', 'm', '2018-10-11', 'assets/img/default.jpg', 'janrommel@gmail.com', '09122235050', 'rommel', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 'October 2, 2018 1:21 am', 'October 2, 2018 1:39 am'),
+(20180005, 2, 1, 'Jemar', 'Agustin', 'A', 'Morales Bldg F taedo st Brgy San Nicolas Tarlac City', 'm', '1999-01-14', '../assets/img/owner_pictures/15386792741538563692Screen Shot 2018-06-07 at 10.29.53 PM.png', 'jemar@gmail.com', '09122235050', 'jemar', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 'October 5, 2018 2:52 am', 'October 5, 2018 2:54 am');
 
 --
 -- Indexes for dumped tables
@@ -296,7 +300,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `houses`
 --
 ALTER TABLE `houses`
-  MODIFY `house_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20180003;
+  MODIFY `house_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20180004;
 --
 -- AUTO_INCREMENT for table `reservations`
 --
@@ -326,7 +330,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20180005;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20180006;
 --
 -- Constraints for dumped tables
 --
