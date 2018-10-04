@@ -44,12 +44,6 @@
 						  		?>
 						  		</h6>
 						  	</div>
-						  	<div class="col-sm-6">
-						  		<div class="container" id="map-lat-lng">
-						  			<p id="lat"></p>
-						  			<p id="lng"></p>
-						  		</div>
-						  	</div>
 						  </div>
 						  </div>
 						  <div class="tab-pane fade" id="location" role="tabpanel" aria-labelledby="location-tab">
@@ -80,11 +74,8 @@
 	}
 	require "template.php";
 ?>	
-	<script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfbli7Zq07Uw96NZlB0DxA5uzQVaBTFa0&callback=initMap">
-    </script>
 	<script type="text/javascript">
-	$(document).ready(function() {
+	function initMap() {
 		var location = $('span#loc').text();
 		// console.log(location);
 		$.ajax({
@@ -101,40 +92,29 @@
 				var formattedAddress = data.results[0].formatted_address;
 				var lat = data.results[0].geometry.location.lat;
 				var lng = data.results[0].geometry.location.lng;
-				// $('p.lat').html(data);
-				$('p#lat').text(lat);
-				$('p#lng').text(lng);
-				// console.log(lat);
-				// console.log(lng);
+				// Map Option
+				var options = {
+					zoom : 13,
+					center : {
+							lat: parseFloat(lat),
+							lng: parseFloat(lng) }
+				}
+				// console.log(options);
+				// // New Map
+				var map = new google.maps.Map(document.getElementById('map-display'), options);
+				// console.log(map);
+				// Add Market
+				var marker = new google.maps.Marker({
+					position: {lat: parseFloat(lat), lng: parseFloat(lng) },
+					map : map,
+				})
 			},
 			error : function(data){
 				console.log(data);
 			}
 		})
-	}) 
-	function initMap() {
-		var getLng = document.getElementById("lng").innerHTML;
-		var getLat = document.getElementById("lat").innerHTML;
-		// var getLat = $('.map-lat-lng').find('p#lat').text();
-		// var getLng = $('.map-lat-lng').find('p#lng').text();
-		// console.log(getLat);
-		// console.log(getLng);
-		// Map Option
-		var options = {
-			zoom : 13,
-			center : {
-					lat: parseFloat(getLat),
-					lng: parseFloat(getLng) }
-		}
-		// console.log(options);
-		// // New Map
-		var map = new google.maps.Map(document.getElementById('map-display'), options);
-		// console.log(map);
-		// Add Market
-		// var logo = '../assets/img/bhod_logo.png';
-		var marker = new google.maps.Marker({
-			position: {lat: parseFloat(getLat), lng: parseFloat(getLng) },
-			map : map,
-		})
 	}
 	</script>
+	<script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfbli7Zq07Uw96NZlB0DxA5uzQVaBTFa0&callback=initMap">
+    </script>
