@@ -194,12 +194,7 @@ img.img-view-room {
     border: 0;
     border-top: 1px solid #cecece;
 }
-.bhod-title-display{
-	margin-left: 1em;
-	margin-top: .5em;
-	font-weight: bold;
-	font-size: 2em;
-}
+
 span.pending {
 	color: red;
 	margin-left: .3em;
@@ -724,7 +719,23 @@ h4.guide-title{
  .owner-customer-list{
   padding: 0;
  }
+ /*
+  *
+  * Owner Edit House
+  *
+  */
+  .bhod-title-display{
+    /*margin-left: 1em;*/
+    margin-top: .5em;
+    font-weight: bold;
+    font-size: 2em;
+  }
+  .edit-house-button{
+    margin-top: .3em;
+    font-size: 2.5em;
+    padding: 0;
 
+  }
 /*
  *
  *Mobile

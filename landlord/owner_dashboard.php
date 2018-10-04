@@ -19,10 +19,13 @@
 			<div class="container">
 				<div class="container-cybod-house">
 				  <div class="row">
-				    <div class="col-sm-9">
+				  	<div class="col-sm-1 edit-house-button text-right">
+				    	<a href="edit_house.php?id-house=<?php echo $house_id;?>"><i class="fas fa-cog"></i></i></a>
+				  	</div>
+				    <div class="col-sm-8">
 				     <p class="bhod-title-display"><?php echo $house_name ?></p>
 				    </div>
-				    <div class="col-sm-3">
+				    <div class="col-sm-2">
 				    	<?php
 				    		if ($house_status == 3) {
 				    			?>
