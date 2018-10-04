@@ -123,10 +123,9 @@
 				</div>
 			  	</div>
 			  </div>
-			  <div class="tab-pane" id="pending" role="tabpanel">
-			  	<div class="container">
-			  		<div class="row">
-			  			<h3 class="mt-1">House Pending</h3>
+			  <div class="tab-pane pending-container" id="pending" role="tabpanel">
+			  	<div class="container pending-container">
+			  			<h3 class="mt-1 ml-3 pending-list">House Pending</h3>
 			  			<div class="col-sm-12 mt-2">
 			  				<table class="house-pending-list w-auto table-responsive" id="house-pending-list" class="table table-hover">
 			  					<thead>
@@ -157,12 +156,12 @@
 			  								echo $user_fname,str_repeat('&nbsp;', 1),substr($user_mname, 0, 1).".".str_repeat('&nbsp;', 1),ucfirst($user_lname);?></td>
 			  							<!-- End of boarding house owner -->
 			  							<!-- Business Plate -->
-			  							<td class="text-center"><button type="button" class="btn btn-warning view-business-plate" data-id="<?php echo $house_id ?>" data-toggle="modal" data-target="#view-business-plate">View</button></td>
+			  							<td class="text-center"><button type="button" class="btn btn-warning view-business-plate pending-button" data-id="<?php echo $house_id ?>" data-toggle="modal" data-target="#view-business-plate">View</button></td>
 			  							<!-- End business Plate -->
 			  							<!-- Boarding house status -->
 			  							<td>
-			  								<button type="button" class="btn btn-primary approve_modal" data-id=<?php echo $house_id?> data-toggle="modal" data-target="#approve">Approve</button>
-			  							<button type="button" class="btn btn-danger deny_modal" data-id=<?php echo $house_id?> data-toggle="modal" data-target="#deny">Deny</button>
+			  								<button type="button" class="btn btn-primary approve_modal pending-button" data-id=<?php echo $house_id?> data-toggle="modal" data-target="#approve">Approve</button>
+			  								<button type="button" class="btn btn-danger deny_modal pending-button" data-id=<?php echo $house_id?> data-toggle="modal" data-target="#deny">Deny</button>
 			  							</td>
 			  							<!-- End of boarding house status -->
 			  							</tr>
@@ -172,21 +171,19 @@
 			  					</tbody>
 			  				</table>
 			  			</div>
-			  		</div>
 			  	</div>
 			  </div>
-			  <div class="tab-pane" id="house" role="tabpanel">
-			  	<div class="container">
-			  		<div class="row">
-			  		<h3 class="mt-1">House List</h3>
+			  <div class="tab-pane all-all-approved" id="house" role="tabpanel">
+			  	<div class="container all-all-approved">
+			  		<h3 class="mt-1 ml-3 all-house-approved">House List</h3>
 			  		<div class="col-sm-12 mt-2">
 			  			<table class="house-list w-auto table-responsive" id="house-list" class="table table-hover">
 			  			<thead>
 			  				<tr>
 			  					<th>House Name</th>
 			  					<th>Owner</th>
-			  					<th>Business License Permit</th>
-			  					<th>Status</th>
+			  					<!-- <th>Business License Permit</th>
+			  					<th>Status</th> -->
 			  					<th>House Category</th>
 			  				</tr>
 			  			</thead>
@@ -208,10 +205,10 @@
 			  					extract($all_house_row);
 			  					echo $user_fname,str_repeat('&nbsp;', 1),substr($user_mname, 0, 1).".".str_repeat('&nbsp;', 1),ucfirst($user_lname);?></td>
 			  				<!-- Business Plate -->
-			  				<td class="text-center"><button type="button" class="btn btn-warning view-business-plate" data-id="<?php echo $house_id ?>" data-toggle="modal" data-target="#view-business-plate">View</button></td>
+			  				<!-- <td class="text-center"><button type="button" class="btn btn-warning view-business-plate" data-id="<?php echo $house_id ?>" data-toggle="modal" data-target="#view-business-plate">View</button></td> -->
 			  				<!-- End business Plate -->
 			  				<!--  house status -->
-			  				<td> Approved</td>
+			  				<!-- <td> Approved</td> -->
 			  				<!-- End of  house status -->
 			  				<?php 
 			  					if ($house_category_id == 1) {
@@ -233,7 +230,6 @@
 			  		</div>
 			  		</div>
 			  	</div>
-			  </div>
 			</div>
 		</div>
 		<?php
