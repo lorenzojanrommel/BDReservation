@@ -56,9 +56,9 @@
 				  			<?php
 				  			$customer_id = $_SESSION['user_id'];
 				  			if ($availability > $room_customer_no) {
-				  				$check_reservation_room_no = "SELECT * FROM reservations WHERE customer_id ='$customer_id' AND room_id = '$room_number'";
+				  				$check_reservation_room_no = "SELECT * FROM reservations WHERE customer_id ='$customer_id' AND room_id = '$room_id' AND reservation_status = '3'";
 				  				$results_check = mysqli_query($conn, $check_reservation_room_no);
-				  				if (mysqli_num_rows($results_check) >= 0) {
+				  				if (mysqli_num_rows($results_check) >= 1) {
 				  					?>
 				  					<h6>You Already Reserve a Reservation in this Room</h6>
 				  					<?php

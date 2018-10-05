@@ -130,10 +130,10 @@
       <li class="nav-item">
         <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
+  <!--     <li class="nav-item">
         <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="houses.php">Houses</a>
         <a class="nav-link d-lg-none" href="houses.php">Houses</a>
-      </li>
+      </li> -->
 <!--       <li class="nav-item">
         <a class="nav-link border-left d-none d-sm-none d-md-none d-lg-block" href="contacts.php">Contacts</a>
         <a class="nav-link d-lg-none" href="contacts.php">Contacts</a>
