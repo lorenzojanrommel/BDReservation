@@ -59,8 +59,19 @@
 				  				$check_reservation_room_no = "SELECT * FROM reservations WHERE customer_id ='$customer_id' AND room_id = '$room_id' AND reservation_status = '3'";
 				  				$results_check = mysqli_query($conn, $check_reservation_room_no);
 				  				if (mysqli_num_rows($results_check) >= 1) {
+				  					$reserve = "SELECT * FROM reservations WHERE customer_id = '$customer_id' AND reservation_status = '4'";
+				  					$reserve_results = mysqli_query($conn, $reserve);
+				  					$reserve_row = mysqli_num_rows($reserve_results);
+				  					if ($reserve_row >= 1) {
+				  							?>
+				  							<h6>Reservation Approved</h6>
+				  							<?php
+				  						}else{
+				  						?>
+				  						<h6>You Already Reserve a Reservation in this Room</h6>
+				  					<?php
+				  					}
 				  					?>
-				  					<h6>You Already Reserve a Reservation in this Room</h6>
 				  					<?php
 				  				}else{
 				  			$reserve = "SELECT * FROM reservations WHERE customer_id = '$customer_id' AND reservation_status = '4'";
