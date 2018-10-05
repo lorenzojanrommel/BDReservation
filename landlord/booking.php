@@ -75,9 +75,17 @@
 											$count_customer_row = mysqli_fetch_assoc($count_customer_results);
 											extract($count_customer_row);
 											if ($availability > $room_customer_no) {
+												$count_approve = "SELECT * FROM reservations WHERE customer_id = '$customer_id' AND reservation_status = '4'";
+												$count_approve_results = mysqli_query($conn, $count_approve);
+												if (mysqli_num_rows($count_approve_results) >= 1) {
+													?>
+													<h6>Already Reserved</h6>
+													<?php
+												}else{
 										?>
 										<button class="btn btn-outline-warning approve_reservation_modal" data-id=<?php echo $reservation_id?> data-toggle="modal" data-target="#approve_reservation">Accept</button>
 										<?php
+										}
 									}else{
 										?>
 											<h6>This Room is Full</h6>
