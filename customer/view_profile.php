@@ -134,8 +134,9 @@
 			  									<?php
 			  									$reservation = "SELECT * FROM reservations WHERE customer_id = '$id'";
 			  									$reservation_results = mysqli_query($conn, $reservation);
+
 			  									if (mysqli_num_rows($reservation_results) >0) {
-			  									$reservation_row = mysqli_fetch_assoc($reservation_results);
+			  									while($reservation_row = mysqli_fetch_assoc($reservation_results)){
 			  									extract($reservation_row);
 			  									?>
 			  									<tr>
@@ -201,6 +202,7 @@
 			  										</td>
 			  									</tr>
 			  									<?php
+			  									}
 			  								}else{
 			  									?>
 			  									<tr>

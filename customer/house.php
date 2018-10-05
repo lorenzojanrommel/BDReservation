@@ -11,7 +11,7 @@
 		extract($house_row);
 		?>
 		<div class="house-view-container mb-5 pb-1">
-			<div class="container-fluid mt-3 p-5">
+			<div class="container mt-3">
 				<div class="row border-house-view">
 					<div class="col-sm-12">
 					<h3 class="text-center house-name"><?php echo $house_name?></h3>
@@ -34,27 +34,26 @@
 						<div class="tab-content" id="myTabContent">
 						  <div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="about-tab">
 						  <div class="row p-3">
-						  	<div class="col-sm-6">
-						  		<h6><span class="about-house-view">Address:</span> <?php
+						  	<div class="col-sm-12">
+						  		<h6><span class="about-house-view">Address:</span> <span id="loc"><?php
 						  		echo $house_address;
-						  		?></h6>
+						  		?></span></h6>
 						  		<h6><span class="about-house-view">Phone Number:</span> <?php echo $house_phone_number; ?></h6>
-						  		<h6><span class="about-house-view">House Description: </span> <?php
+						  		<h6><span class="about-house-view">House Description: </span><div class="house-description"><?php
 						  		echo $house_description; 
 						  		?>
-						  		</h6>
-						  	</div>
-						  	<div class="col-sm-6">
+						  		</div></h6>
 						  	</div>
 						  </div>
 						  </div>
 						  <div class="tab-pane fade" id="location" role="tabpanel" aria-labelledby="location-tab">
-						  	<div class="map" onload="initMap">
-						  		<h5>Map</h5>
-						  		<div id="map-display">
-						  			<!-- <p id="lat">15.69</p>
-						  			<p id="lng">120.41</p> -->
-						  		</div>
+						  	
+					  		<div class="map" onload="initMap">
+					  			<h5>Map</h5>
+					  			<div id="map-display">
+					  				<!-- <p id="lat">15.69</p>
+					  				<p id="lng">120.41</p> -->
+					  			</div>
 						  	</div>
 						  </div>
 						</div>
@@ -68,61 +67,52 @@
 				</div>
 			</div>
 		</div>
-		<div class="container">
-		</div>
 		<?php
 
 	}
 	require "../template.php";
 ?>
-	<script type="text/javascript">
-//	$(document).ready(function() {
-//		var location = $('span#location').text();
-//		console.log(location);
-//		$.ajax({
-//			method : 'GET',
-//			url : 'https://maps.googleapis.com/maps/api/geocode/json',
-//			data : {
-//				address : location,
-//				key : 'AIzaSyC13PAMU-yO3K-JW2VmMmuZZ2YalWmc7GQ'
-//			},
-//			success : function(data){
-//				// log full response
-//				console.log(data);
-//				// Formatted Address
-//				var formattedAddress = data.results[0].formatted_address;
-//				var lat = data.results[0].geometry.location.lat;
-//				var lng = data.results[0].geometry.location.lng;
-//				console.log(lat);
-//				console.log(lng);
-//			},
-//			error : function(data){
-//				console.log(data);
-//			}
-//		})
-//	}) 
-	function initMap() {
-		// var getLat = $('#lat').text();
-		// var getLng = $('#lng').text();
-		// console.log(getLng);
-		// console.log(getLat);
-		// Map Option
-		var options = {
-			zoom : 11,
-			center : {
-					lat: 15.4755,
-					lng: 120.5963}
+		<script type="text/javascript">
+		function initMap() {
+			var location = $('span#loc').text();
+			// console.log(location);
+			$.ajax({
+				method : 'GET',
+				url : 'https://maps.googleapis.com/maps/api/geocode/json',
+				data : {
+					address : location,
+					key : 'AIzaSyBfbli7Zq07Uw96NZlB0DxA5uzQVaBTFa0'
+				},
+				success : function(data){
+					// log full response
+					// console.log(data);
+					// Formatted Address
+					var formattedAddress = data.results[0].formatted_address;
+					var lat = data.results[0].geometry.location.lat;
+					var lng = data.results[0].geometry.location.lng;
+					// Map Option
+					var options = {
+						zoom : 13,
+						center : {
+								lat: parseFloat(lat),
+								lng: parseFloat(lng) }
+					}
+					// console.log(options);
+					// // New Map
+					var map = new google.maps.Map(document.getElementById('map-display'), options);
+					// console.log(map);
+					// Add Market
+					var marker = new google.maps.Marker({
+						position: {lat: parseFloat(lat), lng: parseFloat(lng) },
+						map : map,
+					})
+				},
+				error : function(data){
+					console.log(data);
+				}
+			})
 		}
-		// New Map
-		var map = new google.maps.Map(document.getElementById('map-display'), options);
-		// Add Market
-		// var logo = '../assets/img/bhod_logo.png';
-		var marker = new google.maps.Marker({
-			position: {lat:15.4755, lng:120.5963},
-			map : map,
-		})
-	}
-	</script>
-	<script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC13PAMU-yO3K-JW2VmMmuZZ2YalWmc7GQ&callback=initMap">
-    </script>
+		</script>
+		<script async defer
+	      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfbli7Zq07Uw96NZlB0DxA5uzQVaBTFa0&callback=initMap">
+	    </script>

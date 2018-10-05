@@ -41,11 +41,11 @@
 				  	<?php 
 				  	if ($room_type = 1 ) {
 				  		?>
-				    	<p class="mt-2"><span class="room-type">Room Type:</span> Single Room</p>
+				    	<p class="mt-2"><span class="room-type">Room Type:</span> Male Room</p>
 				  		<?php
 				  	}else{
 				  		?>
-				    	<p class="mt-2"><span class="room-type">Room Type:</span> Double Room</p>
+				    	<p class="mt-2"><span class="room-type">Room Type:</span> Female Room</p>
 				  		<?php
 				  	}
 				  	?>
@@ -53,9 +53,19 @@
 				  	<p><span class="room-availability">Availability: </span><span><?php echo $room_customer_no;?></span><span>/</span><?php echo $availability; ?> </p></span>
 				  	<div class="row">
 				  		<div class="col-sm-12 text-center">
-				  		<form method="POST" action="customer/reservation.php?room=<?php echo $room_id?>">
-				  		<input type="submit" value="Reserve" class="btn btn-outline-warning" name="goToreservation">
-				  		</form>
+				  			<?php
+				  			if ($availability > $room_customer_no) {
+				  			?>
+				  			<form method="POST" action="customer/reservation.php?room=<?php echo $room_id?>">
+				  			<input type="submit" value="Reserve" class="btn btn-outline-warning" name="goToreservation">
+				  			</form>
+				  		<?php
+				  	}else{
+				  		?>
+				  		<h6>This Room is full</h6>
+				  		<?php
+				  	}
+				  		?>
 				  		</div>
 				  	</div>
 				  </div>

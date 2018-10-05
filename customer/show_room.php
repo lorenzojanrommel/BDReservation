@@ -21,31 +21,31 @@
 				<div class="card border-primary mb-3">
 				  <div class="card-header text-center">Room No. <?php echo $room_number?></div>
 				  <div class="card-body">
-				  	<div class="gallery-rooms">
+				    	<div class="gallery-rooms">
 				  		<div class="row">
-				  			<div class="col-sm-6">
-						  		<a href="<?php echo $room_pic_1 ?>" data-lightbox="mygallery"><img  class ="gallery-rooms-img img-fluid" src="<?php echo $room_pic_1 ?>"></a>
+				  			<div class="col-sm-6 room-picture">
+						  		<a href="../<?php echo substr($room_pic_1, 3); ?>" data-lightbox="mygallery"><img  class ="gallery-rooms-img img-fluid" src="../<?php echo substr($room_pic_1, 3)?>"></a>
 				  			</div>
-	  			  			<div class="col-sm-6 mb-3">
-	  					  		<a href="<?php echo $room_pic_2 ?>" data-lightbox="mygallery"><img  class ="gallery-rooms-img img-fluid" src="<?php echo $room_pic_2 ?>"></a>
+	  			  			<div class="col-sm-6 mb-3 room-picture">
+	  					  		<a href="../<?php echo substr($room_pic_2, 3); ?>" data-lightbox="mygallery"><img  class ="gallery-rooms-img img-fluid" src="../<?php echo substr($room_pic_2, 3); ?>"></a>
 	  			  			</div>
 
-		  			  			<div class="col-sm-6">
-		  					  		<a href="<?php echo $room_pic_3 ?>" data-lightbox="mygallery"><img  class ="gallery-rooms-img img-fluid" src="<?php echo $room_pic_3 ?>"></a>
+		  			  			<div class="col-sm-6 room-picture">
+		  					  		<a href="../<?php echo substr($room_pic_2, 3) ?>" data-lightbox="mygallery"><img  class ="gallery-rooms-img img-fluid" src="../<?php echo substr($room_pic_2, 3) ?>"></a>
 		  			  			</div>
-		  			  			<div class="col-sm-6">
-		  					  		<a href="<?php echo $room_pic_4 ?>" data-lightbox="mygallery"><img  class ="gallery-rooms-img img-fluid" src="<?php echo $room_pic_4 ?>"></a>
+		  			  			<div class="col-sm-6 room-picture">
+		  					  		<a href="../<?php echo substr($room_pic_2, 3) ?>" data-lightbox="mygallery"><img  class ="gallery-rooms-img img-fluid" src="../<?php echo substr($room_pic_2, 3) ?>"></a>
 		  			  			</div>
 				  		</div>
 				  	</div>
 				  	<?php 
 				  	if ($room_type = 1 ) {
 				  		?>
-				    	<p class="mt-2"><span class="room-type">Room Type:</span> Single Room</p>
+				    	<p class="mt-2"><span class="room-type">Room Type:</span> Male Room</p>
 				  		<?php
 				  	}else{
 				  		?>
-				    	<p class="mt-2"><span class="room-type">Room Type:</span> Double Room</p>
+				    	<p class="mt-2"><span class="room-type">Room Type:</span> Female Room</p>
 				  		<?php
 				  	}
 				  	?>
@@ -56,14 +56,20 @@
 				  			<?php
 				  			$customer_id = $_SESSION['user_id'];
 				  			if ($availability > $room_customer_no) {
-				  			
-				  			$reserve = "SELECT * FROM reservations WHERE customer_id = '$customer_id'";
+				  				$check_reservation_room_no = "SELECT * FROM reservations WHERE customer_id ='$customer_id' AND room_id = '$room_number'";
+				  				$results_check = mysqli_query($conn, $check_reservation_room_no);
+				  				if (mysqli_num_rows($results_check) >= 0) {
+				  					?>
+				  					<h6>You Already Reserve a Reservation in this Room</h6>
+				  					<?php
+				  				}else{
+				  			$reserve = "SELECT * FROM reservations WHERE customer_id = '$customer_id' AND reservation_status = '4'";
 				  			$reserve_results = mysqli_query($conn, $reserve);
 				  			$reserve_row = mysqli_num_rows($reserve_results);
 				  			// echo $reserve_row;
 				  			if ($reserve_row >= 1) {
 				  				?>
-				  				<h6>You Already Reserve a Room</h6>
+				  				<h6>Reservation Approved</h6>
 				  				<?php
 				  			}else{
 				  			?>
@@ -71,6 +77,7 @@
 				  			<input type="submit" value="Reserve" class="btn btn-outline-warning" name="goToreservation">
 				  			</form>
 				  		<?php
+				  		}
 				  		}
 				  	}else{
 				  		?>
