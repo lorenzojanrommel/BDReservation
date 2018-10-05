@@ -9,7 +9,18 @@
 				<div class="col-sm-12">
 					<h4 class="text-center text-success">Your Reservation Has Been Sent!</h4>
 					<p class="text-center">Wait for the owner Confirmation</p>
-					<p class="text-center"><a href="customer_house_list.php"><button class="btn btn-outline-warning">Go back!</button></a></p>
+					<p class="text-center"></p>
+				</div>
+				<div class="col-sm-12">
+					<div class="row">
+						<div class="col-sm-6 text-right">
+							<a href="customer_house_list.php"><button class="btn btn-outline-warning mt-4">Go back!</button></a>
+						</div>
+						<div class="col-sm-6">
+							<h6>Payment Method:</h6>
+							<a href="https://app.coins.ph/welcome/login" target="_blank"><img src="../assets/img/coinsph.jpg" class="coin-ph"></a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

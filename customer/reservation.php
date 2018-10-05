@@ -1,10 +1,9 @@
 <?php
-session_start();
-if (!isset($_SESSION['user_id'])) {
-		$_SESSION['redirect'] = $_SERVER['REQUEST_URI'];
-		// echo $_SESSION['redirect'];
-		header('location: ../login.php');
-	}else{
+// if (!isset($_SESSION['user_id'])) {
+// 		$_SESSION['redirect'] = $_SERVER['REQUEST_URI'];
+// 		// echo $_SESSION['redirect'];
+// 		header('location: ../login.php');
+// 	}else{
 	// if (isset($_POST['goToreservation'])) {
 	function display_title(){
 		echo "Boarding House & Dormitories Finder || Reservation Invoice";
@@ -103,10 +102,12 @@ if (!isset($_SESSION['user_id'])) {
 					    	</div>
 					    </div>
 					    <div class="row">
-					    	<div class="col-sm-12">
+					    <!-- 	<div class="col-sm-12">
 					    		<h6><span class="font-weight-bold">Rules: </span>No Payment: You will be given 3 days to pay or go in the Boarding/Dormitory or else your reservation will be void</h6>
+					    	</div> -->
+					    	<div class="col-sm-12">
+					    		<h6><span class="font-weight-bold">Reminder: </span> For payment, Please remember all the details about the owner.</h6>
 					    	</div>
-
 					    	<div class="col-sm-12"></div>
 					    </div>
 					    <div class="row mt-5">
@@ -126,5 +127,5 @@ if (!isset($_SESSION['user_id'])) {
 // 	}else{
 // 		header('location: not_authorized.php');
 // }
-}
+// }
 ?>
