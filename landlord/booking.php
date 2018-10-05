@@ -30,7 +30,10 @@
 						$count_row = mysqli_num_rows($results);
 						if ($count_row > 0 ) {
 						while ($row = mysqli_fetch_assoc($results)){
-						extract($row)
+						extract($row);
+						$if_already_reserve = "SELECT * FROM reservations WHERE customer_id = '$customer_id' AND reservation_status = '4'";
+						$if_already_reserve_results = mysqli_query($conn, $if_already_reserve);
+						if (mysqli_num_rows($if_already_reserve_results) == 0) {
 						?>
 						<tr>
 							<td>
@@ -97,6 +100,14 @@
 							</td>
 						</tr>
 						<?php
+					}else{
+						?>
+						<tr>
+						<td colspan="6"> No Results Found</td>
+						</tr>
+						<?php
+					}
+
 						}
 					}else{
 						?>

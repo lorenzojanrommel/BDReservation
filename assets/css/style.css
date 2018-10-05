@@ -746,6 +746,9 @@ h4.guide-title{
     border: 0;
     background: #ecf0f1;
   }
+  .customer{
+    min-height: 400px;
+  }
 /*
  *
  *Mobile

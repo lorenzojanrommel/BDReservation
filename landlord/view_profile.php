@@ -22,7 +22,7 @@
 		                        </div>
 		                    </div>
 		                    <div class="col-md-6">
-		                        <div class="profile-head">
+		                        <div class="profile-head text-center">
 		                                    <h5>
 		                                       <?php
 		                                       	echo $user_fname,str_repeat('&nbsp;', 1),substr($user_mname, 0, 1).".".str_repeat('&nbsp;', 1),ucfirst($user_lname);

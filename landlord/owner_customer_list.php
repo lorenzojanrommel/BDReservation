@@ -83,7 +83,11 @@
 			<?php
 			}
 			}else{
-				echo "No Reservation Found";
+				?>
+				<div class="col-sm-12 customer">
+				<h5>No Reservation Found</h5>
+				</div>
+				<?php
 			}
 			?>
 		</div>
