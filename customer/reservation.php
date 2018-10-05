@@ -86,12 +86,12 @@
 					    					}elseif($room_type = 2){
 					    						echo "Double Room";
 					    					}?></td>
-					    					<td>
-					    						<input type="text" name="room-number" value="<?php echo $room_number?>" readonly>
+					    					<td class="text-center">
+					    						<input type="text" name="room-number" value="<?php echo $room_number?>" readonly class="remove-border">
 					    					</td>
 					    					<td>
 					    						<span>&#8369</span>
-					    						<input type="text" name="room-price" value="<?php echo number_format($room_price) ?>" readonly>
+					    						<input type="text" name="room-price" value="<?php echo number_format($room_price) ?>" readonly class="remove-border">
 					    					</td>
 					    				</tr>
 					    			</tbody>
@@ -111,7 +111,7 @@
 					    	<div class="col-sm-12"></div>
 					    </div>
 					    <div class="row mt-5">
-					    	<div class="col-sm-6 text-right"><button class="btn btn-outline-success"> Payment</button></div>
+					    	<div class="col-sm-6 text-right"></div>
 					    	<div class="col-sm-6 text-left"><button type="submit" name="proceed_reservation" class="btn btn-outline-primary">Proceed for Reservation</button></div>
 					    </div>
 					</form>

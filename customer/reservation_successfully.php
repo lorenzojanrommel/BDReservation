@@ -17,7 +17,7 @@
 							<a href="customer_house_list.php"><button class="btn btn-outline-warning mt-4">Go back!</button></a>
 						</div>
 						<div class="col-sm-6">
-							<h6>Payment Method:</h6>
+							<h6 class="font-weight-bold">Payment Method:</h6>
 							<a href="https://app.coins.ph/welcome/login" target="_blank"><img src="../assets/img/coinsph.jpg" class="coin-ph"></a>
 						</div>
 					</div>
