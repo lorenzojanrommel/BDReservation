@@ -1,6 +1,6 @@
 
 <!--Footer-->
-<footer class="page-footer font-small bg-dark pt-4">
+<footer class="page-footer font-small default-color pt-4">
 
     <!--Footer Links-->
     <div class="container text-center text-md-left">
@@ -55,7 +55,7 @@
         </ul>
     </div> -->
     <!--/.Social buttons-->
-
+</div>
     <!--Copyright-->
     <div class="footer-copyright py-3 text-center">
         <div class="container-fluid">

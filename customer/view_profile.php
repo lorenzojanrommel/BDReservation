@@ -12,16 +12,16 @@
 		?>
 		<div class="container-fluid emp-profile">
 		                <div class="row">
-		                    <div class="col-md-4">
+		                    <div class="col-md-4 col-lg-2">
 		                        <div class="profile-img">
-		                            <img class="avatar-admin" src="../<?php echo $user_picture?>" alt=""/>
+		                            <img class="avatar-admin" src="<?php echo $user_picture?>" alt=""/>
 		                            <!-- <div class="file btn btn-lg btn-primary">
 		                                Change Photo
 		                                <input type="file" name="file"/>
 		                            </div> -->
 		                        </div>
 		                    </div>
-		                    <div class="col-md-6">
+		                    <div class="col-md-6 col-lg-8">
 		                        <div class="profile-head text-center mt-2">
 		                                    <h5>
 		                                       <?php
@@ -45,7 +45,7 @@
 		                            </ul>
 		                        </div>
 		                    </div>
-		                    <div class="col-md-2">
+		                    <div class="col-md-2 col-lg-2">
 		                        	<form action="edit_profile.php?edit=edit" method="POST">
 		                        		<button type="submit" name="edit_profile" class="profile-edit-btn">Edit Profile</button>
 		                            </form>
@@ -55,9 +55,9 @@
 		                    </div>
 		                </div>
 		                <div class="row">
-		                    <div class="col-md-4">
+		                    <div class="col-md-4 col-lg-2">
 		                    </div>
-		                    <div class="col-md-8">
+		                    <div class="col-md-8 col-lg-10">
 		                        <div class="tab-content profile-tab" id="myTabContent">
 		                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 		                                        <div class="row">
@@ -128,15 +128,14 @@
 			  										<th>Room Price</th>
 			  										<th>Day/Days Left</th>
 			  										<th>Status</th>
-			  										<th>Action</td>
+			  										<!-- <th>Action</td> -->
 			  									</tr>
 			  								</thead>
 			  								<tbody>
 			  									<?php
-			  									$reservation = "SELECT * FROM reservations WHERE customer_id = '$id'";
+			  									$reservation = "SELECT * FROM reservations WHERE customer_id = '$id' AND reservation_status = '4'";
 			  									$reservation_results = mysqli_query($conn, $reservation);
-
-			  									if (mysqli_num_rows($reservation_results) >0) {
+			  									if (mysqli_num_rows($reservation_results) > 0) {
 			  									while($reservation_row = mysqli_fetch_assoc($reservation_results)){
 			  									extract($reservation_row);
 			  									?>
@@ -176,47 +175,86 @@
 			  											echo $room_price;
 			  										?></td>
 			  										<td><p id="day-left"></p></td>
-			  										<?php
-			  										if ($reservation_status == '4') {
-			  											?>
-			  											<td class="text-center">Approved</td>
-			  											<?php
-			  										}elseif($reservation_status == '3'){
-			  											?>
-			  											<td class="text-center">Pending</td>
-			  											<?php
-			  										}elseif ($reservation_status == '5') {
-			  											?>
-			  											<td class="text-center">Denied</td>
-			  											<?php
-			  										}
-			  										?>
-			  										<td>
-			  											<?php
-			  											if ($reservation_status == '5') {
-			  												?>
-			  												<button type="button" class="btn btn-outline-danger">Delete</button>
-			  												<?php
-			  											}elseif($reservation_status == '3'){
-			  												?>
-			  												<button type="button" class="btn btn-outline-warning">Cancel</button>
-			  												<?php
-			  											}else{
-			  												?>
-			  												<button type="button" class="btn btn-success">Approved</button>
-			  												<?php
-			  											}
-			  											?>
-			  										</td>
+			  										<td class="text-center">Approved</td>
 			  									</tr>
 			  									<?php
 			  									}
 			  								}else{
-			  									?>
-			  									<tr>
-			  										<td colspan="6">No Reservation found!</td>
-			  									</tr>
-			  									<?php
+			  										$reservation = "SELECT * FROM reservations WHERE customer_id = '$id' AND reservation_status = '3'";
+			  										$reservation_results = mysqli_query($conn, $reservation);
+
+			  										if (mysqli_num_rows($reservation_results) > 0) {
+			  										while($reservation_row = mysqli_fetch_assoc($reservation_results)){
+			  										extract($reservation_row);
+			  										?>
+			  										<tr>
+			  											<td class="text-center"><?php 
+			  											$house = "SELECT * FROM `houses` JOIN rooms ON (houses.house_id = rooms.house_id) JOIN reservations ON (rooms.room_id = reservations.room_id) WHERE owner_id = '$owner_id'";
+			  											$house_results = mysqli_query($conn, $house);
+			  											$house_row = mysqli_fetch_assoc($house_results);
+			  											extract($house_row);
+			  											echo $house_name;
+			  											?></td>
+			  											<td class="text-center">
+			  												<?php
+			  												$room_number = "SELECT * FROM rooms WHERE room_id = '$room_id'";
+			  												$room_results = mysqli_query($conn, $room_number);
+			  												$room_row = mysqli_fetch_assoc($room_results);
+			  												extract($room_row);
+			  												echo $room_number;
+			  												?>
+			  											</td>
+			  											<td>
+			  												<?php
+			  												$owner = "SELECT * FROM users WHERE id = '$owner_id'";
+			  												$owner_results = mysqli_query($conn, $owner);
+			  												$owner_row = mysqli_fetch_assoc($owner_results);
+			  												extract($owner_row);
+			  												echo $user_fname,str_repeat('&nbsp;', 1),substr($user_mname, 0, 1).".".str_repeat('&nbsp;', 1),ucfirst($user_lname);
+			  												?>
+			  											</td>
+			  											<td class="text-center"><?php
+			  												echo $room_price;
+			  											?></td>
+			  											<td class="date"><?php 
+			  											$date = date_create($update_reserve_date);
+			  											$plus_three = date_modify($date, '+3 day');
+			  											$day = date_format($date, 'F j, Y g:i a');
+			  											if (strtotime($day) > time()) {
+			  												echo $day;
+			  											}else{
+			  												echo "Expired";
+			  											}
+			  											
+			  											?>
+			  											</td>
+			  											<!-- <td><p id="day-left"></p></td> -->
+			  											<?php
+			  											if ($reservation_status == '4') {
+			  												?>
+			  												<td class="text-center">Approved</td>
+			  												<?php
+			  											}elseif($reservation_status == '3'){
+			  												?>
+			  												<td class="text-center">Pending</td>
+			  												<?php
+			  											}elseif ($reservation_status == '5') {
+			  												?>
+			  												<td class="text-center">Denied</td>
+			  												<?php
+			  											}
+			  											?>
+			  										</tr>
+			  										<?php
+			  										}
+			  									}else{
+			  										
+			  										?>
+			  										<tr>
+			  											<td colspan="6">No Reservation found!</td>
+			  										</tr>
+			  										<?php
+			  									}
 			  								}
 			  									?>
 			  								</tbody>

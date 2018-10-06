@@ -21,7 +21,7 @@
 			      <!-- left column -->
 			      <div class="col-sm-3">
 			        <div class="text-center">
-			          <img src="../<?php echo $user_picture; ?>" class="avatar img-circle" alt="avatar">
+			          <img src="<?php echo $user_picture; ?>" class="avatar img-circle" alt="avatar">
 			          <h6><?php echo $user_fname,str_repeat('&nbsp;', 1),substr($user_mname, 0, 1).".".str_repeat('&nbsp;', 1),ucfirst($user_lname); ?></h6>
 			        </div>
 			      </div>
@@ -29,7 +29,7 @@
 			      <!-- edit form column -->
 			      <div class="col-sm-9 personal-info">
 			        <h3>Personal info</h3>
-			        <form class="form-horizontal" role="form" method="POST"  action="edit_profile_endpoint.php?id=<?php echo $id?>" enctype='multipart/form-data'>
+			        <form class="form-horizontal" role="form" method="POST" action="edit_profile_endpoint.php?id=<?php echo $id?>" enctype='multipart/form-data'>
 			        	<div class="form-group">
 			        		<div class="form-group col-sm-8">
 			        		     <label for="uProfile">Profile Picture:</label>
@@ -152,11 +152,11 @@
 			            <div class="col-sm-8">
 			            	<div class="row">
 			            		<div class="col-sm-6 text-center">
-			              			<input type="submit" class="btn btn-primary" name="save" value="Save Changes">
+			              			<input type="submit" class="btn btn-primary cancel-edit" name="save" value="Save Changes">
 			            		</div>
 			            		<div class="col-sm-6 text-center">
 			        			</form>
-			        				<a href="view_profile.php" class="btn btn-default">Cancel</a>
+			        				<a href="view_profile.php" class="btn btn-default cancel-edit">Cancel</a>
 			            		</div>
 			            	</div>
 			            </div>

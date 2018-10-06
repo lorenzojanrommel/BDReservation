@@ -36,7 +36,7 @@
 			    				<th>Customer Name</th>
 			    				<th>Phone Number</th>
 			    				<th>Address</th>
-			    				<th>Days Left</th>
+			    				<th>Expiration Date</th>
 			    				<th>Action</th>
 			    			</tr>
 			    		</thead>
@@ -48,13 +48,6 @@
 			    				extract($customer_row);
 			    			?>
 			    			<tr>
-			    				<td class="date" hidden><?php 
-			    				$date = date_create($update_reserve_date);
-			    				$plus_three = date_modify($date, '+3 day');
-			    				$day = date_format($date, 'F j, Y g:i a');
-			    				echo $day;?>
-			    					
-			    				</td>
 			    				<td><?php
 			    				$customer_name = "SELECT * FROM users WHERE id = '$customer_id'";
 			    				$customer_name_results = mysqli_query($conn, $customer_name);
@@ -64,8 +57,13 @@
 			    				?></td>
 			    				<td><?php echo $user_phone_number; ?></td>
 			    				<td><?php echo $user_address; ?></td>
-			    				<td><p id="day-left"></p></td>
-			    				<td>Delete</td>
+			    				<td class="date"><?php 
+			    				$date = date_create($update_reserve_date);
+			    				$plus_three = date_modify($date, '+3 day');
+			    				$day = date_format($plus_three, 'F j, Y g:i a');
+			    				echo $day; ?>
+			    				</td>
+			    				<td>Delete Edit</td>
 			    			</tr>
 			    			<?php
 			    			}
@@ -91,9 +89,9 @@
 	}
 	require "../template.php";
 ?>
-<script>
+<!-- <script>
 	var date = $('.date').text();
-	console.log(date);
+	// console.log(date);
 // Set the date we're counting down to
 var countDownDate = new Date(date).getTime();
 
@@ -113,13 +111,14 @@ var x = setInterval(function() {
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
     // Output the result in an element with id="day-left"
+    if ($('#day-left') != "") {
     document.getElementById("day-left").innerHTML = days + "d " + hours + "h "
     + minutes + "m " + seconds + "s ";
-    
+    }
     // If the count down is over, write some text 
     if (distance < 0) {
         clearInterval(x);
         document.getElementById("day-left").innerHTML = "EXPIRED";
     }
 }, 1000);
-</script>
+</script> -->

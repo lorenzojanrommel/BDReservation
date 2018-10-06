@@ -12,7 +12,7 @@
 		?>
 		<div class="container-fluid emp-profile">
 		                <div class="row">
-		                    <div class="col-md-4">
+		                    <div class="col-md-4 col-lg-2">
 		                        <div class="profile-img">
 		                            <img class="avatar-admin" src="<?php echo $user_picture?>" alt=""/>
 		                            <!-- <div class="file btn btn-lg btn-primary">
@@ -21,7 +21,7 @@
 		                            </div> -->
 		                        </div>
 		                    </div>
-		                    <div class="col-md-6">
+		                    <div class="col-md-6 col-lg-8">
 		                        <div class="profile-head">
 		                                    <h5>
 		                                       <?php
@@ -42,9 +42,9 @@
 		                            </ul>
 		                        </div>
 		                    </div>
-		                    <div class="col-md-2">
+		                    <div class="col-md-2 col-lg-2">
 		                        	<form action="edit_profile.php?edit=edit" method="POST">
-		                        		<button type="submit" name="edit_profile" class="profile-edit-btn">Edit Profile</button>
+		                        		<button type="submit" name="edit_profile" class="profile-edit-btn mt-1">Edit Profile</button>
 		                            </form>
 		                        	<form action="change_password.php?change=change" method="POST" class="mt-2">
 		                        		<button type="submit" name="edit_profile" class="profile-edit-btn">Change Password</button>
@@ -52,9 +52,9 @@
 		                    </div>
 		                </div>
 		                <div class="row">
-		                    <div class="col-md-4">
+		                    <div class="col-md-4 col-lg-2">
 		                    </div>
-		                    <div class="col-md-8">
+		                    <div class="col-md-8 col-lg-10">
 		                        <div class="tab-content profile-tab" id="myTabContent">
 		                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 		                                        <div class="row">

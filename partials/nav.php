@@ -15,7 +15,7 @@
       <!-- <a class="navbar-brand title d-none d-lg-block" href="../admin/../../BDReservation/index.php">Boarding House & Dormitories Finder</a> -->
     </div>
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-center">
+<nav class="navbar navbar-expand-lg navbar-dark default-color d-flex justify-content-center">
 <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> -->
 	<div class="d-flex justify-content-center">
   <a class="navbar-brand title d-none d-md-block d-lg-none mr-5 pr-5" href="index.php">Boarding House & Dormitories Finder</a>

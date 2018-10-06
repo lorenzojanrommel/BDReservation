@@ -88,10 +88,12 @@
 	   <!-- End Description of the boarding house or dormitory -->
 	 
 	<div class="modal-footer">
-		 <input type="submit" name="edit_house" value="Save" class="btn btn-warning">
+		 <!-- <input type="submit" value="Save" class=" edit_house-button"> -->
+		 <button type="submit" name="edit_house"  class="btn btn-warning edit_house-button">Save</button>
+		 </form>
 		</form>
 	 <form action="owner_dashboard.php">
-	  <button type="submit" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	  <button type="submit" class="btn btn-secondary edit_house-button" data-dismiss="modal">Close</button>
 	  </form>
 	 </div>
 	</div>

@@ -6,7 +6,7 @@ session_start();
 	if (isset($_POST['mname'])) {
 		$mname = htmlspecialchars($_POST['mname']);
 	}else{
-		$mname = 'NA';
+		$mname = '_.';
 	}
 	if (isset($_POST['address'])) {
 		$address = htmlspecialchars($_POST['address']);
@@ -21,7 +21,7 @@ session_start();
 	if (isset($_POST['picture'])) {
 		$picture = htmlspecialchars($_POST['picture']);
 	}else{
-		$picture = 'assets/img/default.jpg';
+		$picture = '../assets/img/default.jpg';
 	}
 	if (isset($_POST['email'])) {
 		$email = htmlspecialchars($_POST['email']);

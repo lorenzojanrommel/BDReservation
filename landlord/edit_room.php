@@ -94,7 +94,8 @@
 		     <!-- End of Fourth Picture -->
 		  </div>
 		<div class="modal-footer">
-		   <input type="submit" name="edit_room_button" value="Save" class="btn btn-success ml-3">
+		   <!-- <input type="submit"  value="Save" class=" ml-3"> -->
+		   <button type="submit" name="edit_room_button" class="btn btn-success ml-1" data-dismiss="modal">Save</button>
 		</form>
 		<form action="add_room.php">
 		   <button type="submit" class="btn btn-primary ml-1" data-dismiss="modal">Close</button>

@@ -13,7 +13,7 @@
 				</div>
 				<div class="col-sm-12">
 					<div class="row">
-						<div class="col-sm-6 text-right">
+						<div class="col-sm-6 go-back">
 							<a href="customer_house_list.php"><button class="btn btn-outline-warning mt-4">Go back!</button></a>
 						</div>
 						<div class="col-sm-6">

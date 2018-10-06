@@ -6,7 +6,7 @@ session_start();
 	if (isset($_POST['mname'])) {
 		$mname = htmlspecialchars($_POST['mname']);
 	}else{
-		$mname = 'NA';
+		$mname = '_.';
 	}
 	if (isset($_POST['address'])) {
 		$address = htmlspecialchars($_POST['address']);

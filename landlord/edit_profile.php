@@ -152,11 +152,14 @@
 			            <div class="col-sm-8">
 			            	<div class="row">
 			            		<div class="col-sm-6 text-center">
-			              			<input type="submit" class="btn btn-primary" name="save" value="Save Changes">
+			              			<button type="submit" class="btn btn-primary" name="save">Save Changes</button>
 			            		</div>
 			            		<div class="col-sm-6 text-center">
 			        			</form>
-			        				<a href="view_profile.php" class="btn btn-default">Cancel</a>
+		        				<form action="view_profile.php">
+		        					<button type="submit" class="btn btn-default">Cancel</button>
+		        				<!-- <a href="view_profile.php" class="btn btn-default">Cancel</a> -->
+		        				</form>
 			            		</div>
 			            	</div>
 			            </div>
