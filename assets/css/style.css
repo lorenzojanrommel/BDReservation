@@ -223,7 +223,7 @@ span.approved{
 .container-cybod-house{
 	margin-top: 1em;
 	margin-bottom: 1em;
-	border: 1px solid black;
+	/*border: 1px solid black;*/
 	min-height: 600px;
 }
 .container-cybod{
@@ -731,7 +731,7 @@ h4.guide-title{
     /*margin-left: 1em;*/
     margin-top: .5em;
     font-weight: bold;
-    font-size: 2em;
+    font-size: 1.2em;
   }
   .edit-house-button{
     margin-top: .3em;
@@ -748,6 +748,9 @@ h4.guide-title{
   }
   .customer{
     min-height: 400px;
+  }
+  .owner-customer-container{
+    min-height: 500px;
   }
 /*
  *
@@ -880,6 +883,29 @@ h4.guide-title{
      #home{
       margin-top: 20px;
      }
+     /*
+      *
+      *Owner Dashboard
+      *
+      */
+      .edit-house-button{
+        margin-left: 20px;
+      }
+      .bhod-title-display{
+        font-size: .6em;
+        text-align: justify;
+      }
+      .bhod-image-display{
+        height: 250px;
+      }
+      .description-owner{
+        overflow: scroll;
+        height: 200px;
+        text-align: justify;
+      }
+      .map{
+        min-height: 100px;
+      }
  }
  /*
   *
@@ -942,6 +968,26 @@ h4.guide-title{
       height: 120px;
       filter: grayscale(0);
     }
+    /*
+     *
+     *House Owner
+     *
+     */
+     .bhod-status-display{
+      font-size: 2em;
+      height: 100px;
+      line-height: 50px;
+     }
+     .bhod-title-display{
+      font-size: .8em;
+     }
+     .edit-house-button{
+      height: 100px;
+      line-height: 50px;
+     }
+     .map{
+      min-height: 200px;
+     }
 }
 @media (max-width: 961px){
 

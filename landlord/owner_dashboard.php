@@ -31,27 +31,25 @@
 						?>
 				<div class="container-cybod-house">
 				  <div class="row">
-				  	<div class="col-sm-1 edit-house-button text-right">
-				    	<a href="edit_house.php?id-house=<?php echo $house_id;?>"><i class="fas fa-cog"></i></i></a>
+				  	  <div class="col-sm-12">
+				  	  	<?php
+				  	  		if ($house_status == 3) {
+				  	  			?>
+				  	    			<span class="bhod-status-display"><b>Status:</b><span class="pending">Pending</span></span>
+				  	    			<?php
+				  	  		}elseif($house_status == 4){
+				  	  	?>
+				  	    <span class="bhod-status-display"><b>Status:</b><span class="approved">Approved</span></span>
+				  		<?php }elseif($house_status == 5){
+				  			?>
+				  	    <span class="bhod-status-display"><b>Status:</b><span class="denied">Denied</span></span>
+				  	    <?php
+				  		}?>
+				  	  </div>
+				  	<div class="col-sm-12 edit-house-button">
+				  		<a href="edit_house.php?id-house=<?php echo $house_id;?>"><i class="fas fa-cog"></i></a>
+				  		<span class="bhod-title-display"><?php echo $house_name ?></span>
 				  	</div>
-				    <div class="col-sm-8">
-				     <p class="bhod-title-display"><?php echo $house_name ?></p>
-				    </div>
-				    <div class="col-sm-2">
-				    	<?php
-				    		if ($house_status == 3) {
-				    			?>
-				      			<p class="bhod-status-display"><b>Status:</b><span class="pending">Pending</span></p>
-				      			<?php
-				    		}elseif($house_status == 4){
-				    	?>
-				      <p class="bhod-status-display"><b>Status:</b><span class="approved">Approved</span></p>
-				  	<?php }elseif($house_status == 5){
-				  		?>
-				      <p class="bhod-status-display"><b>Status:</b><span class="denied">Denied</span></p>
-				      <?php
-				  	}?>
-				    </div>
 				  </div>
 				  <div class="hr-line"></div>
 				  <div class="row">
@@ -73,7 +71,7 @@
 				  		?></p>
 				  		<p><b>Location:</b> <span id="loc"><?php echo $house_address ?></span></p>
 				  		<p><b>Phone Number:</b> <?php echo $house_phone_number ?></p>
-				  		<p><b>Description:</b> <?php echo $house_description ?></p>
+				  		<p><b>Description:</b> <span class="description-owner"><?php echo $house_description ?></span></p>
 				  	</div>
 				  </div>
 				  <div class="map" onload="initMap">

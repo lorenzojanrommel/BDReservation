@@ -38,7 +38,7 @@
 	// Business License Permit
 	$bhd_blp_image = $target_file2;
 	// Description of boarding house or dormitory
-	$bhd_description = $_POST['bhddescription'];
+	$bhd_description = htmlspecialchars($_POST['bhddescription']);
 	// user id of owner
 	$user_id = $_SESSION['user_id'];
 	date_default_timezone_set('Asia/Manila');

@@ -1,9 +1,11 @@
 <?php
-// if (!isset($_SESSION['user_id'])) {
-// 		$_SESSION['redirect'] = $_SERVER['REQUEST_URI'];
-// 		// echo $_SESSION['redirect'];
-// 		header('location: ../login.php');
-// 	}else{
+session_start();
+if (!isset($_SESSION['user_id'])) {
+	
+		$_SESSION['redirect'] = $_SERVER['REQUEST_URI'];
+		// echo $_SESSION['redirect'];
+		header('location: ../login.php');
+	}else{
 	// if (isset($_POST['goToreservation'])) {
 	function display_title(){
 		echo "Boarding House & Dormitories Finder || Reservation Invoice";
@@ -123,6 +125,7 @@
 		</div>
 		<?php
 	}
+}
 	require '../template.php';
 // 	}else{
 // 		header('location: not_authorized.php');

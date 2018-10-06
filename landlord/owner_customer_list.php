@@ -4,7 +4,7 @@
 	}
 	function display_content(){
 		?>
-		<div class="container mb-4">
+		<div class="container mb-4 owner-customer-container">
 		<h3 class="pt-4">Customer List</h3>
 		<?php
 			require '../condb.php';
@@ -48,6 +48,13 @@
 			    				extract($customer_row);
 			    			?>
 			    			<tr>
+			    				<td class="date" hidden><?php 
+			    				$date = date_create($update_reserve_date);
+			    				$plus_three = date_modify($date, '+3 day');
+			    				$day = date_format($date, 'F j, Y g:i a');
+			    				echo $day;?>
+			    					
+			    				</td>
 			    				<td><?php
 			    				$customer_name = "SELECT * FROM users WHERE id = '$customer_id'";
 			    				$customer_name_results = mysqli_query($conn, $customer_name);
@@ -57,19 +64,7 @@
 			    				?></td>
 			    				<td><?php echo $user_phone_number; ?></td>
 			    				<td><?php echo $user_address; ?></td>
-			    				<td><?php
-			    					date_default_timezone_set('Asia/Manila');
-			    					$date = date_create($update_reserve_date);
-			    					date_modify($date, '+3 day');
-			    					$day_left = date_format($date, 'F j, Y g:i a');
-			    					// $remain = strtotime($day_left) - strtotime($update_reserve_date);
-			    					// // echo $remain;
-			    					// // // $remaining = $update_reserve_date - $day_left;
-			    					// $hours_remaining = floor(($remain % 86400) / 3600);
-			    					// $days_remaining = floor($remain / 86400);
-			    					// // echo $days_remaining;
-			    					// echo $hours_remaining;
-			    				?></td>
+			    				<td><p id="day-left"></p></td>
 			    				<td>Delete</td>
 			    			</tr>
 			    			<?php
@@ -96,4 +91,35 @@
 	}
 	require "../template.php";
 ?>
+<script>
+	var date = $('.date').text();
+	console.log(date);
+// Set the date we're counting down to
+var countDownDate = new Date(date).getTime();
 
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+    
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+    
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Output the result in an element with id="day-left"
+    document.getElementById("day-left").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+    
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("day-left").innerHTML = "EXPIRED";
+    }
+}, 1000);
+</script>
