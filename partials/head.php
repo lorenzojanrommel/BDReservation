@@ -16,6 +16,10 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_level'] != '1') {
 	?>
 <link rel="stylesheet" type="text/css" href="../assets/css/lightbox.min.css">
 <?php
+}elseif(!isset($_SESSION['user_id'])){
+?>
+<link rel="stylesheet" type="text/css" href="assets/css/lightbox.min.css">
+<?php
 }
 ?>
 <!-- Custom CSS -->

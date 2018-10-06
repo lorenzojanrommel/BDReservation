@@ -18,6 +18,10 @@
 		<script type="text/javascript" src="../assets/js/lightbox-plus-jquery.min.js"></script>
 		
 		<?php
+	}elseif(!isset($_SESSION['user_id'])){
+		?>
+		<script type="text/javascript" src="assets/js/lightbox-plus-jquery.min.js"></script>
+		<?php
 	}else{
 		?>
 		<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>

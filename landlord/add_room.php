@@ -62,23 +62,23 @@
 								<div class="card border-primary mb-3">
 								  <div class="card-header text-center">Room No. <?php echo $room_number?></div>
 								  <div class="card-body">
-								  	<div class="gallery-rooms">
-								  		<div class="row">
-								  			<div class="col-sm-6">
-										  		<a href="<?php echo $room_pic_1 ?>" data-lightbox="mygallery"><img  class ="gallery-rooms-img img-fluid" src="<?php echo $room_pic_1 ?>"></a>
-								  			</div>
-					  			  			<div class="col-sm-6 mb-3">
-					  					  		<a href="<?php echo $room_pic_2 ?>" data-lightbox="mygallery"><img  class ="gallery-rooms-img img-fluid" src="<?php echo $room_pic_2 ?>"></a>
-					  			  			</div>
+							    	<div class="gallery-rooms">
+							  		<div class="row">
+							  			<div class="col-sm-6 room-picture">
+									  		<a href="../<?php echo substr($room_pic_1, 3); ?>" data-lightbox="mygallery"><img  class ="gallery-rooms-img img-fluid" src="../<?php echo substr($room_pic_1, 3)?>"></a>
+							  			</div>
+				  			  			<div class="col-sm-6 mb-3 room-picture">
+				  					  		<a href="../<?php echo substr($room_pic_2, 3); ?>" data-lightbox="mygallery"><img  class ="gallery-rooms-img img-fluid" src="../<?php echo substr($room_pic_2, 3); ?>"></a>
+				  			  			</div>
 
-		  			  			  			<div class="col-sm-6">
-		  			  					  		<a href="<?php echo $room_pic_3 ?>" data-lightbox="mygallery"><img  class ="gallery-rooms-img img-fluid" src="<?php echo $room_pic_3 ?>"></a>
-		  			  			  			</div>
-		  			  			  			<div class="col-sm-6">
-		  			  					  		<a href="<?php echo $room_pic_4 ?>" data-lightbox="mygallery"><img  class ="gallery-rooms-img img-fluid" src="<?php echo $room_pic_4 ?>"></a>
-		  			  			  			</div>
-								  		</div>
-								  	</div>
+					  			  			<div class="col-sm-6 room-picture">
+					  					  		<a href="../<?php echo substr($room_pic_2, 3) ?>" data-lightbox="mygallery"><img  class ="gallery-rooms-img img-fluid" src="../<?php echo substr($room_pic_2, 3) ?>"></a>
+					  			  			</div>
+					  			  			<div class="col-sm-6 room-picture">
+					  					  		<a href="../<?php echo substr($room_pic_2, 3) ?>" data-lightbox="mygallery"><img  class ="gallery-rooms-img img-fluid" src="../<?php echo substr($room_pic_2, 3) ?>"></a>
+					  			  			</div>
+							  			</div>
+							  		</div>
 								  	<?php 
 								  	if ($room_type == '1' ) {
 								  		?>

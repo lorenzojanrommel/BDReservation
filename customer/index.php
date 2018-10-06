@@ -19,7 +19,7 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-2 col-sm-12 col-md-12 text-center">
-						<img src="../assets/img/guide/mag.PNG" alt="Search" class="img-fluid">
+						<img src="../assets/img/guide/mag.PNG" alt="Search" class="img-fluid guide-img">
 						<div class="guide-title text-center">
 							<h4 class="guide-title">SEARCH</h4>
 						</div>
@@ -31,7 +31,7 @@
 						<img src="../assets/img/guide/arrow.PNG" alt="arrow">
 					</div>
 					<div class="col-lg-2 col-sm-12 col-md-12 text-center">
-						<img src="../assets/img/guide/view.PNG" alt="View" class="img-fluid">
+						<img src="../assets/img/guide/view.PNG" alt="View" class="img-fluid guide-img">
 						<div class="guide-title text-center">
 							<h4 class="guide-title">VIEW</h4>
 						</div>
@@ -43,7 +43,7 @@
 						<img src="../assets/img/guide/arrow.PNG" alt="arrow">
 					</div>
 					<div class="col-lg-2 col-sm-12 col-md-12 text-center">
-						<img src="../assets/img/guide/book.PNG" alt="Book" class="img-fluid">
+						<img src="../assets/img/guide/book.PNG" alt="Book" class="img-fluid guide-img">
 						<div class="guide-title text-center">
 							<h4 class="guide-title">BOOK</h4>
 						</div>
@@ -55,7 +55,7 @@
 						<img src="../assets/img/guide/arrow.PNG" alt="arrow">
 					</div>
 					<div class="col-lg-2 col-sm-12 col-md-12 text-center">
-						<img src="../assets/img/guide/kama.PNG" alt="kama" class="img-fluid">
+						<img src="../assets/img/guide/kama.PNG" alt="kama" class="img-fluid guide-img">
 						<div class="guide-title text-center">
 							<h4 class="guide-title">MOVE IN</h4>
 						</div>

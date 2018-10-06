@@ -332,8 +332,8 @@ div.dataTables_wrapper div.dataTables_paginate{
  	transform: scale(1.1);
  }
  img.lb-image{
- 	width: 700px !important;;
- 	height: 500px !important;;
+ 	width: 700px !important;
+ 	height: 500px !important;
  }
 .lb-outerContainer, .lb-dataContainer {
     max-width: 700px;
@@ -494,8 +494,9 @@ input[type=number]::-webkit-outer-spin-button {
     width: 70%;
     padding: 2%;
     font-weight: 600;
-    color: #6c757d;
+    color: #000;
     cursor: pointer;
+    border: 1px solid #000;
 }
 .proile-rating{
     font-size: 12px;
@@ -550,6 +551,7 @@ img.avatar-admin{
 	widows: 140px;
 	/*border-radius: 50%;*/
 	object-fit: cover;
+  border: 2px solid #000;
 }
 /*
  *
@@ -752,6 +754,9 @@ h4.guide-title{
   .owner-customer-container{
     min-height: 500px;
   }
+  label {
+    font-weight: bold;
+  }
 /*
  *
  *Mobile
@@ -906,6 +911,37 @@ h4.guide-title{
       .map{
         min-height: 100px;
       }
+      /*
+       *
+       *LightBox
+       *
+       */
+       img.lb-image{
+        margin-top: 100px;
+        height: 200px !important;
+        width: 100% !important; 
+       }
+       .add-room-button{
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        font-size: .6em;
+        margin-bottom: 20px;
+        float: right;
+        margin-top: -50px;
+        padding: 10px;
+       }
+       .add-room-title{
+        font-size: 1.1em;
+        font-weight: bold;
+       }
+       img.guide-img{
+        height: 80px;
+       }
+       img.guide-arrow{
+        /*height: 80px;*/
+       }
+
  }
  /*
   *
@@ -987,6 +1023,10 @@ h4.guide-title{
      }
      .map{
       min-height: 200px;
+     }
+     .profile-edit-btn{
+      width: 100px;
+      font-size: .8em;
      }
 }
 @media (max-width: 961px){
