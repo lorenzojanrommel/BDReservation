@@ -59,12 +59,12 @@
 			    				<td><?php echo $user_address; ?></td>
 			    				<td class="date"><?php 
 			    				$date = date_create($update_reserve_date);
-			    				$plus_three = date_modify($date, '+3 day');
+			    				$plus_three = date_modify($date, '+'.$day.' day');
 			    				$day = date_format($plus_three, 'F j, Y g:i a');
 			    				echo $day; ?>
 			    				</td>
 			    				<td>
-			    					<button class="btn btn-outline-warning approve_reservation_modal" data-id=<?php echo $reservation_id?> data-toggle="modal" data-target="#approve_reservation">Edit</button>
+			    					<button class="btn btn-outline-warning edit_day_left_modal" data-id=<?php echo $reservation_id ?> data-toggle="modal" data-target="#edit_day_left_modal">Edit</button>
 			    					<button class="btn btn-outline-danger delete_customer_modal" data-id=<?php echo $customer_id; ?> data-toggle="modal" data-target="#delete_customer_modal">Delete</button></td>
 			    			</tr>
 			    			<?php
@@ -91,6 +91,7 @@
 	}
 	require "../template.php";
 	require "delete_customer_at_room_modal.php";
+	require 'edit_day_left_modal.php';
 ?>
 <script type="text/javascript">
 	$('.delete_customer_modal').click(function() {
@@ -106,6 +107,22 @@
 			success: function(data){
 				// console.log(data);
 				$('#delete_customer_modal_body').html(data);
+			}
+		})
+	})
+	$('.edit_day_left_modal').click(function() {
+		var id = $(this).data('id');
+		console.log(id);
+		$.ajax({
+			method: 'post',
+			url: 'edit_day_left_modal_body.php',
+			data: {
+				// edit: true,
+				id : id
+			},
+			success: function(data){
+				// console.log(data);
+				$('#edit_day_left_modal_body').html(data);
 			}
 		})
 	})

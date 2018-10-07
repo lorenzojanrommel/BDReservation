@@ -142,7 +142,7 @@
 			  									<tr>
 			  										<td class="date" hidden><?php 
 			  										$date = date_create($update_reserve_date);
-			  										$plus_three = date_modify($date, '+3 day');
+			  										$plus_three = date_modify($date, '+'.$day.' day');
 			  										$day = date_format($date, 'F j, Y g:i a');
 			  										echo $day;?>
 			  										</td>
@@ -293,8 +293,14 @@ var x = setInterval(function() {
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
     // Output the result in an element with id="day-left"
+    if ((date) != "") {
+	if ($('#day-left') != "") {
     document.getElementById("day-left").innerHTML = days + "d " + hours + "h "
     + minutes + "m " + seconds + "s ";
+    }else{
+    	// document.getElementById("day-left").innerHTML = "NONE";
+    }
+	}
     
     // If the count down is over, write some text 
     if (distance < 0) {

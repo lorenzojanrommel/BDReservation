@@ -31,10 +31,10 @@
 	  			  			</div>
 
 		  			  			<div class="col-sm-6 room-picture">
-		  					  		<a href="../<?php echo substr($room_pic_2, 3) ?>" data-lightbox="mygallery"><img  class ="gallery-rooms-img img-fluid" src="../<?php echo substr($room_pic_2, 3) ?>"></a>
+		  					  		<a href="../<?php echo substr($room_pic_3, 3) ?>" data-lightbox="mygallery"><img  class ="gallery-rooms-img img-fluid" src="../<?php echo substr($room_pic_3, 3) ?>"></a>
 		  			  			</div>
 		  			  			<div class="col-sm-6 room-picture">
-		  					  		<a href="../<?php echo substr($room_pic_2, 3) ?>" data-lightbox="mygallery"><img  class ="gallery-rooms-img img-fluid" src="../<?php echo substr($room_pic_2, 3) ?>"></a>
+		  					  		<a href="../<?php echo substr($room_pic_4, 3) ?>" data-lightbox="mygallery"><img  class ="gallery-rooms-img img-fluid" src="../<?php echo substr($room_pic_4, 3) ?>"></a>
 		  			  			</div>
 				  		</div>
 				  	</div>
