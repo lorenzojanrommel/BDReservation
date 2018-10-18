@@ -81,6 +81,17 @@
 				                		<a href="register_customer.php" class="ml-1"><small class="signup">Sign Up for Customer Boarding House / Dormitories</small></a>
 				                	</div>
 				                <div class="hr_line"></div>
+				                <div class="col s12 center login-flex ml-2">
+				                	<div class="row">
+				                		<div class="col-sm-6 text-right">
+				                	<button class="btn btn-outline-warning" data-toggle="modal" data-target="#copyright">Copyright</button>
+				                		</div>
+				                		<div class="col-sm-6">
+				                	<button class="btn btn-outline-primary" data-toggle="modal" data-target="#policy">Policy</button>
+				                		</div>
+				                	</div>
+				                </div>
+				                <div class="hr_line"></div>
 				            </div>
 				        </div>
 				    </div>
@@ -89,5 +100,6 @@
 		<?php
 	}
 	require 'template.php';
-
+	require 'copyright.php';
+	require 'policy.php';
 ?>
