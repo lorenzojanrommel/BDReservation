@@ -13,6 +13,10 @@
  			        	  <button type="button" class="close" data-dismiss="alert">&times;</button>
  			        	  <p></p>
  			        	</div>
+ 			        	<div class="alert alert-dismissible alert-danger text-center" id="danger_message" hidden>
+ 			        	  <button type="button" class="close" data-dismiss="alert">&times;</button>
+ 			        	  <p></p>
+ 			        	</div>
  			        	
  			            <div class="card card-default">
  			                <div class="card-header"><h4>Add New Admin</h4></div>
@@ -56,7 +60,7 @@
  			                        <div class="form-group row">
  			                            <label for="phone_numer" class="col-md-4 col-form-label text-md-right">Phone Number</label>
  			                            <div class="col-md-6">
- 			                                <input type="tel" class="form-control phone_numer" name="phone_numer" placeholder="Phone Name" required autofocus ondrop="return false;" onpaste="return false;" onkeypress="return event.charCode>=48 && event.charCode<=57" pattern='{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}' title='Phone Number (Format: +99(99)9999-9999)'>
+ 			                                <input type="tel" class="form-control phone_numer" name="phone_numer" placeholder="Phone Name" required autofocus ondrop="return false;" onpaste="return false;" onkeypress="return event.charCode>=48 && event.charCode<=57" pattern='[0-9]{11}' title='Phone Number (Phone Number Format: 0999 999 9999)'>
  			                                    <span class="invalid-feedback">
  			                                    </span>
 
@@ -145,7 +149,8 @@
  							password : password
  						},
  						success: function(data){
- 							console.log(data);
+ 							// console.log(data);
+ 							if (data == "New Admin Added") {
  							$('form').trigger("reset");
  							$('#success_message').removeAttr('hidden');
  							$('#register_submit').attr('disabled', 'disabled');
@@ -156,6 +161,16 @@
  							setTimeout(function(){  
  							$('#success_message').fadeOut("Slow");  
  							}, 3000);
+ 						}else if (data == "Phone Number Format: 0999 999 9999"){
+ 							$('form').trigger("reset");
+ 							$('#confirm_email').hide();
+ 							$('#confirm_username').hide();
+ 							$('#msgconfirmpass').hide();
+ 							$('#danger_message').removeAttr('hidden');
+ 							$('#register_submit').attr('disabled', 'disabled');
+ 							$('.phone_numer').trigger("reset");
+ 							$('#danger_message').fadeIn().html(data);
+ 						}
  						}
  					})
  				})

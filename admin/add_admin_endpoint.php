@@ -2,6 +2,8 @@
 	require '../condb.php';
 	$fname = htmlspecialchars($_POST['fname']);
 	$lname = htmlspecialchars($_POST['lname']);
+	$pnumber = htmlspecialchars($_POST['phone_numer']);
+
 	if (isset($_POST['mname'])) {
 		$mname = htmlspecialchars($_POST['mname']);
 	}else{
@@ -46,10 +48,14 @@
 	date_default_timezone_set('Asia/Manila');
 	$create_date = date("F j, Y g:i a");
 	$update_date = date("F j, Y g:i a");
-
+	if (strlen($pnumber) == 11) {
+	
 	$sql = "INSERT INTO users (role_id, status_id, user_fname, user_lname, user_mname, user_address, user_gender, user_birthdate, user_picture, user_email, user_phone_number, username, password, create_date, update_date) VALUES ('1', '1', '$fname', '$lname', '$mname', '$address', '$gender', '$bday', '$picture', '$email', '$phone', '$username', '$password', '$create_date', '$update_date')";
 	if(mysqli_query($conn, $sql)){
 	echo "New Admin Added";
 	}
+}else{
+	echo "Phone Number Format: 0999 999 9999";
 	// header('location: add_admin.php')
+}
 ?>
