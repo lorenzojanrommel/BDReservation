@@ -3,6 +3,7 @@
 	session_start();
 	require '../condb.php';
 	$house_id = $_GET['house-id'];
+	
 	// $check1 = getimagesize($_FILES["poybhd"]["tmp_name"]);
 	// $check2 = getimagesize($_FILES["blppoybhd"]["tmp_name"]);
 	if(is_uploaded_file($_FILES['poybhd']['tmp_name'])) {
@@ -53,6 +54,27 @@
 	date_default_timezone_set('Asia/Manila');
 	$updated_date = date("F j, Y g:i a");
 
+	$sql_check_status = "SELECT house_status FROM houses WHERE house_id = '$house_id'";
+	$results_check_status = mysqli_query($conn, $sql_check_status);
+	$row = mysqli_fetch_assoc($results_check_status);
+	extract($row);
+	if ($house_status == '5') {
+		$sql = "UPDATE houses SET 
+							house_category_id = '$category', 
+							house_name = '$bhd_name', 
+							house_address = '$bhd_address', 
+							house_phone_number = '$bdh_pnumber', 
+							house_number_room = '$bdh_number_room', 
+							house_picture = '$bhd_image', 
+							house_blpp = '$bhd_blp_image', 
+							house_business_no = '$bussiness_plate_no', 
+							house_description = '$bhd_description',
+							house_status = '3',
+							updated_date = '$updated_date'
+							WHERE house_id = $house_id";
+	mysqli_query($conn, $sql) or die (mysqli_error($conn));
+	header('Location: owner_dashboard.php?success=success');
+	}else{
 	$sql = "UPDATE houses SET 
 							house_category_id = '$category', 
 							house_name = '$bhd_name', 
@@ -67,6 +89,7 @@
 							WHERE house_id = $house_id";
 	mysqli_query($conn, $sql) or die (mysqli_error($conn));
 	header('Location: owner_dashboard.php?success=success');
+		}
 	}else{
 		function display_title(){
 			echo "Boarding House & Dormitories Finder";

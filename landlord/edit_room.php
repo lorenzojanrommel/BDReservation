@@ -12,7 +12,7 @@
 		extract($row);
 		?>
 		<div class="container">
-			<h2 class="mt-5">Edit this Room</h2>
+			<h2 class="mt-5 font-weight-bold">Edit this Room</h2>
 		<form method='POST' action='edit_room_endpoint.php?id=<?php echo $room_id; ?>' enctype='multipart/form-data'>
 		  <div class="row">
 		    <div class="col-sm-6">
@@ -64,34 +64,51 @@
 		    <!-- End of Room Availavility-->
 		    <!-- Number of customer in this room -->
 		    <div class="form-group col-sm-6">
-		        <label for="number_customer">Number of Customer in this Room</label>
+		        <label for="number_customer">Number of Customer on this Room</label>
 		        <input type="number" id="number_customer" name="number_customer" class="form-control" min="0" max="<?php echo $availability; ?>" oninput="this.value=this.value.replace(/[^0-9]/g,'');" value="<?php echo $room_customer_no; ?>">
 		     </div>
 		    <!-- end of number of customer in this room -->
-		    <!-- First Picture-->
+		    <!-- upload image -->
 		    <div class="form-group col-sm-12">
-		         <label for="room-pic-1">First Picture of Room</label>
-		         <input type="file" id="room-pic-1" name="room-pic-1" class="form-control-file" aria-describedby="fileHelp" placeholder="Second Picture of Room">
-		     </div>
-		    <!-- End of first Picture -->
-		    <!-- Second Picture-->
-		    <div class="form-group col-sm-12">
-		         <label for="room-pic-2">Second Picture of Room</label>
-		         <input type="file" id="room-pic-2" name="room-pic-2" class="form-control-file" aria-describedby="fileHelp" placeholder="Second Picture of Room">
-		     </div>
-		    <!-- End of Second Picture -->
-		    <!-- Third Picture-->
-		     <div class="form-group col-sm-12">
-		          <label for="room-pic-3">Third Picture of Room</label>
-		          <input type="file" id="room-pic-3" name="room-pic-3" class="form-control-file" aria-describedby="fileHelp" placeholder="Third Picture of Room">
-		      </div>
-		    <!-- End of Third Picture -->
-		    <!-- Fourth Picture-->
-		    <div class="form-group col-sm-12">
-		         <label for="room-pic-4">Fourth Picture of Room</label>
-		         <input type="file" id="room-pic-4" name="room-pic-4" class="form-control-file" aria-describedby="fileHelp" placeholder="Fourth Picture of Room">
-		     </div>
-		     <!-- End of Fourth Picture -->
+		        <label for="room-pic-1">Upload Photo of your Room</label>
+		        <input type="file" id="room-pic[]" name="room-pic[]" multiple accept=".jpg, .png, .gif" class="form-control-file" aria-describedby="fileHelp" placeholder="Second Picture of Room">
+		    </div>
+		    <!-- end of upload image -->
+		    <!-- Show images -->
+	    	<div class="gallery-rooms">
+	    		<div class="container">
+	  			<div class="row">
+	  			<?php 
+	  			$sql4 = "SELECT * FROM room_imgs WHERE room_id = '$room_id' ORDER BY img_id ASC";
+	  			$results4 = mysqli_query($conn, $sql4);
+	  			$count_img = mysqli_num_rows($results4);
+	  			if ($count_img > 0) {
+	  			while ($row4 = mysqli_fetch_assoc($results4)) {
+	  				extract($row4);
+	  				?>
+	  				<!-- <div class="image-div"> -->
+	  					<div class="mb-4 pr-1 col-sm-6 col-md-4 col-lg-3 text-center">
+	  					<!-- <button id = "x">X</button> -->
+				  			<a href="../<?php echo substr($img_name, 3); ?>" data-lightbox="mygallery"><img  class ="gallery-rooms-img img-fluid" src="../<?php echo substr($img_name, 3); ?>"></a>
+				  			<button type="button" name="delete-img" class="btn btn-outline-danger mt-3 delete-image-modal" data-id=<?php echo $img_id?> data-toggle="modal" data-target="#delete_image">Delete</button>
+		  				</div>
+		  			<!-- </div> -->
+
+	  				<?php
+	  			}
+	  		}else{
+	  			?>
+	  			<div class="col-sm-12">
+	  				<a href="../assets/img/no_image_uploaded.png" data-lightbox="mygallery"><img  class ="img-fluid" src="../assets/img/no_image_uploaded.png"></a>
+	  			</div>
+	  			<?php
+	  		}
+	  			?>
+		  			</div>
+	  			</div>
+
+	  		</div>
+		    <!-- end show images -->
 		  </div>
 		<div class="modal-footer">
 		   <!-- <input type="submit"  value="Save" class=" ml-3"> -->
@@ -105,7 +122,26 @@
 		<?php
 
 	}
+	require "delete_image_modal.php";
+	// require "delete_image_modal_body.php";
 	require "../template.php";
 ?>
-
+<script type="text/javascript">
+	$('.delete-image-modal').click(function() {
+		var id = $(this).data('id');
+		// console.log(id);
+		$.ajax({
+			method: 'POST',
+			url: 'delete_image_modal_body.php',
+			data: {
+				// delete-img: true,
+				id : id
+			},
+			success: function(data){
+				// console.log(data);
+				$('#delete_image_body').html(data);
+			}
+		})
+	})
+</script>
 

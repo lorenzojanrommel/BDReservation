@@ -17,7 +17,7 @@
 					<div class="add-room-container mt-2">
 						<div class="row">
 						<div class="col-sm-11 col-md-10">
-						<h2>Room List</h2>
+						<h2 class="mt-4 font-weight-bold">Room List</h2>
 						</div>
 						<div class="col-sm-1 col-md-2 text-md-left">
 							<?php
@@ -64,20 +64,30 @@
 								  <div class="card-body">
 							    	<div class="gallery-rooms">
 							  		<div class="row">
-							  			<div class="col-sm-6 room-picture">
-									  		<a href="../<?php echo substr($room_pic_1, 3); ?>" data-lightbox="mygallery"><img  class ="gallery-rooms-img img-fluid" src="../<?php echo substr($room_pic_1, 3)?>"></a>
+							  			<?php 
+							  			$sql4 = "SELECT * FROM room_imgs WHERE room_id = '$room_id' ORDER BY img_id ASC LIMIT 4";
+							  			$results4 = mysqli_query($conn, $sql4);
+							  			$count_img = mysqli_num_rows($results4);
+							  			if ($count_img > 0) {
+							  			while ($row4 = mysqli_fetch_assoc($results4)) {
+							  				extract($row4);
+							  				?>
+							  				<div class="room-picture mb-3 col-sm-6">
+				  					  			<a href="../<?php echo substr($img_name, 3); ?>" data-lightbox="mygallery"><img  class ="gallery-rooms-img img-fluid" src="../<?php echo substr($img_name, 3); ?>"></a>
+				  			  				</div>
+							  				<?php
+							  			}
+							  		}else{
+							  			?>
+							  			<div class="col-sm-12">
+							  				<a href="../assets/img/no_image_uploaded.png" data-lightbox="mygallery"><img  class ="img-fluid" src="../assets/img/no_image_uploaded.png"></a>
 							  			</div>
-				  			  			<div class="col-sm-6 mb-3 room-picture">
-				  					  		<a href="../<?php echo substr($room_pic_2, 3); ?>" data-lightbox="mygallery"><img  class ="gallery-rooms-img img-fluid" src="../<?php echo substr($room_pic_2, 3); ?>"></a>
-				  			  			</div>
+							  			<?php
+							  		}
+							  			?>
+				  			  			
+							  			</div>
 
-					  			  			<div class="col-sm-6 room-picture">
-					  					  		<a href="../<?php echo substr($room_pic_3, 3) ?>" data-lightbox="mygallery"><img  class ="gallery-rooms-img img-fluid" src="../<?php echo substr($room_pic_3, 3) ?>"></a>
-					  			  			</div>
-					  			  			<div class="col-sm-6 room-picture">
-					  					  		<a href="../<?php echo substr($room_pic_4, 3) ?>" data-lightbox="mygallery"><img  class ="gallery-rooms-img img-fluid" src="../<?php echo substr($room_pic_4, 3) ?>"></a>
-					  			  			</div>
-							  			</div>
 							  		</div>
 								  	<?php 
 								  	if ($room_type == '1' ) {
@@ -126,6 +136,12 @@
 	{ 
 	    $(this).removeData();
 	}) ;
+	});
+	$(document).ready(function()
+	{
+	setTimeout(function(){  
+	$('#success_message').fadeOut("Slow");  
+	}, 2000);
 	});
 </script>
 

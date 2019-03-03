@@ -37,7 +37,7 @@
                 <!-- Room Number-->
                 <div class="form-group col-sm-12">
                     <label for="room-number">Room Number</label>
-                    <input type="text" id="room-number" name="room-number" class="form-control" placeholder="Input Room Number" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
+                    <input type="text" id="room-number" name="room-number" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
                  </div>
                 <!-- End of Room Number-->
               </div>
@@ -57,28 +57,28 @@
                </div>
               <!-- End of Room Availavility-->
               <!-- First Picture-->
-              <div class="form-group col-sm-12">
-                   <label for="room-pic-1">First Picture of Room</label>
-                   <input type="file" id="room-pic-1" name="room-pic-1" class="form-control-file" aria-describedby="fileHelp" placeholder="Second Picture of Room">
-               </div>
+             <!--  <div class="form-group col-sm-12">
+                   <label for="room-pic-1">Upload Photo of your Room</label>
+                   <input type="file" id="room-pic[]" name="room-pic[]" multiple accept=".jpg, .png, .gif" class="form-control-file" aria-describedby="fileHelp" placeholder="Second Picture of Room">
+               </div> -->
               <!-- End of first Picture -->
               <!-- Second Picture-->
-              <div class="form-group col-sm-12">
+              <!-- <div class="form-group col-sm-12">
                    <label for="room-pic-2">Second Picture of Room</label>
                    <input type="file" id="room-pic-2" name="room-pic-2" class="form-control-file" aria-describedby="fileHelp" placeholder="Second Picture of Room">
-               </div>
+               </div> -->
               <!-- End of Second Picture -->
               <!-- Third Picture-->
-               <div class="form-group col-sm-12">
+               <!-- <div class="form-group col-sm-12">
                     <label for="room-pic-3">Third Picture of Room</label>
                     <input type="file" id="room-pic-3" name="room-pic-3" class="form-control-file" aria-describedby="fileHelp" placeholder="Third Picture of Room">
-                </div>
+                </div> -->
               <!-- End of Third Picture -->
               <!-- Fourth Picture-->
-              <div class="form-group col-sm-12">
+            <!--   <div class="form-group col-sm-12">
                    <label for="room-pic-4">Fourth Picture of Room</label>
                    <input type="file" id="room-pic-4" name="room-pic-4" class="form-control-file" aria-describedby="fileHelp" placeholder="Fourth Picture of Room">
-               </div>
+               </div> -->
                <!-- End of Fourth Picture -->
             </div>
           <div class="modal-footer">

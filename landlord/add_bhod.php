@@ -1,4 +1,21 @@
 <?php
+	//##########################################################################
+	// ITEXMO SEND SMS API - PHP - CURL-LESS METHOD
+	// Visit www.itexmo.com/developers.php for more info about this API
+	//##########################################################################
+	function itexmo($number,$message,$apicode){
+	$url = 'https://www.itexmo.com/php_api/api.php';
+	$itexmo = array('1' => $number, '2' => $message, '3' => $apicode);
+	$param = array(
+	    'http' => array(
+	        'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+	        'method'  => 'POST',
+	        'content' => http_build_query($itexmo),
+	    ),
+	);
+	$context  = stream_context_create($param);
+	return file_get_contents($url, false, $context);}
+	//##########################################################################
 	if (isset($_POST['category'])) {
 	session_start();
 	require '../condb.php';
@@ -22,28 +39,43 @@
 	}
 	
 	// Boarding house category
-	$category = htmlspecialchars($_POST['category']);
+	$category = mysqli_real_escape_string($conn, $_POST['category']);
 	// Boarding house or dormitory name
-	$bhd_name = htmlspecialchars($_POST['noybhd']);
+	$bhd_name = mysqli_real_escape_string($conn, $_POST['noybhd']);
 	// Address of boarding hourse or dormitory
-	$bhd_address = htmlspecialchars($_POST['aoybhd']);
+	$bhd_address = mysqli_real_escape_string($conn, $_POST['aoybhd']);
 	// Phone number of boarding house or dormitory
-	$bdh_pnumber = htmlspecialchars($_POST['pnoybhd']);
+	$bdh_pnumber = mysqli_real_escape_string($conn, $_POST['pnoybhd']);
 	// Number of Rooms
-	$bdh_number_room = htmlspecialchars($_POST['rnumber']);
+	$bdh_number_room = mysqli_real_escape_string($conn, $_POST['rnumber']);
 	// Bussiness Plate Number 
-	$bussiness_plate_no = htmlspecialchars($_POST['bussiness_place_no']);
+	$bussiness_plate_no = mysqli_real_escape_string($conn, $_POST['bussiness_place_no']);
 	// Image of boarding house or dormitory
 	$bhd_image = $target_file1;
 	// Business License Permit
 	$bhd_blp_image = $target_file2;
 	// Description of boarding house or dormitory
-	$bhd_description = htmlspecialchars($_POST['bhddescription']);
+	$bhd_description = mysqli_real_escape_string($conn, $_POST['bhddescription']);
 	// user id of owner
 	$user_id = $_SESSION['user_id'];
 	date_default_timezone_set('Asia/Manila');
 	$created_date = date("F j, Y g:i a");
 	$updated_date = date("F j, Y g:i a");
+	// SMS
+	$msg = "Review the new house rental ".$bhd_name;
+	$api = "TR-BOARD850790_37BNJ";
+	$result = itexmo("09981850790",$msg, $api);
+	if ($result == ""){
+	echo "iTexMo: No response from server!!!
+	Please check the METHOD used (CURL or CURL-LESS). If you are using CURL then try CURL-LESS and vice versa.	
+	Please CONTACT US for help. ";	
+	}else if ($result == 0){
+	echo "Message Sent!";
+	}
+	else{	
+	echo "Error Num ". $result . " was encountered!";
+	}
+	// End of SMS
 
 	$sql = "INSERT INTO houses (user_id, house_category_id, house_name, house_address, house_phone_number, house_number_room, house_picture, house_blpp, house_business_no, house_description, house_status, updated_date, created_date) 
 			VALUES ('$user_id' , '$category' , '$bhd_name', '$bhd_address', '$bdh_pnumber', '$bdh_number_room', '$bhd_image', '$bhd_blp_image', '$bussiness_plate_no', '$bhd_description', '3', '$updated_date', '$created_date')";

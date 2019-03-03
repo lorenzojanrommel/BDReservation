@@ -323,8 +323,8 @@ div.dataTables_wrapper div.dataTables_paginate{
  	font-size: 2em;
  }
  img.gallery-rooms-img{
- 	width: 300px;
- 	height: 200px;
+ 	/*max-width: 300px;*/
+ 	height: 100%;
  	filter: grayscale(100%);
  	transition: 1s;
  }
@@ -354,7 +354,7 @@ span.room-type, .room-price, .room-availability{
  *
  *Add Admin
  *
- */
+ 
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
@@ -389,8 +389,8 @@ input[type=number]::-webkit-outer-spin-button {
  }
  .reg-label{
  	/*font-weight: bold;*/
- 	font-size: 1.3em;
- 	font-family: 'Francois One', sans-serif;
+ 	/*font-size: 1.3em;
+ 	font-family: 'Francois One', sans-serif;*/
  	color: #000;
  	/*text-shadow: 10px 5px 5px #000;*/
  }
@@ -781,6 +781,23 @@ h4.guide-title{
         width: 160px;
         text-align: center;
        }
+  /*#x{
+      position: absolute;
+      background: red;
+      color: white;
+      top: -10px;
+      right: -10px;
+  }*/
+  .image-div{
+    padding-left: 0;
+    /*padding-right: 0;*/
+    width: 25%;
+    height: 400px;
+    padding-bottom: 100px;
+  }
+  .room-picture{
+    height: 300px;
+  }
 /*
  *
  *Mobile
@@ -854,6 +871,7 @@ h4.guide-title{
     .room-picture{
       width: 50%;
       height: 120px;
+      padding: 0 !important;
     }
     img.gallery-rooms-img{
       width: 100%;

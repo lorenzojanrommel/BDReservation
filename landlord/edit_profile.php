@@ -51,13 +51,13 @@
 			          <div class="form-group">
 			            <label class="col-sm-3 control-label">Middle name:</label>
 			            <div class="col-sm-8">
-			              <input class="form-control" type="text" name="mname" value="<?php echo $user_mname; ?>" oninput="this.value=this.value.replace(/[^A-Za-z\s]/g,'');">
+			              <input class="form-control" type="text" name="mname" value="<?php echo $user_mname; ?>" oninput="this.value=this.value.replace(/[^A-Za-z\s]/g,'');" title='If none just input N/A'>
 			            </div>
 			          </div>
 			          <div class="form-group">
 			            <label class="col-sm-3 control-label">Address:</label>
 			            <div class="col-sm-8">
-			              <input class="form-control" type="text" name="address" value="<?php echo $user_address; ?>" oninput="this.value=this.value.replace(/[^A-Za-z\s]/g,'');">
+			              <input class="form-control" type="text" name="address" value="<?php echo $user_address; ?>" oninput="this.value=this.value.replace(/[^A-Za-z\s]/g,'');" required>
 			            </div>
 			          </div>
 			          <div class="form-group">
@@ -125,8 +125,7 @@
 			          <div class="form-group">
 			            <label class="col-sm-3 control-label">Birthdate:</label>
 			            <div class="col-sm-8">
-			              <input class="form-control" type="date" name="bday" max="3000-12-31" 
-        min="1000-01-01" required value="<?php echo $user_birthdate?>">
+			              <input class="form-control" type="date" name="bday" max="<?php echo date('Y-m-d',strtotime('-18 years'));?>" min="1980-01-01" required value="<?php echo $user_birthdate?>">
 			            </div>
 			          </div>
 			          <div class="form-group">
@@ -138,7 +137,7 @@
 			          <div class="form-group">
 			            <label class="col-sm-3 control-label">Phone Number:</label>
 			            <div class="col-sm-8">
-			              <input type="tel" class="form-control phone_numer" name="phone_numer" placeholder="Phone Name" required autofocus ondrop="return false;" onpaste="return false;" onkeypress="return event.charCode>=48 && event.charCode<=57" pattern='{4}[\-]\d{3}[\-]\d{4}' title='Phone Number (Format: 0999-123-4321)' value="<?php echo $user_phone_number; ?>">
+			              <input type="tel" class="form-control phone_numer" name="phone_numer" placeholder="Phone Name" required autofocus ondrop="return false;" onpaste="return false;" onkeypress="return event.charCode>=48 && event.charCode<=57" pattern='^(09|\+639)\d{9}$' title='Format: 0999-999-9999 or +(639)999-999-9999' value="<?php echo $user_phone_number; ?>">
 			            </div>
 			          </div>
 			          <div class="form-group">

@@ -25,7 +25,7 @@
 		                        <div class="profile-head text-center mt-2">
 		                                    <h5>
 		                                       <?php
-		                                       	echo $user_fname,str_repeat('&nbsp;', 1),substr($user_mname, 0, 1).".".str_repeat('&nbsp;', 1),ucfirst($user_lname);
+		                                       	echo ucfirst($user_fname),str_repeat('&nbsp;', 1),substr($user_mname, 0, 1).".".str_repeat('&nbsp;', 1),ucfirst($user_lname);
 		                                       ?>
 		                                    </h5>
 		                                    <h6>
@@ -73,7 +73,7 @@
 		                                                <label>Name</label>
 		                                            </div>
 		                                            <div class="col-md-6">
-		                                                <p><?php echo $user_fname,str_repeat('&nbsp;', 1),substr($user_mname, 0, 1).".".str_repeat('&nbsp;', 1),ucfirst($user_lname);?></p>
+		                                                <p><?php echo ucfirst($user_fname),str_repeat('&nbsp;', 1),substr($user_mname, 0, 1).".".str_repeat('&nbsp;', 1),ucfirst($user_lname);?></p>
 		                                            </div>
 		                                        </div>
 		                                        <div class="row">

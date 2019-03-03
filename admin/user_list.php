@@ -46,7 +46,7 @@
 			  					
 			  					?>
 			  					<tr>
-			  						<td><?php echo $user_fname,str_repeat('&nbsp;', 1),substr($user_mname, 0, 1).".".str_repeat('&nbsp;', 1),ucfirst($user_lname); ?></td>
+			  						<td><?php echo ucfirst($user_fname),str_repeat('&nbsp;', 1),substr($user_mname, 0, 1).".".str_repeat('&nbsp;', 1),ucfirst($user_lname); ?></td>
 			  						<td><?php echo $user_phone_number; ?></td>
 			  						<td><?php echo $user_address; ?></td>
 			  						<td><?php echo $user_email; ?></td>
@@ -97,7 +97,7 @@
 			  					
 			  					?>
 			  					<tr>
-			  						<td><?php echo $user_fname,str_repeat('&nbsp;', 1),substr($user_mname, 0, 1).".".str_repeat('&nbsp;', 1),ucfirst($user_lname); ?></td>
+			  						<td><?php echo ucfirst($user_fname),str_repeat('&nbsp;', 1),substr($user_mname, 0, 1).".".str_repeat('&nbsp;', 1),ucfirst($user_lname); ?></td>
 			  						<td><?php echo $user_phone_number; ?></td>
 			  						<td><?php echo $user_address; ?></td>
 			  						<td><?php echo $user_email; ?></td>

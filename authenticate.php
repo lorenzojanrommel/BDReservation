@@ -76,6 +76,22 @@
 				echo "email_available";
 			}
 			}
+	}elseif(isset($_POST['phone_ver'])){
+			$phone_number = mysqli_real_escape_string($conn, $_POST['phone_number']);
+			if (empty($phone_number)) {
+				echo "empty";
+			}else{
+				$sql = "SELECT * FROM users WHERE user_phone_number = '$phone_number'";
+				$results = mysqli_query($conn, $sql);
+				if (mysqli_num_rows($results)>0) {
+					echo "phone_number_exist";
+				}elseif(!preg_match("/^(09|\+639)\d{9}$/", $phone_number)){
+					echo "invalid_format";
+				}else{
+					echo "phone_available";
+				}
+			}
+
 	}else{
 		header('Location: index.php');
 		exit();

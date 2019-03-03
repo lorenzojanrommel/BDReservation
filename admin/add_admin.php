@@ -1,10 +1,10 @@
 <?php
-// 	session_start();
-// 	if (isset($_SESSION['user_id']) && $_SESSION['user_level'] == '1') {
  	function display_title(){
  	echo "Boarding House & Dormitories Finder || Add Admin";
  	}
  	function display_content(){
+	// session_start();
+	if (isset($_SESSION['user_level']) && $_SESSION['user_level'] == '1') {
  		?>
  			<div class="container">
  			    <div class="row justify-content-center pt-5 mt-5 mb-5 pb-5">
@@ -26,57 +26,56 @@
  			                    	<form>
  			                    	<!-- First Name -->
  			                        <div class="form-group row">
- 			                            <label for="name" class="col-md-4 col-form-label text-md-right">First Name</label>
+ 			                            <label for="name" class="col-md-4 col-form-label text-md-right">First Name<span class="important">*</span></label>
  			                            <div class="col-md-6">
  			                                <input type="text" class="form-control fname" name="fname" placeholder="First Name" required autofocus oninput="this.value=this.value.replace(/[^A-Za-z\s]/g,'');">
  			                            </div>
  			                        </div>
  			                        <!-- Last Name -->
  			                        <div class="form-group row">
- 			                            <label for="name" class="col-md-4 col-form-label text-md-right">Last Name</label>
+ 			                            <label for="name" class="col-md-4 col-form-label text-md-right">Last Name<span class="important">*</span></label>
  			                            <div class="col-md-6">
- 			                                <input type="text" class="form-control lname" name="lname" placeholder="Last Name" required autofocus oninput="this.value=this.value.replace(/[^A-Za-z\s]/g,'');">
+ 			                                <input type="text" class="form-control lname" name="lname" placeholder="Last Name" required autofocus oninput="this.value=this.value.replace(/[^A-Za-z0-9\s]/g,'');">
  			                            </div>
  			                        </div>
  			                        <!-- Middle Name -->
- 			                        <div class="form-group row">
+ 			                        <!-- <div class="form-group row">
  			                            <label for="name" class="col-md-4 col-form-label text-md-right">Middle Name</label>
  			                            <div class="col-md-6">
  			                                <input type="text" class="form-control mname" name="mname" placeholder="Middle Name" required autofocus oninput="this.value=this.value.replace(/[^A-Za-z\s]/g,'');">
  			                                    <span class="invalid-feedback">
  			                                    </span>
  			                            </div>
- 			                        </div>
+ 			                        </div> -->
  			                        <!-- Email address Reg -->
  			                        <div class="form-group row">
- 			                            <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+ 			                            <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address<span class="important">*</span></label>
 
  			                            <div class="col-md-6">
- 			                                <input id="email" type="email" class="form-control email" name="email" required autofocus oninput="return validate_email()" placeholder="Email Address">
+ 			                                <input id="email" type="email" class="form-control email" name="email" required autofocus onblur="return validate_email()" placeholder="Email Address">
  			                                <strong><p id="confirm_email"></p></strong>
  			                            </div>
  			                        </div>
  			                        <!-- Phone Number -->
  			                        <div class="form-group row">
- 			                            <label for="phone_numer" class="col-md-4 col-form-label text-md-right">Phone Number</label>
+ 			                            <label for="phone_numer" class="col-md-4 col-form-label text-md-right">Phone Number<span class="important">*</span></label>
  			                            <div class="col-md-6">
- 			                                <input type="tel" class="form-control phone_numer" name="phone_numer" placeholder="Phone Name" required autofocus ondrop="return false;" onpaste="return false;" onkeypress="return event.charCode>=48 && event.charCode<=57" pattern='[0-9]{11}' title='Phone Number (Phone Number Format: 0999 999 9999)'>
- 			                                    <span class="invalid-feedback">
- 			                                    </span>
+ 			                                <input type="tel" class="form-control phone_number" name="phone_numer" id="phone_number" placeholder="Phone Name" required autofocus ondrop="return false;" onpaste="return false;" onkeypress="return event.charCode>=48 && event.charCode<=57" pattern='^(09|\+639)\d{9}$' title='Format: 0999-999-9999 or +(639)999-999-9999' onblur="return validate_phone()">
+ 			                                <strong><p id="confirm_phone_number"></p></strong>
 
  			                            </div>
  			                        </div>
  			                        <!-- Username -->
  			                        <div class="form-group row">
- 			                            <label for="name" class="col-md-4 col-form-label text-md-right">Username</label>
+ 			                            <label for="name" class="col-md-4 col-form-label text-md-right">Username<span class="important">*</span></label>
  			                            <div class="col-md-6">
- 			                                <input id="username" type="text" class="form-control username" name="username" required autofocus oninput="return validate_username()" placeholder="Username">
+ 			                                <input id="username" type="text" class="form-control username" name="username" required autofocus onblur="return validate_username()" placeholder="Username">
  			                                   <strong><p id="confirm_username"></p></strong>
  			                            </div>
  			                        </div>
  			                        <!-- Password Register -->
  			                        <div class="form-group row">
- 			                            <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+ 			                            <label for="password" class="col-md-4 col-form-label text-md-right">Password<span class="important">*</span></label>
 
  			                            <div class="col-md-6">
  			                                <input id="password" type="password" class="form-control password" name="password" minlength="6" required placeholder="Password" onblur="return validate()">
@@ -84,7 +83,7 @@
  			                        </div>
  			                        <!-- Confirm password -->
  			                        <div class="form-group row">
- 			                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
+ 			                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirm Password<span class="important">*</span></label>
 
  			                            <div class="col-md-6">
  			                                <input id="password-confirm" type="password" class="form-control" oninput="return validate()" name="password_confirmation" required placeholder="Confirm Password">
@@ -94,7 +93,7 @@
 
  			                        <div class="form-group row mb-0">
  			                            <div class="col-md-6 offset-md-4">
- 			                                <button type="button" id="register_submit" disabled class="btn btn-primary">
+ 			                                <button type="button" name="reg_admin_btn" id="register_submit" disabled class="btn btn-primary">
  			                                    Register
  			                                </button>
  			                            </div>
@@ -179,10 +178,14 @@
  			<script type="text/javascript" src="../assets/js/validate_password.js"></script>
  			<script type="text/javascript" src="../assets/js/admin_validate_username_exist.js"></script>
  			<script type="text/javascript" src="../assets/js/validate_email_exist.js"></script>
+ 			<script type="text/javascript" src="../assets/js/admin_phone_validation.js"></script>
  		<?php
+ 	}else{
+ 		// session_start();
+ 		session_destroy();
+ 		header('Location: ../login.php');
+ 		// echo "Hey";
+ 	}
  	}
  	require '../template.php';
- 	// }else{
- 	// 	header('Location: ../login.php');
- 	// }
 ?>

@@ -175,7 +175,7 @@
     <div class="container">
       Welcome <?php 
         if (isset($_SESSION['fname'])) {
-          echo $_SESSION['fname'];
+          echo ucfirst($_SESSION['fname']);
         }else {
           echo "Guest!";
         }

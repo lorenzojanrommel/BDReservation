@@ -49,7 +49,7 @@
 			echo "Boarding House & Dormitories Finder";
 		}
 		function display_content(){
-		?>qweqwe
+		?>
 		<div class="container p-5 room_msg_error">
 			<div class="row">
 				<div class="col-sm-12">
